@@ -1,0 +1,12 @@
+// The scene's title.
+"Title" = "Scene 1";
+
+// The headline when no value is provided. The parameter is the number of times the headline has been changed.
+"HeadlineNoValue" = "No value - %d";
+// The headline showing a value. The fist parameter is the value to display and the second the number of times the headline has been changed.
+"HeadlineWithValue" = "%@ - %d";
+
+// The titles of the entities in the list.
+"EntityTitle1" = "Cell 1";
+"EntityTitle2" = "Cell 2";
+"EntityTitle3" = "Cell 3";

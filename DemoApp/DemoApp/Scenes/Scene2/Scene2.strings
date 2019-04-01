@@ -1,0 +1,10 @@
+// The scene's title. The parameter is the provided headline to the scene.
+"Title" = "Scene 2 via %@";
+
+// The headline when rotation is locked. The input parameter is the timestamp.
+"HeadlineLocked" = "%@ - rotation locked";
+// The headline when rotation is unlocked. The input parameter is the timestamp.
+"HeadlineUnlocked" = "%@ - rotation unlocked";
+
+// The dismiss button's title.
+"DismissButtonTitle" = "Reset counter and dismiss this view";

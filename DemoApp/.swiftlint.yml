@@ -1,0 +1,28 @@
+# https://github.com/realm/SwiftLint
+# https://github.com/realm/SwiftLint/blob/master/Rules.md
+
+disabled_rules: # rule identifiers to exclude from running
+  - todo
+  - nesting
+included: # paths to include during linting. `--path` is ignored if present.
+  - DemoApp
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - DemoApp/Generated
+  - DemoApp/Resources
+
+line_length: 160
+file_length: 1000
+type_body_length: 400
+function_body_length: 100
+
+type_name:
+  min_length:
+    error: 3
+  max_length:
+    error: 40
+identifier_name:
+  min_length:
+    error: 3
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)
+
+cyclomatic_complexity: 10

@@ -1,0 +1,63 @@
+PODS:
+  - Anchorage (4.3)
+  - AppFolder (0.2.0)
+  - CocoaLumberjack/Core (3.5.2)
+  - CocoaLumberjack/Swift (3.5.2):
+    - CocoaLumberjack/Core
+  - Periphery (1.4.0)
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
+  - RxAtomic (4.4.2)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+  - SwiftFormat/CLI (0.40.4)
+  - SwiftLint (0.31.0)
+  - WeaverDI (0.12.2)
+
+DEPENDENCIES:
+  - Anchorage
+  - AppFolder
+  - CocoaLumberjack/Swift
+  - Periphery
+  - R.swift
+  - RxCocoa
+  - RxSwift
+  - SwiftFormat/CLI
+  - SwiftLint
+  - WeaverDI
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Anchorage
+    - AppFolder
+    - CocoaLumberjack
+    - Periphery
+    - R.swift
+    - R.swift.Library
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+    - SwiftFormat
+    - SwiftLint
+    - WeaverDI
+
+SPEC CHECKSUMS:
+  Anchorage: 21a98675245188427f0bcea21404d42a824a766f
+  AppFolder: d10ba19488bd441d60ffcf96eb2ab639a4825231
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
+  Periphery: 88b0f2c4f290fb47b02d2faf8d9a3e2facf0b51f
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+  SwiftFormat: cc36377840cffa5d0634782875dccf34dc02ff39
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  WeaverDI: 0daf6b9a1e276bda301e9360ffe992d19d20982e
+
+PODFILE CHECKSUM: 8fd8c9dadf33e20ecec453e3eafee33a82311f4d
+
+COCOAPODS: 1.6.1

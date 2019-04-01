@@ -1,0 +1,6 @@
+framework module AppFolder {
+  umbrella header "AppFolder-umbrella.h"
+
+  export *
+  module * { export * }
+}

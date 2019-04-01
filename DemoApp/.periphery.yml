@@ -1,0 +1,26 @@
+# https://peripheryapp.com
+# https://github.com/peripheryapp/periphery
+
+aggressive: false
+diagnose: false
+disable_update_check: false
+format: xcode
+index_exclude: []
+project: null
+quiet: false
+report_exclude: []
+retain_objc_annotated: true
+retain_public: true
+retain_unused_protocol_func_params: false
+save_build_log: null
+schemes:
+- DemoAppDev
+- DemoWidget
+- Shared
+targets:
+- DemoAppDev
+- DemoWidget
+- Shared
+use_build_log: null
+verbose: false
+workspace: DemoApp.xcworkspace/
