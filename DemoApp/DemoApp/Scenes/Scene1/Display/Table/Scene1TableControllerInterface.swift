@@ -1,3 +1,4 @@
+import Shared
 import UIKit
 
 /// The interface to the table.
@@ -13,7 +14,7 @@ protocol Scene1TableControllerInterface: AnyObject {
 /// The models send to the table controller.
 struct Scene1TableModel {
 	struct DataModel {
-		/// The cell titles to show.
-		let cellTitles: [String]
+		/// The suggestions to present as table cells.
+		let suggestions: [Suggestion]
 	}
 }

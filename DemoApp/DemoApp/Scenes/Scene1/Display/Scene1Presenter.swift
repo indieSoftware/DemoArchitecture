@@ -1,3 +1,5 @@
+import ServerWorker
+import Shared
 import UIKit
 
 /// Responsible for updating the view according to the data to present.
@@ -18,25 +20,19 @@ final class Scene1Presenter {
 // MARK: - Scene1PresenterInterface
 
 extension Scene1Presenter: Scene1PresenterInterface {
-	func updateView(model: Scene1PresenterModel.UpdateView) {
-		// Update the nav bar title.
-		viewController?.title = R.string.scene1.title()
-
-		// Show the headline if a value is provided.
-		if let headlineValue = model.headlineValue {
-			view?.headlineLabel.text = R.string.scene1.headlineWithValue(headlineValue, model.numberOfInfos)
-		} else {
-			view?.headlineLabel.text = R.string.scene1.headlineNoValue(model.numberOfInfos)
-		}
-
-		// Update the table.
-		let tableModel = Scene1TableModel.DataModel(
-			cellTitles: model.entityTitles
-		)
+	func suggestionList(suggestions: Suggestions) {
+		let tableModel = Scene1TableModel.DataModel(suggestions: suggestions)
 		tableController?.setData(model: tableModel)
 	}
 
-	func updateHeadline(model: Scene1PresenterModel.UpdateHeadline) {
-		view?.headlineLabel.text = R.string.scene1.headlineWithValue(model.value, model.numberOfInfos)
+	func serverError(_ error: ServerWorkerError) {
+		let alert = UIAlertController(title: R.string.global.serverErrorTitle(), message: R.string.global.serverErrorMessage(), preferredStyle: .alert)
+		let defaultAction = UIAlertAction(title: R.string.global.serverErrorDefaultButton(), style: .default, handler: nil)
+		alert.addAction(defaultAction)
+		viewController?.present(alert, animated: true, completion: nil)
+	}
+
+	func searchText(_ text: String) {
+		view?.searchInputField.text = text
 	}
 }

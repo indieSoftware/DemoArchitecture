@@ -1,26 +1,40 @@
+import Shared
+
 /// The logic interface, which is available to the display for informing about user initiated processes.
 protocol Scene1LogicInterface: AnyObject {
 	/**
-	 Requests a display update with the current state's data.
+	 Updates the display with initial data by performing an initial search with an empty query string.
 	 */
-	func updateDisplay()
+	func updateInitialDisplay()
 
 	/**
-	 Updates the internal settings if not yet done.
+	 Informs that the display has been rotated so the rotation counter gets increased.
 	 */
-	func updateSettings()
+	func displayRotated()
 
 	/**
-	 An entry with a title has been selected and Scene2 will be shown with it.
+	 Searches for a given text and updates the display accordingly.
 
-	 - parameter title: The selected entry's title.
+	 - parameter text: The text to search for.
 	 */
-	func entrySelected(title: String)
+	func searchForText(_ text: String)
 
 	/**
-	 An entry's info has been selected and will be should in the headline.
-
-	 - parameter title: The entry's title.
+	 Dismisses the keyboard when it is shown.
 	 */
-	func entryInfoSelected(title: String)
+	func dismissKeyboard()
+
+	/**
+	 Takes the suggestion's term, passes it to the display for showing in the search field and performs a new search with it.
+
+	 - parameter suggestion: The suggestion to adopt.
+	 */
+	func adoptSuggestion(_ suggestion: Suggestion)
+
+	/**
+	 Routes to `Scene2` with the given suggestion passed to it.
+
+	 - parameter suggestion: The suggestion to pass.
+	 */
+	func showSuggestionDetails(_ suggestion: Suggestion)
 }

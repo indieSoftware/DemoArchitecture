@@ -1,3 +1,4 @@
+import Shared
 import UIKit
 
 class Scene1TableController: NSObject {
@@ -22,6 +23,7 @@ class Scene1TableController: NSObject {
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.rowHeight = UITableView.automaticDimension
+		tableView.separatorStyle = .none
 
 		// Register cells.
 		tableView.register(Scene1DefaultCell.self)
@@ -29,11 +31,14 @@ class Scene1TableController: NSObject {
 
 	// MARK: - Table content
 
-	/// The data representation for the table view.
+	/// The original model of which the tableData is created.
+	private var currentModel: Scene1TableModel.DataModel?
+
+	/// The data representation for the table view consisting of the cell types and their models.
 	private var tableData = [Scene1TableData]()
 
 	/**
-	 Creates the data for the table view.
+	 Creates the data for the table view and updates the `currentModel`.
 	 Does not reload the table view itself.
 
 	 - parameter model: The model to use for mapping to the content.
@@ -42,10 +47,13 @@ class Scene1TableController: NSObject {
 		// Clear data.
 		tableData = [Scene1TableData]()
 
-		// Map data.
-		let mappedData = model.cellTitles.map { (title) -> Scene1TableData in
+		// Save model.
+		currentModel = model
+
+		// Map model to table data.
+		let mappedData = model.suggestions.map { (suggestion) -> Scene1TableData in
 			let cellModel = Scene1DefaultCellModel(
-				title: title,
+				suggestion: suggestion,
 				delegate: self
 			)
 			return Scene1TableData.defaultCell(cellModel)
@@ -96,18 +104,17 @@ extension Scene1TableController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		let data = tableData[indexPath.row]
-		switch data {
-		case let .defaultCell(cellModel):
-			logic.entrySelected(title: cellModel.title)
+		guard let selectedSuggestion = currentModel?.suggestions[indexPath.row] else {
+			fatalError("No model for shown data")
 		}
+		logic.showSuggestionDetails(selectedSuggestion)
 	}
 }
 
 // MARK: - Scene1DefaultCellDelegate
 
 extension Scene1TableController: Scene1DefaultCellDelegate {
-	func cellButtonPressed(title: String) {
-		logic.entryInfoSelected(title: title)
+	func cellButtonPressed(cellModel: Scene1DefaultCellModel) {
+		logic.adoptSuggestion(cellModel.suggestion)
 	}
 }

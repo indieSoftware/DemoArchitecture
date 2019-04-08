@@ -11,9 +11,6 @@ final class Scene1Navigator {
 
 	// weaver: forceGenerate = Bool
 
-	// TODO: add if necessary
-	/// weaver: settings <- InternalSettingsInterface
-
 	// weaver: scene2VC = Scene2VC
 	// weaver: scene2VC.scope = .transient
 

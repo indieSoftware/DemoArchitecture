@@ -7,6 +7,7 @@ def app_pods
 	# Add pods from embedded frameworks to resolve errors like: dyld Library not loaded, image not found
 	shared_pods
 	customViews_pods
+	serverWorker_pods
 
 	# Constants for localized text, storyboards, nibs, etc.
 	# https://github.com/mac-cain13/R.swift
@@ -95,6 +96,11 @@ def customViews_pods
 	pod 'Anchorage'
 end
 
+# Pods used by the ServerWorker framework.
+def serverWorker_pods
+end
+
+
 # Targets
 
 target 'DemoAppDev' do
@@ -109,6 +115,14 @@ end
 target 'DemoAppUnitTests' do
 	development_pods
 
+	# HTTP request mocker.
+	# https://github.com/kylef/Mockingjay
+	#pod 'Mockingjay'
+
+	# HTTP stubbing.
+	# https://github.com/JanGorman/Hippolyte
+	pod 'Hippolyte'
+
 	# Rx Tests.
 	# https://github.com/ReactiveX/RxSwift
 	#pod 'RxBlocking'
@@ -117,10 +131,6 @@ target 'DemoAppUnitTests' do
 	# Mocking framework for Swift.
 	# https://github.com/Brightify/Cuckoo
 	#pod 'Cuckoo'
-
-	# HTTP request mocker.
-	# https://github.com/kylef/Mockingjay/releases
-	#pod 'Mockingjay'
 
 	# Snapshot view unit tests.
 	# https://github.com/uber/ios-snapshot-test-case
@@ -193,6 +203,22 @@ target 'CustomViews' do
 	development_pods
 
 	customViews_pods
+end
+
+target 'ServerWorker' do
+	development_pods
+
+	# HTTP stubbing.
+	# https://github.com/JanGorman/Hippolyte
+	pod 'Hippolyte'
+
+	serverWorker_pods
+end
+
+target 'ServerWorkerTests' do
+	# HTTP stubbing.
+	# https://github.com/JanGorman/Hippolyte
+	pod 'Hippolyte'
 end
 
 

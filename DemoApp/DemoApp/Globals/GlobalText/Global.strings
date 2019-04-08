@@ -1,2 +1,8 @@
 // Localized text used globally scene independent.
 
+// Error title when a server request failed.
+"ServerErrorTitle" = "Server error";
+// Error message when a server request failed.
+"ServerErrorMessage" = "Request failed, please retry later.";
+// Confirmation button title for the error message when a server request failed.
+"ServerErrorDefaultButton" = "Ok";

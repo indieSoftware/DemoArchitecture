@@ -1,37 +1,27 @@
 import Foundation
+import ServerWorker
+import Shared
 
 /// The interface for presenting something in the view.
 protocol Scene1PresenterInterface: AnyObject {
 	/**
-	 Updates the whole view according to the given state.
+	 Updates the suggestion table list view with the given data.
 
-	 - parameter model: The new state.
+	 - parameter suggestions: The suggestions to display.
 	 */
-	func updateView(model: Scene1PresenterModel.UpdateView)
+	func suggestionList(suggestions: Suggestions)
 
 	/**
-	 Updates only the headline for a value.
+	 Presents a server error via alert message to the user.
 
-	 - parameter model: The new state.
+	 - parameter error: The server error to present.
 	 */
-	func updateHeadline(model: Scene1PresenterModel.UpdateHeadline)
-}
+	func serverError(_ error: ServerWorkerError)
 
-/// The models send to the presenter.
-struct Scene1PresenterModel {
-	struct UpdateView {
-		/// The headline value to show if any is available.
-		let headlineValue: String?
-		/// The number of times the info have been requested.
-		let numberOfInfos: Int
-		/// The list of entities with their titles.
-		let entityTitles: [String]
-	}
+	/**
+	 Updates the search input text field with a provided text.
 
-	struct UpdateHeadline {
-		/// The headline value to show.
-		let value: String
-		/// The number to show with the value.
-		let numberOfInfos: Int
-	}
+	 - parameter text: The text to apply to the text field.
+	 */
+	func searchText(_ text: String)
 }

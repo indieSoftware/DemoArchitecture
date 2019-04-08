@@ -1,12 +1,15 @@
 import RxCocoa
 import RxSwift
+import Shared
 
 /// Responsible for delivering any user inputs to the logic.
 final class Scene2Interactor {
 	/// A reference to the view to recive inputs from.
 	private unowned let view: Scene2View
+
 	/// A reference to the logic to deliver actions to.
 	private unowned let logic: Scene2LogicInterface
+
 	/// The dispose bag for Rx.
 	private let disposeBag = DisposeBag()
 
@@ -20,13 +23,25 @@ final class Scene2Interactor {
 		self.view = view
 		self.logic = logic
 
-		view.dismissButton.rx.tap.subscribe(onNext: { _ in
-			logic.resetAndDismiss()
-		}).disposed(by: disposeBag)
+		// Reset counter and dismiss scene when pressing the dismiss button.
+		view.dismissButton.rx
+			// React on tap actions.
+			.tap
+			// Act immediately, but not too often.
+			.throttle(Const.Time.defaultDebounceDuration, scheduler: MainScheduler.instance)
+			.subscribe(onNext: { _ in
+				logic.resetAndDismiss()
+			}).disposed(by: disposeBag)
 
-		view.rotationLockSwitch.rx.isOn.subscribe(onNext: { enabled in
-			let lockState: DisplayRotation = enabled ? .open : .locked
-			logic.rotationLockChanged(lockState: lockState)
-		}).disposed(by: disposeBag)
+		// Toggle rotation lock state when pressing the switch.
+		view.rotationLockSwitch.rx
+			// Trigger on switch state changes.
+			.isOn
+			// Ignore first event on registration.
+			.changed
+			.subscribe(onNext: { enabled in
+				let lockState: DisplayRotation = enabled ? .possible : .locked
+				logic.rotationLockChanged(lockState: lockState)
+			}).disposed(by: disposeBag)
 	}
 }

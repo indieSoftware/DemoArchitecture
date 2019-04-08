@@ -20,19 +20,16 @@ extension Scene2Presenter: Scene2PresenterInterface {
 		viewController?.title = R.string.scene2.title(model.headline)
 
 		// Format the input data to display the headline.
-		let timestamp = model.timestamp.string(withFormat: "HH:mm:ss", calendar: Calendar.current)
 		let headline: String
 		switch model.displayRotation {
 		case .locked:
-			headline = R.string.scene2.headlineLocked(timestamp)
+			headline = R.string.scene2.headlineLocked(model.rotations)
 			view?.rotationLockSwitch.isOn = true
-		case .open:
-			headline = R.string.scene2.headlineUnlocked(timestamp)
+		case .possible:
+			headline = R.string.scene2.headlineUnlocked(model.rotations)
 			view?.rotationLockSwitch.isOn = false
 		}
 		view?.headlineLabel.text = headline
-		view?.counterTextField.text = String(model.counterValue)
-		Log.debug("Settings version: \(model.settingsVersion)")
 
 		// Add an embedded sub-view with its own controller if not yet done.
 		if let viewController = viewController,

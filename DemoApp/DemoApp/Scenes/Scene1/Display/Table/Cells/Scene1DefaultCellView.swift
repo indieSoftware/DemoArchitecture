@@ -16,6 +16,18 @@ class Scene1DefaultCellView: BaseView {
 		addSubview(cellButton)
 		cellButton.trailingAnchor == layoutMarginsGuide.trailingAnchor
 		cellButton.centerYAnchor == titleLabel.centerYAnchor
+		cellButton.horizontalHuggingPriority = .low + 1
+		cellButton.horizontalCompressionResistance = .high + 1
+
+		// Add the separator line to the bottom.
+		addSubview(separatorLine)
+		separatorLine.bottomAnchor == bottomAnchor
+		separatorLine.leadingAnchor == leadingAnchor
+		separatorLine.trailingAnchor == trailingAnchor
+		separatorLine.heightAnchor == Const.Margin.separatorThickness
+
+		// The view's min height.
+		heightAnchor == Const.Margin.cellMinHeight ~ .required - 1
 
 		// Set default styles.
 		backgroundColor = R.color.defaultBackground()
@@ -30,10 +42,18 @@ class Scene1DefaultCellView: BaseView {
 		return label
 	}()
 
-	/// A button inside of the cell.
+	/// The button to apply the suggestion.
 	let cellButton: UIButton = {
-		let button = UIButton(type: UIButton.ButtonType.infoDark)
+		// TODO: Replace the button's representation with the correct image icon.
+		let button = UIButton(type: UIButton.ButtonType.contactAdd)
 		return button
+	}()
+
+	/// The separator line.
+	let separatorLine: UIView = {
+		guard let color = R.color.separator() else { fatalError() }
+		let line = UIView.viewWithColor(color)
+		return line
 	}()
 
 	// MARK: - Interface Builder

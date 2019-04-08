@@ -1,3 +1,5 @@
+import RxCocoa
+import RxSwift
 import Shared
 import UIKit
 
@@ -14,6 +16,9 @@ class Scene1DefaultCell: BaseCell {
 	/// The cell's model.
 	private var model: Scene1DefaultCellModel?
 
+	/// The dispose bag for Rx.
+	private var disposeBag = DisposeBag()
+
 	/**
 	 Sets up the cell.
 
@@ -22,19 +27,17 @@ class Scene1DefaultCell: BaseCell {
 	func setup(model: Scene1DefaultCellModel) {
 		// Apply model.
 		self.model = model
-		cellView.titleLabel.text = model.title
+		cellView.titleLabel.text = model.suggestion
 
-		// Register for callback actions
-		onCellButtonPressed.setDelegate(to: self, with: { _, _ in
-			model.delegate?.cellButtonPressed(title: model.title)
-		})
+		// Reset previous bindings so they don't fire multiple times.
+		disposeBag = DisposeBag()
+
+		// Inform delegate about cell button tap.
+		cellView.cellButton.rx.tap
+			.throttle(Const.Time.defaultDebounceDuration, scheduler: MainScheduler.instance) // act immediately, but not too often
+			.subscribe(onNext: { _ in
+				Log.debug("Cell \(model.suggestion) tapped")
+				model.delegate?.cellButtonPressed(cellModel: model)
+			}).disposed(by: disposeBag)
 	}
-
-	// MARK: - Delegate callers
-
-	private lazy var onCellButtonPressed: ControlCallback<Scene1DefaultCell> = {
-		ControlCallback(for: cellView.cellButton, event: .touchUpInside) { [unowned self] in
-			self
-		}
-	}()
 }

@@ -3,7 +3,7 @@ import UIKit
 /**
  A replacement construct for a simple delegate pattern or a callback closure.
 
- Use this instead of a simple delegate closure where the API user might forget to provide a `[weak self]` in the closure,
+ Use this instead of a simple delegate closure where the developer might forget to provide a `[weak self]` in the closure,
  e.g. `delegate = { [weak self] image in }`.
  With this approach the provided closure has automatically a not-retained strong reference to the object.
 

@@ -2,7 +2,7 @@ extension Const {
 	/// Arguments passed on app start when targeting tests or a debug version.
 	/// To apply the arguments "Edit Scheme", go to "Run" phase and select the "Arguments" tab.
 	/// Add the arguments to "Arguments Passed On Launch" and make sure their checkmark is ticked.
-	public struct AppArgument {
+	public enum AppArgument {
 		/// A string appended to the app start arguments to indicate that the app is under UI test and thus any persisted states have to be cleared.
 		public static let testMode = "--testMode"
 

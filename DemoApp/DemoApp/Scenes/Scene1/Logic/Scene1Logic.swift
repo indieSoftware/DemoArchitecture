@@ -1,4 +1,5 @@
 import Foundation
+import ServerWorker
 import Shared
 
 /**
@@ -15,17 +16,14 @@ final class Scene1Logic {
 	// The provided setup data parameter.
 	// weaver: setupModel <= Scene1Setup
 
-	// weaver: settings <- InternalSettingsInterface
+	// A reference to the server worker.
+	// weaver: serverWorker <- ServerWorkerInterface
 
 	// The presenter for sending data to display.
-	// weaver: presenter <- Scene1Presenter
-	// TODO: replace
-	/// weaver: presenter <- Scene1PresenterInterface
+	// weaver: presenter <- Scene1PresenterInterface
 
 	// The navigator for routing to other scenes.
-	// weaver: navigator <- Scene1Navigator
-	// TODO: replace
-	/// weaver: navigator <- Scene1NavigatorInterface
+	// weaver: navigator <- Scene1NavigatorInterface
 
 	required init(injecting dependencies: Scene1LogicDependencyResolver) {
 		self.dependencies = dependencies
@@ -35,49 +33,54 @@ final class Scene1Logic {
 // MARK: - Scene1LogicInterface
 
 extension Scene1Logic: Scene1LogicInterface {
-	func updateDisplay() {
-		let model = Scene1PresenterModel.UpdateView(
-			headlineValue: nil,
-			numberOfInfos: state.numberOfInfos,
-			entityTitles: [
-				R.string.scene1.entityTitle1(),
-				R.string.scene1.entityTitle2(),
-				R.string.scene1.entityTitle3()
-			]
-		)
-		dependencies.presenter.updateView(model: model)
+	func updateInitialDisplay() {
+		searchForText(String.empty)
 	}
 
-	func updateSettings() {
-		guard state.settingsUpdated == false else { return }
-		state.settingsUpdated = true
+	func displayRotated() {
+		state.numberOfRotations += 1
+	}
 
-		// Update settings.
-		let internalSettings = dependencies.settings
-		let testScenario = Const.AppArgument.TestScenario(commandLineArguments: CommandLine.arguments)
-		if testScenario != nil {
-			Log.info("App started in test mode")
+	func searchForText(_ text: String) {
+		guard !text.isEmpty else {
+			// Clear suggestions on empty search text because the server doesn't allow requests with an empty query.
+			state.lastSuggestions = []
+			dependencies.presenter.suggestionList(suggestions: [])
+			return
 		}
-		internalSettings.updateSettings(testScenario: testScenario)
+
+		// Send non-empty query to server.
+		let request = Request.SearchAutocompletion.Query(text)
+		dependencies.serverWorker.send(request) { [weak self] result in
+			guard let strongSelf = self else { return }
+			switch result {
+			case let .failure(error):
+				strongSelf.dependencies.presenter.serverError(error)
+			case let .success(result):
+				strongSelf.state.lastSuggestions = result.suggestions
+				strongSelf.dependencies.presenter.suggestionList(suggestions: result.suggestions)
+			}
+		}
 	}
 
-	func entrySelected(title: String) {
+	func dismissKeyboard() {
+		UIResponder.resignFirstResponder()
+	}
+
+	func adoptSuggestion(_ suggestion: Suggestion) {
+		let searchText = suggestion
+		dependencies.presenter.searchText(searchText)
+		searchForText(searchText)
+	}
+
+	func showSuggestionDetails(_ suggestion: Suggestion) {
 		let model = Scene2Setup(
-			headline: title,
-			counter: state.numberOfInfos,
+			headline: suggestion,
+			numberOfRotations: state.numberOfRotations,
 			callback: { [weak self] model in
-				self?.state.numberOfInfos = model.counter
+				self?.state.numberOfRotations = model.numberOfRotations
 			}
 		)
 		dependencies.navigator.scene2(setupModel: model)
-	}
-
-	func entryInfoSelected(title: String) {
-		state.numberOfInfos += 1
-		let model = Scene1PresenterModel.UpdateHeadline(
-			value: title,
-			numberOfInfos: state.numberOfInfos
-		)
-		dependencies.presenter.updateHeadline(model: model)
 	}
 }

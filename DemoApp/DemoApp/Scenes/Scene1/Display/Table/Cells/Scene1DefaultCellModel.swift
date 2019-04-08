@@ -1,7 +1,9 @@
+import Shared
+
 /// The model for `Scene1DefaultCell`.
 struct Scene1DefaultCellModel {
-	/// The cell's title.
-	let title: String
+	/// The represented data.
+	let suggestion: Suggestion
 	/// The cell's delegate to inform about actions inside of the cell.
 	weak var delegate: Scene1DefaultCellDelegate?
 }
@@ -10,7 +12,7 @@ protocol Scene1DefaultCellDelegate: AnyObject {
 	/**
 	 Informs that the cell button has been pressed.
 
-	 - parameter title: The cell's title.
+	 - parameter cellModel: The cell's model.
 	 */
-	func cellButtonPressed(title: String)
+	func cellButtonPressed(cellModel: Scene1DefaultCellModel)
 }

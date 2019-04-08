@@ -23,15 +23,9 @@ final class Scene2View: BaseView {
 		rotationLockSwitch.topAnchor == headlineLabel.bottomAnchor + Const.Margin.gap
 		rotationLockSwitch.leadingAnchor == layoutMarginsGuide.leadingAnchor
 
-		// The counter field goes under the switch.
-		addSubview(counterTextField)
-		counterTextField.topAnchor == rotationLockSwitch.bottomAnchor + Const.Margin.gap
-		counterTextField.leadingAnchor == layoutMarginsGuide.leadingAnchor
-		counterTextField.trailingAnchor == layoutMarginsGuide.trailingAnchor
-
 		// The dismiss button goes under the dismiss button.
 		addSubview(dismissButton)
-		dismissButton.topAnchor == counterTextField.bottomAnchor + Const.Margin.gap
+		dismissButton.topAnchor == rotationLockSwitch.bottomAnchor + Const.Margin.gap
 		dismissButton.leadingAnchor == layoutMarginsGuide.leadingAnchor
 		dismissButton.trailingAnchor <= layoutMarginsGuide.trailingAnchor
 
@@ -46,15 +40,6 @@ final class Scene2View: BaseView {
 	let headlineLabel: UILabel = {
 		let label = UILabel()
 		return label
-	}()
-
-	/// The input field showing the current coutner value.
-	let counterTextField: UITextField = {
-		let textField = UITextField()
-		textField.borderStyle = .bezel
-		textField.clearButtonMode = .always
-		textField.keyboardType = .numberPad
-		return textField
 	}()
 
 	/// The dismiss button.

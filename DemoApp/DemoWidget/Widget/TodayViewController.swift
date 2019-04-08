@@ -3,15 +3,11 @@ import Shared
 import UIKit
 
 class TodayViewController: UIViewController, NCWidgetProviding {
+	// weaver: forceGenerate = Bool
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view from its nib.
-		let groupId = Const.App.groupIdentifier
-		Log.debug("Group ID: \(groupId)")
-
-		// TODO: remove
-		let root = Root()
-		root.main()
 	}
 
 	func widgetPerformUpdate(completionHandler: @escaping (NCUpdateResult) -> Void) {

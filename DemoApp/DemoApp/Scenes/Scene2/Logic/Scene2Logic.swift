@@ -14,22 +14,15 @@ final class Scene2Logic {
 	// The provided setup data parameter.
 	// weaver: setupModel <= Scene2Setup
 
-	// TODO: add
-	/// weaver: settings <- InternalSettingsInterface
-
 	// The presenter for sending data to display.
-	// weaver: presenter <- Scene2Presenter
-	// TODO: replace
-	/// weaver: presenter <- Scene2PresenterInterface
+	// weaver: presenter <- Scene2PresenterInterface
 
 	// The navigator for routing to other scenes.
-	// weaver: navigator <- Scene2Navigator
-	// TODO: replace
-	/// weaver: navigator <- Scene2NavigatorInterface
+	// weaver: navigator <- Scene2NavigatorInterface
 
 	required init(injecting dependencies: Scene2LogicDependencyResolver) {
 		self.dependencies = dependencies
-		state.counter = dependencies.setupModel.counter
+		state.numberOfRotations = dependencies.setupModel.numberOfRotations
 	}
 }
 
@@ -37,16 +30,18 @@ final class Scene2Logic {
 
 extension Scene2Logic: Scene2LogicInterface {
 	func updateDisplay() {
-		let timestamp = Date()
 		let model = Scene2PresenterModel.UpdateView(
-			timestamp: timestamp,
 			headline: dependencies.setupModel.headline,
 			displayRotation: state.displayRotation,
-			counterValue: state.counter,
-			settingsVersion: 0, // TODO: use: dependencies.settings.settingsVersion
+			rotations: state.numberOfRotations,
 			subController: dependencies.navigator.subController()
 		)
 		dependencies.presenter.updateView(model: model)
+	}
+
+	func displayRotated() {
+		state.numberOfRotations += 1
+		updateDisplay()
 	}
 
 	func rotationLockChanged(lockState: DisplayRotation) {
@@ -55,12 +50,12 @@ extension Scene2Logic: Scene2LogicInterface {
 	}
 
 	func resetAndDismiss() {
-		state.counter = 0
+		state.numberOfRotations = 0
 		dependencies.navigator.scene1()
 	}
 
 	func updateParentScene() {
-		let model = Scene2CallbackModel(counter: state.counter)
+		let model = Scene2CallbackModel(numberOfRotations: state.numberOfRotations)
 		dependencies.setupModel.callback(model)
 	}
 }

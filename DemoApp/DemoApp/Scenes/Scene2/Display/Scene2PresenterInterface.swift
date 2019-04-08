@@ -13,16 +13,12 @@ protocol Scene2PresenterInterface: AnyObject {
 /// The models send to the presenter.
 struct Scene2PresenterModel {
 	struct UpdateView {
-		/// The timestamp of the last update.
-		let timestamp: Date
 		/// The headline provided to show in the title.
 		let headline: String
 		/// Whether rotation is locked or not.
 		let displayRotation: DisplayRotation
-		/// The counter value.
-		let counterValue: Int
-		/// The current settings version number.
-		let settingsVersion: Int
+		/// The number of rotations.
+		let rotations: Int
 		/// A sub-controller to embed.
 		let subController: UIViewController?
 	}
