@@ -20,12 +20,12 @@ final class Scene2View: BaseView {
 
 		// The switch goes under the headline.
 		addSubview(rotationLockSwitch)
-		rotationLockSwitch.topAnchor == headlineLabel.bottomAnchor + Const.Margin.gap
+		rotationLockSwitch.topAnchor == headlineLabel.bottomAnchor + Const.Size.gap
 		rotationLockSwitch.leadingAnchor == layoutMarginsGuide.leadingAnchor
 
 		// The dismiss button goes under the dismiss button.
 		addSubview(dismissButton)
-		dismissButton.topAnchor == rotationLockSwitch.bottomAnchor + Const.Margin.gap
+		dismissButton.topAnchor == rotationLockSwitch.bottomAnchor + Const.Size.gap
 		dismissButton.leadingAnchor == layoutMarginsGuide.leadingAnchor
 		dismissButton.trailingAnchor <= layoutMarginsGuide.trailingAnchor
 
@@ -64,7 +64,7 @@ final class Scene2View: BaseView {
 	 */
 	func addEmbeddedView(_ subView: UIView) {
 		addSubview(subView)
-		subView.topAnchor == dismissButton.bottomAnchor + Const.Margin.gap
+		subView.topAnchor == dismissButton.bottomAnchor + Const.Size.gap
 		subView.leadingAnchor == layoutMarginsGuide.leadingAnchor
 		subView.trailingAnchor == layoutMarginsGuide.trailingAnchor
 		subView.bottomAnchor == layoutMarginsGuide.bottomAnchor

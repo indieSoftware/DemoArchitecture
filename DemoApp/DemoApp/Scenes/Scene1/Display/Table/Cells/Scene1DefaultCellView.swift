@@ -24,10 +24,10 @@ class Scene1DefaultCellView: BaseView {
 		separatorLine.bottomAnchor == bottomAnchor
 		separatorLine.leadingAnchor == leadingAnchor
 		separatorLine.trailingAnchor == trailingAnchor
-		separatorLine.heightAnchor == Const.Margin.separatorThickness
+		separatorLine.heightAnchor == Const.Size.separatorThickness
 
 		// The view's min height.
-		heightAnchor == Const.Margin.cellMinHeight ~ .required - 1
+		heightAnchor == Const.Size.cellMinHeight ~ .required - 1
 
 		// Set default styles.
 		backgroundColor = R.color.defaultBackground()

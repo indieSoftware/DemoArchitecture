@@ -1,7 +1,7 @@
 import Foundation
 
 extension Const {
-	/// Notification constants for this project.
+	/// Notification constants and their user info keys.
 	public enum Notification {
 		/// Custom notification names to use for sending notifications through the app.
 		public enum Name {

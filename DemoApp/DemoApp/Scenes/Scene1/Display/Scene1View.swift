@@ -20,10 +20,10 @@ final class Scene1View: BaseView {
 
 		// Add a separator line between the input field and the table view.
 		addSubview(separatorLine)
-		separatorLine.topAnchor == searchInputField.bottomAnchor + Const.Margin.gap
+		separatorLine.topAnchor == searchInputField.bottomAnchor + Const.Size.gap
 		separatorLine.leadingAnchor == leadingAnchor
 		separatorLine.trailingAnchor == trailingAnchor
-		separatorLine.heightAnchor == Const.Margin.separatorThickness
+		separatorLine.heightAnchor == Const.Size.separatorThickness
 
 		// The table view under the headline.
 		addSubview(tableView)
