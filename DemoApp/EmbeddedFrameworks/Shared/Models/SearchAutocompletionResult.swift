@@ -1,5 +1,5 @@
-/// The result type of a `SearchAutocompletionRequest`.
-/// Should match something like `["Lorem",["lorem ipsum","lorem ipsum generator","lorem ipsum deutsch"]]` where the first "Lorem" is the query's string.
+/// The result type of a `SearchAutocompletion.Query` request.
+/// Should match something like `["Lorem",["lorem ipsum","lorem ipsum generator"]]` where the first "Lorem" is the query's string.
 public struct SearchAutocompletionResult: Codable, Equatable {
 	/// The first element of the array which is the request's query string.
 	public var query: String

@@ -11,7 +11,7 @@ import Shared
 public final class ServerWorker {
 	// TODO: Consider using a configuration file which gets read at runtime depending on the target and/or build mode instead of using hard coded properties.
 	/// The server's base URL as the string constant.
-	private let baseUrlString = "https://suggestqueries.google.com"
+	private let baseUrlString = "https://suggestqueries.google.com/complete"
 
 	/// The server's base URL where all requests are performed to.
 	lazy var baseEndpointUrl: URL = {

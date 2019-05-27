@@ -21,7 +21,7 @@ enum HTTPParameter: Decodable {
 	case int(Int)
 	case double(Double)
 
-	public init(from decoder: Decoder) throws {
+	init(from decoder: Decoder) throws {
 		let container = try decoder.singleValueContainer()
 
 		if let string = try? container.decode(String.self) {
@@ -38,7 +38,7 @@ enum HTTPParameter: Decodable {
 	}
 
 	/// The parameter as a string representation.
-	public var description: String {
+	var description: String {
 		switch self {
 		case let .string(string):
 			return string

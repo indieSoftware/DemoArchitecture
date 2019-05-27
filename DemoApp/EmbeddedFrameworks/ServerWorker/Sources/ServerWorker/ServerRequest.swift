@@ -21,5 +21,5 @@ public protocol ServerRequest: Encodable {
 
 /// A global namespace for all server requests.
 public enum Request {
-	// All concrete server requests should be defined in their own extension.
+	// All concrete server requests should be defined in their own extensions.
 }
