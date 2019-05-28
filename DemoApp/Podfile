@@ -21,10 +21,6 @@ def app_pods
 	# https://github.com/Raizlabs/Anchorage
 	pod 'Anchorage'
 
-	# Dependency injection framework.
-	# https://github.com/scribd/Weaver
-	pod 'WeaverDI'
-
 	# Reactive programming in swift and cocoa.
 	# https://github.com/ReactiveX/RxSwift
 	pod 'RxSwift'
@@ -183,10 +179,6 @@ target 'DemoWidget' do
 	# Constants for localized text, storyboards, nibs, etc.
 	# https://github.com/mac-cain13/R.swift
 	pod 'R.swift'
-
-	# Dependency injection framework.
-	# https://github.com/scribd/Weaver
-	pod 'WeaverDI'
 end
 
 target 'Shared' do

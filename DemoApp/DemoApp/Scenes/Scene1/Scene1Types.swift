@@ -1,1 +1,0 @@
-// Any scene specific types.

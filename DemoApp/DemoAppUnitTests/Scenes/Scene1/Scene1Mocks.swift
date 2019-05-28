@@ -1,20 +1,7 @@
 @testable import DemoAppDev
 import ServerWorker
-@testable import Shared
+import Shared
 import XCTest
-
-class Scene1LogicDependencyMock: Scene1LogicDependencyResolver {
-	var setupModel = Scene1Setup()
-
-	var _serverWorker = ServerWorkerMock()
-	var serverWorker: ServerWorkerInterface { return _serverWorker }
-
-	var _presenter = Scene1PresenterMock()
-	var presenter: Scene1PresenterInterface { return _presenter }
-
-	var _navigator = Scene1NavigatorMock()
-	var navigator: Scene1NavigatorInterface { return _navigator }
-}
 
 class Scene1PresenterMock: Scene1PresenterInterface {
 	var suggestionListStub: (_ suggestions: Suggestions) -> Void = { _ in XCTFail() }
@@ -34,8 +21,8 @@ class Scene1PresenterMock: Scene1PresenterInterface {
 }
 
 class Scene1NavigatorMock: Scene1NavigatorInterface {
-	var scene2SetupModel: (_ setupModel: Scene2Setup) -> Void = { _ in XCTFail() }
-	func scene2(setupModel: Scene2Setup) {
-		scene2SetupModel(setupModel)
+	var scene2SetupModel: (_ setupModel: SetupModel.Scene2, _ user: User) -> Void = { _, _ in XCTFail() }
+	func scene2(setupModel: SetupModel.Scene2, user: User) {
+		scene2SetupModel(setupModel, user)
 	}
 }

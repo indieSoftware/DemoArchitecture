@@ -25,8 +25,6 @@
 		26232551228ADCC1006AFAF4 /* SearchAutocompletionResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26232550228ADCC1006AFAF4 /* SearchAutocompletionResultTests.swift */; };
 		26232555228AE2A7006AFAF4 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266057142259E794003513AE /* Suggestions.swift */; };
 		26232556228AE2AC006AFAF4 /* SearchAutocompletionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26232552228ADD7F006AFAF4 /* SearchAutocompletionResult.swift */; };
-		2624964E221FFB420023DEEA /* Weaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624964D221FFB410023DEEA /* Weaver.swift */; };
-		2624964F221FFB420023DEEA /* Weaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2624964D221FFB410023DEEA /* Weaver.swift */; };
 		26262ED7228D7A330004A5A2 /* ServerWorker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26262ECE228D7A330004A5A2 /* ServerWorker.framework */; };
 		26262EE0228D7A330004A5A2 /* ServerWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = 26262ED0228D7A330004A5A2 /* ServerWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26262EE3228D7A330004A5A2 /* ServerWorker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26262ECE228D7A330004A5A2 /* ServerWorker.framework */; };
@@ -50,10 +48,19 @@
 		26345E7B223BA48A00BFCA07 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C47B2D21FCA84C0069947A /* Shared.framework */; };
 		26345E7C223BA88300BFCA07 /* CustomViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26345E5B223BA2AD00BFCA07 /* CustomViews.framework */; };
 		26345E7D223BA88300BFCA07 /* CustomViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26345E5B223BA2AD00BFCA07 /* CustomViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26365EFB229D3197009AFBB3 /* SetupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365EFA229D3197009AFBB3 /* SetupModel.swift */; };
+		26365EFC229D3197009AFBB3 /* SetupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365EFA229D3197009AFBB3 /* SetupModel.swift */; };
+		26365EFE229D3653009AFBB3 /* Act2Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365EFD229D3653009AFBB3 /* Act2Dependencies.swift */; };
+		26365EFF229D3653009AFBB3 /* Act2Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365EFD229D3653009AFBB3 /* Act2Dependencies.swift */; };
+		26365F02229D54EB009AFBB3 /* Act1DependenciesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F01229D54EB009AFBB3 /* Act1DependenciesMock.swift */; };
+		26365F04229D5547009AFBB3 /* InternalSettingsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F03229D5547009AFBB3 /* InternalSettingsMock.swift */; };
+		26365F06229D579F009AFBB3 /* Act2DependenciesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F05229D579F009AFBB3 /* Act2DependenciesMock.swift */; };
 		26381E3721FDE2DE00DC3917 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C47B2D21FCA84C0069947A /* Shared.framework */; };
 		2642981C2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
 		2642981D2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
 		2648179B224A3E8C0097014F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648179A224A3E8C0097014F /* UIViewController.swift */; };
+		26531C21229BD28B00D02A0E /* Act1Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26531C20229BD28B00D02A0E /* Act1Dependencies.swift */; };
+		26531C22229BD28B00D02A0E /* Act1Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26531C20229BD28B00D02A0E /* Act1Dependencies.swift */; };
 		2658A3A021F5D43F004451F8 /* UIView+Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */; };
 		2658A3A121F5D43F004451F8 /* UIView+Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */; };
 		2659D5CE21FB29C500F11F18 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2659D5CD21FB29C500F11F18 /* NotificationCenter.framework */; };
@@ -149,7 +156,6 @@
 		26C47BC721FCD8F50069947A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C47BC621FCD8F50069947A /* MainInterface.storyboard */; };
 		26C7E960222AB4730003C57B /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7E95F222AB4730003C57B /* ViewStyle.swift */; };
 		26C7E962222AB7690003C57B /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7E961222AB7690003C57B /* ButtonStyles.swift */; };
-		26E69E05222170100036498D /* Weaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E69E04222170100036498D /* Weaver.swift */; };
 		26EFBD682203071000FE48AB /* Scene1Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EFBD522203071000FE48AB /* Scene1Navigator.swift */; };
 		26EFBD692203071000FE48AB /* Scene1Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EFBD522203071000FE48AB /* Scene1Navigator.swift */; };
 		26EFBD6C2203071000FE48AB /* Scene1Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EFBD542203071000FE48AB /* Scene1Const.swift */; };
@@ -364,7 +370,6 @@
 		260C5AEE22417DC6009CE5A8 /* Scene1LogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene1LogicTests.swift; sourceTree = "<group>"; };
 		26232550228ADCC1006AFAF4 /* SearchAutocompletionResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAutocompletionResultTests.swift; sourceTree = "<group>"; };
 		26232552228ADD7F006AFAF4 /* SearchAutocompletionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAutocompletionResult.swift; sourceTree = "<group>"; };
-		2624964D221FFB410023DEEA /* Weaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weaver.swift; sourceTree = "<group>"; };
 		26262ECE228D7A330004A5A2 /* ServerWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServerWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26262ED0228D7A330004A5A2 /* ServerWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerWorker.h; sourceTree = "<group>"; };
 		26262ED1228D7A330004A5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -377,9 +382,15 @@
 		26345E5E223BA2AD00BFCA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26345E78223BA41100BFCA07 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		26345E80223BAB9A00BFCA07 /* RoundedButton.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = RoundedButton.playground; path = /Users/sven/Work/indieSoftware/Code/Calendar/Cali2/DemoApp/EmbeddedFrameworks/CustomViews/Buttons/RoundedButton.playground; sourceTree = "<absolute>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		26365EFA229D3197009AFBB3 /* SetupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupModel.swift; sourceTree = "<group>"; };
+		26365EFD229D3653009AFBB3 /* Act2Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2Dependencies.swift; sourceTree = "<group>"; };
+		26365F01229D54EB009AFBB3 /* Act1DependenciesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1DependenciesMock.swift; sourceTree = "<group>"; };
+		26365F03229D5547009AFBB3 /* InternalSettingsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSettingsMock.swift; sourceTree = "<group>"; };
+		26365F05229D579F009AFBB3 /* Act2DependenciesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2DependenciesMock.swift; sourceTree = "<group>"; };
 		263F1BDF2254EFBB00ED82A1 /* ServerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerWorker.swift; sourceTree = "<group>"; };
 		2642981B2227DCB5004251FD /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		2648179A224A3E8C0097014F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		26531C20229BD28B00D02A0E /* Act1Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1Dependencies.swift; sourceTree = "<group>"; };
 		2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorage.swift"; sourceTree = "<group>"; };
 		2659D5BF21FB0DAB00F11F18 /* AppArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppArguments.swift; sourceTree = "<group>"; };
 		2659D5C221FB221700F11F18 /* Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
@@ -457,7 +468,6 @@
 		26C47BC621FCD8F50069947A /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		26C7E95F222AB4730003C57B /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		26C7E961222AB7690003C57B /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
-		26E69E04222170100036498D /* Weaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weaver.swift; sourceTree = "<group>"; };
 		26EFBD522203071000FE48AB /* Scene1Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene1Navigator.swift; sourceTree = "<group>"; };
 		26EFBD542203071000FE48AB /* Scene1Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene1Const.swift; sourceTree = "<group>"; };
 		26EFBD552203071000FE48AB /* Scene1.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Scene1.strings; sourceTree = "<group>"; };
@@ -626,14 +636,6 @@
 			path = Scene1;
 			sourceTree = "<group>";
 		};
-		26225A47221EBEF900383E7D /* weaver */ = {
-			isa = PBXGroup;
-			children = (
-				2624964D221FFB410023DEEA /* Weaver.swift */,
-			);
-			path = weaver;
-			sourceTree = "<group>";
-		};
 		2623254F228ADC9F006AFAF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,6 +699,41 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		26365EF7229D2C52009AFBB3 /* Act1 */ = {
+			isa = PBXGroup;
+			children = (
+				26531C20229BD28B00D02A0E /* Act1Dependencies.swift */,
+				26EFBD512203071000FE48AB /* Scene1 */,
+			);
+			path = Act1;
+			sourceTree = "<group>";
+		};
+		26365EF8229D2C6F009AFBB3 /* Act2 */ = {
+			isa = PBXGroup;
+			children = (
+				26365EFD229D3653009AFBB3 /* Act2Dependencies.swift */,
+				26965196227C31AF00D286D4 /* Scene2 */,
+			);
+			path = Act2;
+			sourceTree = "<group>";
+		};
+		26365EF9229D3181009AFBB3 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				26365EFA229D3197009AFBB3 /* SetupModel.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		26365F00229D54D0009AFBB3 /* Acts */ = {
+			isa = PBXGroup;
+			children = (
+				26365F01229D54EB009AFBB3 /* Act1DependenciesMock.swift */,
+				26365F05229D579F009AFBB3 /* Act2DependenciesMock.swift */,
+			);
+			path = Acts;
+			sourceTree = "<group>";
+		};
 		2659D5CF21FB29C500F11F18 /* DemoWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,14 +762,6 @@
 				2660571E225A24CE003513AE /* SearchAutocompletion.swift */,
 			);
 			path = Requests;
-			sourceTree = "<group>";
-		};
-		2677474C222051E200A2B4A1 /* weaver */ = {
-			isa = PBXGroup;
-			children = (
-				26E69E04222170100036498D /* Weaver.swift */,
-			);
-			path = weaver;
 			sourceTree = "<group>";
 		};
 		2690231021EF602300C6B288 = {
@@ -781,6 +810,7 @@
 		2690233021EF602400C6B288 /* DemoAppUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				26365F00229D54D0009AFBB3 /* Acts */,
 				2623254F228ADC9F006AFAF4 /* Models */,
 				26A92CF3225B250100E4B0C1 /* WorkerMocks */,
 				26A92CEF225B21D200E4B0C1 /* Scenes */,
@@ -911,6 +941,7 @@
 			isa = PBXGroup;
 			children = (
 				26A92CF7225B6CB300E4B0C1 /* ServerWorkerMock.swift */,
+				26365F03229D5547009AFBB3 /* InternalSettingsMock.swift */,
 			);
 			path = WorkerMocks;
 			sourceTree = "<group>";
@@ -1009,7 +1040,6 @@
 			isa = PBXGroup;
 			children = (
 				26C47BB921FCD4230069947A /* R-swift */,
-				2677474C222051E200A2B4A1 /* weaver */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -1153,6 +1183,7 @@
 				26F44D4A21EF8683004162F3 /* BaseClasses */,
 				26F44DBF21EF88D2004162F3 /* Extensions */,
 				26F44D5A21EF8752004162F3 /* GlobalText */,
+				26365EF9229D3181009AFBB3 /* Types */,
 				26F44D6D21EF8752004162F3 /* Worker */,
 			);
 			path = Globals;
@@ -1205,7 +1236,6 @@
 			isa = PBXGroup;
 			children = (
 				26F44D3921EF8021004162F3 /* R-swift */,
-				26225A47221EBEF900383E7D /* weaver */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -1213,8 +1243,8 @@
 		26F5CDD421F0834000DB0D86 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				26EFBD512203071000FE48AB /* Scene1 */,
-				26965196227C31AF00D286D4 /* Scene2 */,
+				26365EF7229D2C52009AFBB3 /* Act1 */,
+				26365EF8229D2C6F009AFBB3 /* Act2 */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1382,7 +1412,6 @@
 			buildConfigurationList = 2659D5D921FB29C500F11F18 /* Build configuration list for PBXNativeTarget "DemoWidget" */;
 			buildPhases = (
 				AC27C85DE05252930B22E325 /* [CP] Check Pods Manifest.lock */,
-				2677474B2220519A00A2B4A1 /* Weaver */,
 				26C47BBE21FCD4520069947A /* R-swift */,
 				26C47BC221FCD7080069947A /* SwiftFormat */,
 				26C47BC321FCD72E0069947A /* SwiftLint */,
@@ -1404,7 +1433,6 @@
 			buildConfigurationList = 2690234121EF602400C6B288 /* Build configuration list for PBXNativeTarget "DemoAppDev" */;
 			buildPhases = (
 				8D507E1CE4B014CB20C7E67C /* [CP] Check Pods Manifest.lock */,
-				26225A46221E940E00383E7D /* Weaver */,
 				26F44D3721EF7C95004162F3 /* R-swift */,
 				26F44D3321EF74B4004162F3 /* SwiftFormat */,
 				26F44D3421EF74F5004162F3 /* SwiftLint */,
@@ -1474,7 +1502,6 @@
 			buildConfigurationList = 2690235321EF627D00C6B288 /* Build configuration list for PBXNativeTarget "DemoAppRelease" */;
 			buildPhases = (
 				17A5CF2C25D4DD37880929F3 /* [CP] Check Pods Manifest.lock */,
-				2677474A2220514F00A2B4A1 /* Weaver */,
 				26F44D3821EF7CD5004162F3 /* R-swift */,
 				2690234B21EF627D00C6B288 /* Sources */,
 				2690234E21EF627D00C6B288 /* Frameworks */,
@@ -1762,25 +1789,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ServerWorkerTests/Pods-ServerWorkerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		26225A46221E940E00383E7D /* Weaver */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Weaver;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/DemoApp/Generated/weaver/Weaver.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/WeaverDI/weaver/bin/weaver\" swift --project-path \"${SRCROOT}/DemoApp\" --output-path \"Generated/weaver\" --single-output\n";
-		};
 		26262EF5228D7F4F0004A5A2 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1816,44 +1824,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		2677474A2220514F00A2B4A1 /* Weaver */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Weaver;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/DemoApp/Generated/weaver/Weaver.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/WeaverDI/weaver/bin/weaver\" swift --project-path \"${SRCROOT}/DemoApp\" --output-path \"Generated/weaver\" --single-output\n";
-		};
-		2677474B2220519A00A2B4A1 /* Weaver */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Weaver;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/DemoWidget/Generated/weaver/Weaver.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/WeaverDI/weaver/bin/weaver\" swift --project-path \"${SRCROOT}/DemoWidget\" --output-path \"Generated/weaver\" --single-output\n";
 		};
 		2693B85C222BF0C50094A917 /* R-swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2417,7 +2387,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2659D5D121FB29C500F11F18 /* TodayViewController.swift in Sources */,
-				26E69E05222170100036498D /* Weaver.swift in Sources */,
 				26C47BBD21FCD4230069947A /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2428,6 +2397,7 @@
 			files = (
 				26EFBDA722033D5300FE48AB /* Scene1DefaultCellModel.swift in Sources */,
 				269651C4227C31AF00D286D4 /* Scene2VC.swift in Sources */,
+				26365EFE229D3653009AFBB3 /* Act2Dependencies.swift in Sources */,
 				26EFBD9322030F3B00FE48AB /* Scene1TableControllerInterface.swift in Sources */,
 				269651BA227C31AF00D286D4 /* Scene2Interactor.swift in Sources */,
 				2690236121EF65E300C6B288 /* AppDelegate.swift in Sources */,
@@ -2448,10 +2418,12 @@
 				26EFBD742203071000FE48AB /* Scene1LogicInterface.swift in Sources */,
 				26EFBD9522030F3B00FE48AB /* Scene1TableController.swift in Sources */,
 				26C47B6221FCCB9D0069947A /* UIResponder.swift in Sources */,
+				26365EFB229D3197009AFBB3 /* SetupModel.swift in Sources */,
 				26A5BFD722144F0E00D4F6FE /* Scene1Types.swift in Sources */,
 				269651B6227C31AF00D286D4 /* Scene2Setup.swift in Sources */,
 				26A5BFD12214420A00D4F6FE /* Scene1Setup.swift in Sources */,
 				2658A3A021F5D43F004451F8 /* UIView+Anchorage.swift in Sources */,
+				26531C21229BD28B00D02A0E /* Act1Dependencies.swift in Sources */,
 				269651C6227C31AF00D286D4 /* Scene2NavigatorInterface.swift in Sources */,
 				26EFBD8A2203071000FE48AB /* Scene1TestConst.swift in Sources */,
 				26EFBD722203071000FE48AB /* Scene1LogicState.swift in Sources */,
@@ -2468,7 +2440,6 @@
 				269651BC227C31AF00D286D4 /* Scene2Presenter.swift in Sources */,
 				26EFBD802203071000FE48AB /* Scene1PresenterInterface.swift in Sources */,
 				26EFBD882203071000FE48AB /* Scene1View.swift in Sources */,
-				2624964E221FFB420023DEEA /* Weaver.swift in Sources */,
 				26EFBD6C2203071000FE48AB /* Scene1Const.swift in Sources */,
 				269651B8227C31AF00D286D4 /* Scene2PresenterInterface.swift in Sources */,
 				26F44D4E21EF8683004162F3 /* BaseViewController.swift in Sources */,
@@ -2480,9 +2451,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A92CF8225B6CB300E4B0C1 /* ServerWorkerMock.swift in Sources */,
+				26365F04229D5547009AFBB3 /* InternalSettingsMock.swift in Sources */,
+				26365F02229D54EB009AFBB3 /* Act1DependenciesMock.swift in Sources */,
 				26A92CF5225B5F8500E4B0C1 /* Scene1Mocks.swift in Sources */,
 				260C5AEF22417DC6009CE5A8 /* Scene1LogicTests.swift in Sources */,
 				26232551228ADCC1006AFAF4 /* SearchAutocompletionResultTests.swift in Sources */,
+				26365F06229D579F009AFBB3 /* Act2DependenciesMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2501,6 +2475,7 @@
 			files = (
 				26EFBDA822033D5300FE48AB /* Scene1DefaultCellModel.swift in Sources */,
 				269651C5227C31AF00D286D4 /* Scene2VC.swift in Sources */,
+				26365EFF229D3653009AFBB3 /* Act2Dependencies.swift in Sources */,
 				26EFBD9422030F3B00FE48AB /* Scene1TableControllerInterface.swift in Sources */,
 				269651BB227C31AF00D286D4 /* Scene2Interactor.swift in Sources */,
 				2690236321EF65F800C6B288 /* AppDelegate.swift in Sources */,
@@ -2521,10 +2496,12 @@
 				26EFBD752203071000FE48AB /* Scene1LogicInterface.swift in Sources */,
 				26EFBD9622030F3B00FE48AB /* Scene1TableController.swift in Sources */,
 				26C47B6321FCCB9D0069947A /* UIResponder.swift in Sources */,
+				26365EFC229D3197009AFBB3 /* SetupModel.swift in Sources */,
 				26A5BFD822144F0E00D4F6FE /* Scene1Types.swift in Sources */,
 				269651B7227C31AF00D286D4 /* Scene2Setup.swift in Sources */,
 				26A5BFD22214420A00D4F6FE /* Scene1Setup.swift in Sources */,
 				26EFBD8B2203071000FE48AB /* Scene1TestConst.swift in Sources */,
+				26531C22229BD28B00D02A0E /* Act1Dependencies.swift in Sources */,
 				269651C7227C31AF00D286D4 /* Scene2NavigatorInterface.swift in Sources */,
 				26EFBD732203071000FE48AB /* Scene1LogicState.swift in Sources */,
 				2658A3A121F5D43F004451F8 /* UIView+Anchorage.swift in Sources */,
@@ -2542,7 +2519,6 @@
 				26EFBD812203071000FE48AB /* Scene1PresenterInterface.swift in Sources */,
 				26F44D4F21EF8683004162F3 /* BaseViewController.swift in Sources */,
 				26EFBD892203071000FE48AB /* Scene1View.swift in Sources */,
-				2624964F221FFB420023DEEA /* Weaver.swift in Sources */,
 				269651B9227C31AF00D286D4 /* Scene2PresenterInterface.swift in Sources */,
 				26EFBD6D2203071000FE48AB /* Scene1Const.swift in Sources */,
 			);

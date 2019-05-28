@@ -6,21 +6,6 @@ import UIKit
 class AppDelegate: UIResponder {
 	/// The reference to the window.
 	var window: UIWindow?
-
-	/// The dependency injection container.
-	private let dependencies = AppDelegateDependencyContainer()
-
-	// The scene to start the app with.
-	// weaver: scene1VC = Scene1VC <- UIViewController
-	// weaver: scene1VC.scope = .transient
-
-	// The internal settings of the app where to persist app settings.
-	// weaver: settings = InternalSettings <- InternalSettingsInterface
-	// weaver: settings.scope = .container
-
-	// The server worker as a global dependency.
-	// weaver: serverWorker = ServerWorker <- ServerWorkerInterface
-	// weaver: serverWorker.scope = .container
 }
 
 // MARK: - UIApplicationDelegate
@@ -36,9 +21,10 @@ extension AppDelegate: UIApplicationDelegate {
 		self.window = window
 		window.backgroundColor = R.color.defaultBackground()
 
-		// Prepare initial scene.
-		let setupModel = Scene1Setup()
-		let scene = dependencies.scene1VC(setupModel: setupModel)
+		// Prepare initial act & scene.
+		let dependencies = Act1Dependencies()
+		let setupModel = SetupModel.Scene1()
+		let scene = dependencies.scene(Act1Scene.scene1(setupModel))
 		let navController = BaseNavigationController(rootViewController: scene)
 		navController.isNavigationBarHidden = true
 

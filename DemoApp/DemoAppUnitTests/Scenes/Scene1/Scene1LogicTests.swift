@@ -9,16 +9,25 @@ class Scene1LogicTests: XCTestCase {
 	/// A weak reference to the sut for detecting retain cycles.
 	private weak var weakSut: Scene1Logic?
 	/// The dependencies injected for testing.
-	private var dependencyMock: Scene1LogicDependencyMock!
+	private var presenterMock: Scene1PresenterMock!
+	private var navigatorMock: Scene1NavigatorMock!
+	private var actDependenciesMock: Act1DependenciesMock!
 
-	override func setUp() {
-		dependencyMock = Scene1LogicDependencyMock()
-		sut = Scene1Logic(injecting: dependencyMock)
+	func createSut(setupModel: SetupModel.Scene1) {
+		presenterMock = Scene1PresenterMock()
+		navigatorMock = Scene1NavigatorMock()
+		actDependenciesMock = Act1DependenciesMock()
+		let logicDependencies = Scene1Model.LogicDependencies(
+			setupModel: setupModel,
+			presenter: presenterMock,
+			navigator: navigatorMock,
+			actDependencies: actDependenciesMock
+		)
+		sut = Scene1Logic(dependencies: logicDependencies)
 		weakSut = sut
 	}
 
 	override func tearDown() {
-		dependencyMock = nil
 		sut = nil
 		XCTAssertNil(weakSut, "Logic has a retain cycle")
 	}
@@ -29,6 +38,9 @@ class Scene1LogicTests: XCTestCase {
 
 	/// The server gets queried and the result delivered to the display.
 	func testUpdateInitialDisplay() {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		// Expect behavior.
 		expectPresenterGetsSuggestionList(suggestions: Suggestions([]))
 
@@ -43,6 +55,9 @@ class Scene1LogicTests: XCTestCase {
 
 	/// The rotation counter gets incremented each time.
 	func testDisplayRotatedIncrementsCounter() {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		// Counter should start with 0.
 		XCTAssertEqual(0, sut.state.numberOfRotations)
 
@@ -59,6 +74,9 @@ class Scene1LogicTests: XCTestCase {
 
 	/// Searched for an empty string.
 	func testSearchForEmptyText() {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		// Expect behavior.
 		expectPresenterGetsSuggestionList(suggestions: Suggestions([]))
 
@@ -90,6 +108,9 @@ class Scene1LogicTests: XCTestCase {
 	 - parameter expectedResult: The results for the search.
 	 */
 	private func performSearchForTextTest(searchText: String, expectedResult: Suggestions) {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		// Expect behavior.
 		expectServerSendsSuggestions(queryString: searchText, suggestions: expectedResult)
 		expectPresenterGetsSuggestionList(suggestions: expectedResult)
@@ -119,6 +140,9 @@ class Scene1LogicTests: XCTestCase {
 	 - parameter expectedError: The error to return.
 	 */
 	private func performSearchWithError(expectedError: ServerWorkerError) {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		let searchText = "SomeText"
 
 		// Expect behavior.
@@ -136,13 +160,16 @@ class Scene1LogicTests: XCTestCase {
 
 	/// Undefined.
 	func testDismissKeyboard() {
-		// TODO: Research if this is testable via UnitTest.
+		// Not tested.
 	}
 
 	// MARK: applySuggestion(_ suggestion: Suggestion)
 
 	/// Apply a suggestion and get a new one delivered.
 	func testApplySuggestion() {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		let suggestion = Suggestion("Term")
 		let newSuggestions = Suggestions([Suggestion("Different")])
 
@@ -162,14 +189,17 @@ class Scene1LogicTests: XCTestCase {
 
 	/// The navigator is instructed to show the scene.
 	func testNavigatorGetsInstructed() {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		let suggestionTerm = "suggestion term"
 		let suggestion = Suggestion(suggestionTerm)
 
 		// Prepare navigation mock.
 		let navigatorExpectation = expectation(description: "navigatorExpectation")
-		dependencyMock._navigator.scene2SetupModel = { model in
-			XCTAssertEqual(suggestionTerm, model.headline)
-			XCTAssertEqual(0, model.numberOfRotations)
+		navigatorMock.scene2SetupModel = { setupModel, _ in
+			XCTAssertEqual(suggestionTerm, setupModel.headline)
+			XCTAssertEqual(0, setupModel.numberOfRotations)
 			navigatorExpectation.fulfill()
 		}
 
@@ -181,14 +211,17 @@ class Scene1LogicTests: XCTestCase {
 
 	/// The callback value from the other scene is used.
 	func testCallbackValueRespected() {
+		let setupModel = SetupModel.Scene1()
+		createSut(setupModel: setupModel)
+
 		let suggestionTerm = "term"
 		let suggestion = Suggestion(suggestionTerm)
 
 		// Prepare navigation mock.
 		let navigatorExpectation = expectation(description: "navigatorExpectation")
-		dependencyMock._navigator.scene2SetupModel = { model in
-			let callbackModel = Scene2CallbackModel(numberOfRotations: 3)
-			model.callback(callbackModel)
+		navigatorMock.scene2SetupModel = { setupModel, _ in
+			let callbackResult = SetupModel.Scene2Result(numberOfRotations: 3)
+			setupModel.callback(callbackResult)
 			navigatorExpectation.fulfill()
 		}
 
@@ -212,9 +245,12 @@ class Scene1LogicTests: XCTestCase {
 	 - parameter suggestions: The api's return value.
 	 */
 	private func expectServerSendsSuggestions(queryString: String, suggestions: Suggestions) {
+		let serverWorkerMock = ServerWorkerMock()
+		actDependenciesMock.serverWorkerStub = { serverWorkerMock }
+
 		let result = SearchAutocompletionResult(query: queryString, suggestions: suggestions)
 		let sendExpectation = expectation(description: "expectServerSendsSuggestionsExpectation")
-		dependencyMock._serverWorker.sendStub = { _, closure in
+		serverWorkerMock.sendStub = { _, closure in
 			sendExpectation.fulfill()
 			closure(.success(result))
 		}
@@ -227,8 +263,11 @@ class Scene1LogicTests: XCTestCase {
 	 - parameter expectedError: The returned error.
 	 */
 	private func expectServerSendsError(expectedError: ServerWorkerError) {
+		let serverWorkerMock = ServerWorkerMock()
+		actDependenciesMock.serverWorkerStub = { serverWorkerMock }
+
 		let sendExpectation = expectation(description: "expectServerSendsErrorExpectation")
-		dependencyMock._serverWorker.sendStub = { _, closure in
+		serverWorkerMock.sendStub = { _, closure in
 			sendExpectation.fulfill()
 			closure(.failure(expectedError))
 		}
@@ -242,7 +281,7 @@ class Scene1LogicTests: XCTestCase {
 	 */
 	private func expectPresenterGetsSearchText(searchText: String) {
 		let searchTextExpectation = expectation(description: "expectPresenterGetsSearchTextExpectation")
-		dependencyMock._presenter.searchTextStub = { text in
+		presenterMock.searchTextStub = { text in
 			searchTextExpectation.fulfill()
 			XCTAssertEqual(text, searchText)
 		}
@@ -256,7 +295,7 @@ class Scene1LogicTests: XCTestCase {
 	 */
 	private func expectPresenterGetsError(expectedError: ServerWorkerError) {
 		let presenterExpectation = expectation(description: "expectPresenterGetsErrorExpectation")
-		dependencyMock._presenter.serverErrorStub = { error in
+		presenterMock.serverErrorStub = { error in
 			presenterExpectation.fulfill()
 			XCTAssertEqual(error, expectedError)
 		}
@@ -270,7 +309,7 @@ class Scene1LogicTests: XCTestCase {
 	 */
 	private func expectPresenterGetsSuggestionList(suggestions: Suggestions) {
 		let presenterExpectation = expectation(description: "expectPresenterGetsSuggestionListExpectation")
-		dependencyMock._presenter.suggestionListStub = { result in
+		presenterMock.suggestionListStub = { result in
 			presenterExpectation.fulfill()
 			XCTAssertEqual(result, suggestions)
 		}
