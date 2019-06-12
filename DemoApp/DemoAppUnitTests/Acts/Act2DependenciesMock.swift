@@ -4,6 +4,11 @@ import Shared
 import XCTest
 
 class Act2DependenciesMock: Act2DependenciesInterface {
+	var factoryStub: () -> Act2FactoryInterface = { XCTFail(); return Act2FactoryMock() }
+	var factory: Act2FactoryInterface {
+		return factoryStub()
+	}
+
 	var serverWorkerStub: () -> ServerWorkerInterface = { XCTFail(); return ServerWorkerMock() }
 	var serverWorker: ServerWorkerInterface {
 		return serverWorkerStub()
@@ -13,7 +18,9 @@ class Act2DependenciesMock: Act2DependenciesInterface {
 	var user: User {
 		return userStub()
 	}
+}
 
+class Act2FactoryMock: Act2FactoryInterface {
 	var sceneStub: (_ scene: Act2Scene) -> UIViewController = { _ in XCTFail(); return UIViewController() }
 	func scene(_ scene: Act2Scene) -> UIViewController {
 		return sceneStub(scene)

@@ -59,8 +59,6 @@
 		2642981C2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
 		2642981D2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
 		2648179B224A3E8C0097014F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648179A224A3E8C0097014F /* UIViewController.swift */; };
-		26531C21229BD28B00D02A0E /* Act1Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26531C20229BD28B00D02A0E /* Act1Dependencies.swift */; };
-		26531C22229BD28B00D02A0E /* Act1Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26531C20229BD28B00D02A0E /* Act1Dependencies.swift */; };
 		2658A3A021F5D43F004451F8 /* UIView+Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */; };
 		2658A3A121F5D43F004451F8 /* UIView+Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */; };
 		2659D5CE21FB29C500F11F18 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2659D5CD21FB29C500F11F18 /* NotificationCenter.framework */; };
@@ -139,6 +137,16 @@
 		26A92CF8225B6CB300E4B0C1 /* ServerWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A92CF7225B6CB300E4B0C1 /* ServerWorkerMock.swift */; };
 		26B71E602204772E00C6C341 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B71E5F2204772E00C6C341 /* BaseNavigationController.swift */; };
 		26B71E612204772E00C6C341 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B71E5F2204772E00C6C341 /* BaseNavigationController.swift */; };
+		26BF212A22B0E78900724863 /* Act1Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF212922B0E78900724863 /* Act1Dependencies.swift */; };
+		26BF212B22B0E78900724863 /* Act1Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF212922B0E78900724863 /* Act1Dependencies.swift */; };
+		26BF213322B0F6DD00724863 /* Act1DependenciesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213222B0F6DD00724863 /* Act1DependenciesInterface.swift */; };
+		26BF213422B0F6DD00724863 /* Act1DependenciesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213222B0F6DD00724863 /* Act1DependenciesInterface.swift */; };
+		26BF213622B0F74400724863 /* Act2DependenciesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213522B0F74400724863 /* Act2DependenciesInterface.swift */; };
+		26BF213722B0F74400724863 /* Act2DependenciesInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213522B0F74400724863 /* Act2DependenciesInterface.swift */; };
+		26BF213922B0F82C00724863 /* Act2Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213822B0F82C00724863 /* Act2Scenes.swift */; };
+		26BF213A22B0F82C00724863 /* Act2Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213822B0F82C00724863 /* Act2Scenes.swift */; };
+		26BF213C22B0F84300724863 /* Act1Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213B22B0F84300724863 /* Act1Scenes.swift */; };
+		26BF213D22B0F84300724863 /* Act1Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BF213B22B0F84300724863 /* Act1Scenes.swift */; };
 		26C47B3121FCA84C0069947A /* Shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C47B2F21FCA84C0069947A /* Shared.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26C47B3421FCA84C0069947A /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C47B2D21FCA84C0069947A /* Shared.framework */; };
 		26C47B3521FCA84C0069947A /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C47B2D21FCA84C0069947A /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -390,7 +398,6 @@
 		263F1BDF2254EFBB00ED82A1 /* ServerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerWorker.swift; sourceTree = "<group>"; };
 		2642981B2227DCB5004251FD /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		2648179A224A3E8C0097014F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		26531C20229BD28B00D02A0E /* Act1Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1Dependencies.swift; sourceTree = "<group>"; };
 		2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorage.swift"; sourceTree = "<group>"; };
 		2659D5BF21FB0DAB00F11F18 /* AppArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppArguments.swift; sourceTree = "<group>"; };
 		2659D5C221FB221700F11F18 /* Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
@@ -460,6 +467,11 @@
 		26A92CF4225B5F8500E4B0C1 /* Scene1Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene1Mocks.swift; sourceTree = "<group>"; };
 		26A92CF7225B6CB300E4B0C1 /* ServerWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerWorkerMock.swift; sourceTree = "<group>"; };
 		26B71E5F2204772E00C6C341 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		26BF212922B0E78900724863 /* Act1Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1Dependencies.swift; sourceTree = "<group>"; };
+		26BF213222B0F6DD00724863 /* Act1DependenciesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1DependenciesInterface.swift; sourceTree = "<group>"; };
+		26BF213522B0F74400724863 /* Act2DependenciesInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2DependenciesInterface.swift; sourceTree = "<group>"; };
+		26BF213822B0F82C00724863 /* Act2Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2Scenes.swift; sourceTree = "<group>"; };
+		26BF213B22B0F84300724863 /* Act1Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1Scenes.swift; sourceTree = "<group>"; };
 		26C47B2D21FCA84C0069947A /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C47B2F21FCA84C0069947A /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		26C47B3021FCA84C0069947A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -702,7 +714,9 @@
 		26365EF7229D2C52009AFBB3 /* Act1 */ = {
 			isa = PBXGroup;
 			children = (
-				26531C20229BD28B00D02A0E /* Act1Dependencies.swift */,
+				26BF212922B0E78900724863 /* Act1Dependencies.swift */,
+				26BF213222B0F6DD00724863 /* Act1DependenciesInterface.swift */,
+				26BF213B22B0F84300724863 /* Act1Scenes.swift */,
 				26EFBD512203071000FE48AB /* Scene1 */,
 			);
 			path = Act1;
@@ -712,6 +726,8 @@
 			isa = PBXGroup;
 			children = (
 				26365EFD229D3653009AFBB3 /* Act2Dependencies.swift */,
+				26BF213522B0F74400724863 /* Act2DependenciesInterface.swift */,
+				26BF213822B0F82C00724863 /* Act2Scenes.swift */,
 				26965196227C31AF00D286D4 /* Scene2 */,
 			);
 			path = Act2;
@@ -879,9 +895,9 @@
 				26965197227C31AF00D286D4 /* Scene2Const.swift */,
 				2696519E227C31AF00D286D4 /* Scene2Setup.swift */,
 				2696519D227C31AF00D286D4 /* Scene2Types.swift */,
+				269651A6227C31AF00D286D4 /* Core */,
 				2696519F227C31AF00D286D4 /* Display */,
 				26965199227C31AF00D286D4 /* Logic */,
-				269651A6227C31AF00D286D4 /* Scene */,
 			);
 			path = Scene2;
 			sourceTree = "<group>";
@@ -909,14 +925,14 @@
 			path = Display;
 			sourceTree = "<group>";
 		};
-		269651A6227C31AF00D286D4 /* Scene */ = {
+		269651A6227C31AF00D286D4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				269651A9227C31AF00D286D4 /* Scene2Navigator.swift */,
 				269651A8227C31AF00D286D4 /* Scene2NavigatorInterface.swift */,
 				269651A7227C31AF00D286D4 /* Scene2VC.swift */,
 			);
-			path = Scene;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		269651CA227C31EF00D286D4 /* InternalSettings */ = {
@@ -1094,9 +1110,9 @@
 				26EFBD542203071000FE48AB /* Scene1Const.swift */,
 				26A5BFD02214420A00D4F6FE /* Scene1Setup.swift */,
 				26A5BFD622144F0E00D4F6FE /* Scene1Types.swift */,
+				26EFBDAA220357F100FE48AB /* Core */,
 				26EFBD602203071000FE48AB /* Display */,
 				26EFBD562203071000FE48AB /* Logic */,
-				26EFBDAA220357F100FE48AB /* Scene */,
 			);
 			path = Scene1;
 			sourceTree = "<group>";
@@ -1147,14 +1163,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		26EFBDAA220357F100FE48AB /* Scene */ = {
+		26EFBDAA220357F100FE48AB /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				26EFBD522203071000FE48AB /* Scene1Navigator.swift */,
 				262E99F4222D2DF000BAE132 /* Scene1NavigatorInterface.swift */,
 				26EFBD672203071000FE48AB /* Scene1VC.swift */,
 			);
-			path = Scene;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		26F44D3921EF8021004162F3 /* R-swift */ = {
@@ -2399,6 +2415,7 @@
 				269651C4227C31AF00D286D4 /* Scene2VC.swift in Sources */,
 				26365EFE229D3653009AFBB3 /* Act2Dependencies.swift in Sources */,
 				26EFBD9322030F3B00FE48AB /* Scene1TableControllerInterface.swift in Sources */,
+				26BF213622B0F74400724863 /* Act2DependenciesInterface.swift in Sources */,
 				269651BA227C31AF00D286D4 /* Scene2Interactor.swift in Sources */,
 				2690236121EF65E300C6B288 /* AppDelegate.swift in Sources */,
 				26EFBD9722030F3B00FE48AB /* Scene1TableControllerTypes.swift in Sources */,
@@ -2423,17 +2440,20 @@
 				269651B6227C31AF00D286D4 /* Scene2Setup.swift in Sources */,
 				26A5BFD12214420A00D4F6FE /* Scene1Setup.swift in Sources */,
 				2658A3A021F5D43F004451F8 /* UIView+Anchorage.swift in Sources */,
-				26531C21229BD28B00D02A0E /* Act1Dependencies.swift in Sources */,
 				269651C6227C31AF00D286D4 /* Scene2NavigatorInterface.swift in Sources */,
 				26EFBD8A2203071000FE48AB /* Scene1TestConst.swift in Sources */,
 				26EFBD722203071000FE48AB /* Scene1LogicState.swift in Sources */,
 				269651C0227C31AF00D286D4 /* Scene2View.swift in Sources */,
+				26BF213C22B0F84300724863 /* Act1Scenes.swift in Sources */,
 				269651B0227C31AF00D286D4 /* Scene2LogicState.swift in Sources */,
+				26BF212A22B0E78900724863 /* Act1Dependencies.swift in Sources */,
+				26BF213322B0F6DD00724863 /* Act1DependenciesInterface.swift in Sources */,
 				26EFBD9B2203345600FE48AB /* Scene1DefaultCell.swift in Sources */,
 				26F44D3E21EF8021004162F3 /* R.generated.swift in Sources */,
 				269651C8227C31AF00D286D4 /* Scene2Navigator.swift in Sources */,
 				26F44D9B21EF8753004162F3 /* UIButton.swift in Sources */,
 				26EFBD682203071000FE48AB /* Scene1Navigator.swift in Sources */,
+				26BF213922B0F82C00724863 /* Act2Scenes.swift in Sources */,
 				26EFBD842203071000FE48AB /* Scene1Presenter.swift in Sources */,
 				269651AE227C31AF00D286D4 /* Scene2Logic.swift in Sources */,
 				26EFBD702203071000FE48AB /* Scene1Logic.swift in Sources */,
@@ -2477,6 +2497,7 @@
 				269651C5227C31AF00D286D4 /* Scene2VC.swift in Sources */,
 				26365EFF229D3653009AFBB3 /* Act2Dependencies.swift in Sources */,
 				26EFBD9422030F3B00FE48AB /* Scene1TableControllerInterface.swift in Sources */,
+				26BF213722B0F74400724863 /* Act2DependenciesInterface.swift in Sources */,
 				269651BB227C31AF00D286D4 /* Scene2Interactor.swift in Sources */,
 				2690236321EF65F800C6B288 /* AppDelegate.swift in Sources */,
 				26EFBD9822030F3B00FE48AB /* Scene1TableControllerTypes.swift in Sources */,
@@ -2501,17 +2522,20 @@
 				269651B7227C31AF00D286D4 /* Scene2Setup.swift in Sources */,
 				26A5BFD22214420A00D4F6FE /* Scene1Setup.swift in Sources */,
 				26EFBD8B2203071000FE48AB /* Scene1TestConst.swift in Sources */,
-				26531C22229BD28B00D02A0E /* Act1Dependencies.swift in Sources */,
 				269651C7227C31AF00D286D4 /* Scene2NavigatorInterface.swift in Sources */,
 				26EFBD732203071000FE48AB /* Scene1LogicState.swift in Sources */,
 				2658A3A121F5D43F004451F8 /* UIView+Anchorage.swift in Sources */,
 				269651C1227C31AF00D286D4 /* Scene2View.swift in Sources */,
+				26BF213D22B0F84300724863 /* Act1Scenes.swift in Sources */,
 				26EFBD9C2203345600FE48AB /* Scene1DefaultCell.swift in Sources */,
+				26BF212B22B0E78900724863 /* Act1Dependencies.swift in Sources */,
+				26BF213422B0F6DD00724863 /* Act1DependenciesInterface.swift in Sources */,
 				269651B1227C31AF00D286D4 /* Scene2LogicState.swift in Sources */,
 				26F44D3F21EF8021004162F3 /* R.generated.swift in Sources */,
 				269651C9227C31AF00D286D4 /* Scene2Navigator.swift in Sources */,
 				26F44D9C21EF8753004162F3 /* UIButton.swift in Sources */,
 				26EFBD692203071000FE48AB /* Scene1Navigator.swift in Sources */,
+				26BF213A22B0F82C00724863 /* Act2Scenes.swift in Sources */,
 				26EFBD852203071000FE48AB /* Scene1Presenter.swift in Sources */,
 				269651AF227C31AF00D286D4 /* Scene2Logic.swift in Sources */,
 				269651BD227C31AF00D286D4 /* Scene2Presenter.swift in Sources */,

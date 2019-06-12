@@ -1,4 +1,5 @@
 import AppFolder
+import ServerWorker
 import Shared
 import UIKit
 
@@ -22,9 +23,13 @@ extension AppDelegate: UIApplicationDelegate {
 		window.backgroundColor = R.color.defaultBackground()
 
 		// Prepare initial act & scene.
-		let dependencies = Act1Dependencies()
+		let dependencies = Act1Dependencies(
+			settings: InternalSettings(),
+			serverWorker: ServerWorker()
+		)
 		let setupModel = SetupModel.Scene1()
-		let scene = dependencies.scene(Act1Scene.scene1(setupModel))
+		let sceneType = Act1Scene.scene1(setupModel)
+		let scene = dependencies.factory.scene(sceneType)
 		let navController = BaseNavigationController(rootViewController: scene)
 		navController.isNavigationBarHidden = true
 

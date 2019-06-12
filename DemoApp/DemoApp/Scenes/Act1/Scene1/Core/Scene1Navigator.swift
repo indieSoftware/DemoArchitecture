@@ -24,8 +24,9 @@ extension Scene1Navigator: Scene1NavigatorInterface {
 			fatalError("Source for navigation not provided")
 		}
 
-		let act2Dependencies = dependencies.createAct2Dependencies(user: user)
-		let destination = act2Dependencies.scene(Act2Scene.scene2(setupModel))
+		let act2Dependencies = dependencies.factory.act2Dependencies(user: user)
+		let sceneType = Act2Scene.scene2(setupModel)
+		let destination = act2Dependencies.factory.scene(sceneType)
 		navController.pushViewController(destination, animated: true)
 	}
 }
