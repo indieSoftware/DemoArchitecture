@@ -3,7 +3,7 @@ import ServerWorker
 import Shared
 import XCTest
 
-class Act1DependenciesMock: Act1DependenciesInterface {
+class Act1DCMock: Act1DCInterface {
 	var factoryStub: () -> Act1FactoryInterface = { XCTFail(); return Act1FactoryMock() }
 	var factory: Act1FactoryInterface {
 		return factoryStub()
@@ -26,8 +26,8 @@ class Act1FactoryMock: Act1FactoryInterface {
 		return sceneStub(scene)
 	}
 
-	var act2DependenciesStub: (_ user: User) -> Act2DependenciesInterface = { _ in XCTFail(); return Act2DependenciesMock() }
-	func act2Dependencies(user: User) -> Act2DependenciesInterface {
-		return act2DependenciesStub(user)
+	var act2DCStub: (_ user: User) -> Act2DCInterface = { _ in XCTFail(); return Act2DCMock() }
+	func act2DC(user: User) -> Act2DCInterface {
+		return act2DCStub(user)
 	}
 }

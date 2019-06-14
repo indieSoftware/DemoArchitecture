@@ -20,8 +20,6 @@ extension Scene2Model {
 			let displayRotation: Scene2Model.DisplayRotation
 			/// The number of rotations.
 			let rotations: Int
-			/// A sub-controller to embed.
-			let subController: UIViewController?
 		}
 	}
 }

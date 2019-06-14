@@ -6,7 +6,7 @@ extension Scene2Model {
 		let setupModel: SetupModel.Scene2
 		let presenter: Scene2PresenterInterface
 		let navigator: Scene2NavigatorInterface
-		let actDependencies: Act2DependenciesInterface
+		let actDependencies: Act2DCInterface
 	}
 }
 
@@ -34,8 +34,7 @@ extension Scene2Logic: Scene2LogicInterface {
 		let model = Scene2Model.Presenter.UpdateView(
 			headline: dependencies.setupModel.headline,
 			displayRotation: state.displayRotation,
-			rotations: state.numberOfRotations,
-			subController: dependencies.navigator.subController()
+			rotations: state.numberOfRotations
 		)
 		dependencies.presenter.updateView(model: model)
 	}

@@ -6,10 +6,10 @@ final class Scene2Navigator {
 	/// Has to be assigned via property injection after initialization.
 	weak var viewController: UIViewController?
 
-	/// A reference to the dependecy resolver.
-	private let dependencies: Act2DependenciesInterface
+	/// A reference to the dependency container.
+	private let dependencies: Act2DCInterface
 
-	init(dependencies: Act2DependenciesInterface) {
+	init(dependencies: Act2DCInterface) {
 		self.dependencies = dependencies
 	}
 }
@@ -25,11 +25,5 @@ extension Scene2Navigator: Scene2NavigatorInterface {
 		}
 
 		navController.popViewController(animated: true)
-	}
-
-	func subController() -> UIViewController {
-		let controller = UIViewController()
-		controller.view.backgroundColor = .white
-		return controller
 	}
 }

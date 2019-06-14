@@ -6,10 +6,10 @@ final class Scene1Navigator {
 	/// Has to be assigned via property injection after initialization.
 	weak var viewController: UIViewController?
 
-	/// A reference to the dependecy resolver.
-	private let dependencies: Act1DependenciesInterface
+	/// A reference to the dependecy container.
+	private let dependencies: Act1DCInterface
 
-	init(dependencies: Act1DependenciesInterface) {
+	init(dependencies: Act1DCInterface) {
 		self.dependencies = dependencies
 	}
 }
@@ -24,7 +24,7 @@ extension Scene1Navigator: Scene1NavigatorInterface {
 			fatalError("Source for navigation not provided")
 		}
 
-		let act2Dependencies = dependencies.factory.act2Dependencies(user: user)
+		let act2Dependencies = dependencies.factory.act2DC(user: user)
 		let sceneType = Act2Scene.scene2(setupModel)
 		let destination = act2Dependencies.factory.scene(sceneType)
 		navController.pushViewController(destination, animated: true)

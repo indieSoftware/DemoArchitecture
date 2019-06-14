@@ -17,7 +17,7 @@ final class Scene2VC: BaseViewController {
 	// A strong reference to the business logic.
 	let logic: Scene2Logic
 
-	required init(setupModel: SetupModel.Scene2, dependencies actDependencies: Act2DependenciesInterface) {
+	required init(setupModel: SetupModel.Scene2, dependencies actDependencies: Act2DCInterface) {
 		navigator = Scene2Navigator(dependencies: actDependencies)
 		let logicDependencies = Scene2Model.LogicDependencies(
 			setupModel: setupModel,

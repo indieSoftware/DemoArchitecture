@@ -2,7 +2,7 @@ import ServerWorker
 import UIKit
 
 /// The act's dependency container.
-protocol Act2DependenciesInterface: AnyObject {
+protocol Act2DCInterface: AnyObject {
 	/// The factory for creating new dependencies.
 	var factory: Act2FactoryInterface { get }
 

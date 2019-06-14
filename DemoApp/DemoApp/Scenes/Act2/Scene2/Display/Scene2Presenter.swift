@@ -32,9 +32,9 @@ extension Scene2Presenter: Scene2PresenterInterface {
 		view?.headlineLabel.text = headline
 
 		// Add an embedded sub-view with its own controller if not yet done.
-		if let viewController = viewController,
-			let subController = model.subController,
-			viewController.children.isEmpty {
+		if let viewController = viewController, viewController.children.isEmpty {
+			let subController = UIViewController()
+			subController.view.backgroundColor = .yellow
 			viewController.addChild(viewController: subController) {
 				view?.addEmbeddedView(subController.view)
 			}

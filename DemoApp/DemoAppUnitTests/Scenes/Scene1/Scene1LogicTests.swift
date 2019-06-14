@@ -11,12 +11,12 @@ class Scene1LogicTests: XCTestCase {
 	/// The dependencies injected for testing.
 	private var presenterMock: Scene1PresenterMock!
 	private var navigatorMock: Scene1NavigatorMock!
-	private var actDependenciesMock: Act1DependenciesMock!
+	private var actDependenciesMock: Act1DCMock!
 
 	func createSut(setupModel: SetupModel.Scene1) {
 		presenterMock = Scene1PresenterMock()
 		navigatorMock = Scene1NavigatorMock()
-		actDependenciesMock = Act1DependenciesMock()
+		actDependenciesMock = Act1DCMock()
 		let logicDependencies = Scene1Model.LogicDependencies(
 			setupModel: setupModel,
 			presenter: presenterMock,

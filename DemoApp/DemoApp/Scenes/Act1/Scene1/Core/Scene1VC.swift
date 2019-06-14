@@ -20,7 +20,7 @@ final class Scene1VC: BaseViewController {
 	/// The table controller for this scene.
 	private var tableController: Scene1TableController?
 
-	required init(setupModel: SetupModel.Scene1, dependencies actDependencies: Act1DependenciesInterface) {
+	required init(setupModel: SetupModel.Scene1, dependencies actDependencies: Act1DCInterface) {
 		navigator = Scene1Navigator(dependencies: actDependencies)
 		let logicDependencies = Scene1Model.LogicDependencies(
 			setupModel: setupModel,

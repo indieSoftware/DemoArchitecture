@@ -2,7 +2,7 @@ import ServerWorker
 import Shared
 import UIKit
 
-class Act1Dependencies: Act1DependenciesInterface {
+class Act1DC: Act1DCInterface {
 	lazy var factory: Act1FactoryInterface = {
 		Act1Factory(dependencies: self)
 	}()
@@ -21,9 +21,9 @@ class Act1Dependencies: Act1DependenciesInterface {
 
 class Act1Factory: Act1FactoryInterface {
 	/// The reference to the dependency container, but unowned because the container owns the factory.
-	unowned let dependencies: Act1DependenciesInterface
+	unowned let dependencies: Act1DCInterface
 
-	init(dependencies: Act1DependenciesInterface) {
+	init(dependencies: Act1DCInterface) {
 		self.dependencies = dependencies
 	}
 
@@ -34,7 +34,7 @@ class Act1Factory: Act1FactoryInterface {
 		}
 	}
 
-	func act2Dependencies(user: User) -> Act2DependenciesInterface {
-		return Act2Dependencies(act1Dependencies: dependencies, user: user)
+	func act2DC(user: User) -> Act2DCInterface {
+		return Act2DC(act1DC: dependencies, user: user)
 	}
 }

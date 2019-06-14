@@ -3,7 +3,7 @@ import Shared
 import UIKit
 
 /// The act's dependency container.
-protocol Act1DependenciesInterface: AnyObject {
+protocol Act1DCInterface: AnyObject {
 	/// The factory for creating new dependencies.
 	var factory: Act1FactoryInterface { get }
 
@@ -30,5 +30,5 @@ protocol Act1FactoryInterface {
 	 - parameter user: The logged-in user.
 	 - returns: The new dependency resolver.
 	 */
-	func act2Dependencies(user: User) -> Act2DependenciesInterface
+	func act2DC(user: User) -> Act2DCInterface
 }

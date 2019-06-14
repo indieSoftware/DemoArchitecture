@@ -23,7 +23,7 @@ extension AppDelegate: UIApplicationDelegate {
 		window.backgroundColor = R.color.defaultBackground()
 
 		// Prepare initial act & scene.
-		let dependencies = Act1Dependencies(
+		let dependencies = Act1DC(
 			settings: InternalSettings(),
 			serverWorker: ServerWorker()
 		)

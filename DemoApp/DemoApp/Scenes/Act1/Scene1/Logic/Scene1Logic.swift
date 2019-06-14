@@ -8,7 +8,7 @@ extension Scene1Model {
 		let setupModel: SetupModel.Scene1
 		let presenter: Scene1PresenterInterface
 		let navigator: Scene1NavigatorInterface
-		let actDependencies: Act1DependenciesInterface
+		let actDependencies: Act1DCInterface
 	}
 }
 

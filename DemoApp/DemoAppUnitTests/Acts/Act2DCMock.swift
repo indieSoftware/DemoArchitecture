@@ -3,7 +3,7 @@ import ServerWorker
 import Shared
 import XCTest
 
-class Act2DependenciesMock: Act2DependenciesInterface {
+class Act2DCMock: Act2DCInterface {
 	var factoryStub: () -> Act2FactoryInterface = { XCTFail(); return Act2FactoryMock() }
 	var factory: Act2FactoryInterface {
 		return factoryStub()
