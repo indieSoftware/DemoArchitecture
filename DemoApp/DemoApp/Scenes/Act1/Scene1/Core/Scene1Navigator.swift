@@ -18,10 +18,9 @@ final class Scene1Navigator {
 
 extension Scene1Navigator: Scene1NavigatorInterface {
 	func scene2(setupModel: SetupModel.Scene2, user: User) {
-		guard let source = viewController,
-			let navController = source.navigationController
-		else {
-			fatalError("Source for navigation not provided")
+		guard let source = viewController else { return }
+		guard let navController = source.navigationController else {
+			fatalError("Navigation controller not provided")
 		}
 
 		let act2Dependencies = dependencies.factory.act2DC(user: user)

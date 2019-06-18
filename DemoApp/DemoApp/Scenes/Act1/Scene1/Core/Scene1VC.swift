@@ -9,13 +9,13 @@ final class Scene1VC: BaseViewController {
 	private var interactor: Scene1Interactor?
 
 	// A strong reference to the presenter which presents data on the view.
-	let presenter = Scene1Presenter()
+	private let presenter = Scene1Presenter()
 
 	// A strong reference to the navigator which is responsible for routing.
-	let navigator: Scene1Navigator
+	private let navigator: Scene1Navigator
 
 	// A strong reference to the business logic.
-	let logic: Scene1Logic
+	private let logic: Scene1Logic
 
 	/// The table controller for this scene.
 	private var tableController: Scene1TableController?

@@ -25,12 +25,12 @@ class BaseViewController: UIViewController {
 
 	// MARK: - Segue routing
 
-	@available(*, deprecated, message: "Segues shouldn't be used.")
+	@available(*, unavailable, message: "Segues are forbidden.")
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		fatalError("This method is unsupported.")
 	}
 
-	@available(*, deprecated, message: "Segues shouldn't be used.")
+	@available(*, unavailable, message: "Segues are forbidden.")
 	override func performSegue(withIdentifier identifier: String, sender: Any?) {
 		fatalError("This method is unsupported.")
 	}

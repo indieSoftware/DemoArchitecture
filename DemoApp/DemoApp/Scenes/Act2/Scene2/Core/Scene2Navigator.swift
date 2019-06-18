@@ -18,10 +18,9 @@ final class Scene2Navigator {
 
 extension Scene2Navigator: Scene2NavigatorInterface {
 	func scene1() {
-		guard let sourceCountroller = viewController,
-			let navController = sourceCountroller.navigationController
-		else {
-			fatalError("Source for navigation not provided")
+		guard let source = viewController else { return }
+		guard let navController = source.navigationController else {
+			fatalError("Navigation controller not provided")
 		}
 
 		navController.popViewController(animated: true)

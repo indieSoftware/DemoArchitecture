@@ -9,13 +9,13 @@ final class Scene2VC: BaseViewController {
 	private var interactor: Scene2Interactor?
 
 	// A strong reference to the presenter which presents data on the view.
-	let presenter = Scene2Presenter()
+	private let presenter = Scene2Presenter()
 
 	// A strong reference to the navigator which is responsible for routing.
-	let navigator: Scene2Navigator
+	private let navigator: Scene2Navigator
 
 	// A strong reference to the business logic.
-	let logic: Scene2Logic
+	private let logic: Scene2Logic
 
 	required init(setupModel: SetupModel.Scene2, dependencies actDependencies: Act2DCInterface) {
 		navigator = Scene2Navigator(dependencies: actDependencies)
