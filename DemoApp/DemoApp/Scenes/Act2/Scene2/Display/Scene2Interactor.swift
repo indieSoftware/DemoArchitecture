@@ -28,7 +28,7 @@ final class Scene2Interactor {
 			// React on tap actions.
 			.tap
 			// Act immediately, but not too often.
-			.throttle(Const.Time.defaultDebounceDuration, scheduler: MainScheduler.instance)
+			.throttle(Const.Time.defaultDebounceDuration.dispatchTimeInterval, scheduler: MainScheduler.instance)
 			.subscribe(onNext: { _ in
 				logic.resetAndDismiss()
 			}).disposed(by: disposeBag)

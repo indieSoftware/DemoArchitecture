@@ -29,6 +29,8 @@ class Act1Factory: Act1FactoryInterface {
 
 	func scene(_ scene: Act1Scene) -> UIViewController {
 		switch scene {
+		case let .scene0(setupModel):
+			return Scene0VC(setupModel: setupModel, dependencies: dependencies)
 		case let .scene1(setupModel):
 			return Scene1VC(setupModel: setupModel, dependencies: dependencies)
 		}

@@ -6,20 +6,6 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		26A33C8B221DB7DB00F1251A /* FindUnusedCode */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 26A33C8E221DB7DC00F1251A /* Build configuration list for PBXAggregateTarget "FindUnusedCode" */;
-			buildPhases = (
-				26A33C8F221DB7EB00F1251A /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = FindUnusedCode;
-			productName = Periphery;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		260C5AEF22417DC6009CE5A8 /* Scene1LogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260C5AEE22417DC6009CE5A8 /* Scene1LogicTests.swift */; };
 		26232551228ADCC1006AFAF4 /* SearchAutocompletionResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26232550228ADCC1006AFAF4 /* SearchAutocompletionResultTests.swift */; };
@@ -58,6 +44,37 @@
 		26381E3721FDE2DE00DC3917 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C47B2D21FCA84C0069947A /* Shared.framework */; };
 		2642981C2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
 		2642981D2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
+		2647CAA422BA505F00CCFF4F /* Scene0Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9422BA505F00CCFF4F /* Scene0Logic.swift */; };
+		2647CAA522BA505F00CCFF4F /* Scene0Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9422BA505F00CCFF4F /* Scene0Logic.swift */; };
+		2647CAA622BA505F00CCFF4F /* Scene0TestConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9522BA505F00CCFF4F /* Scene0TestConst.swift */; };
+		2647CAA722BA505F00CCFF4F /* Scene0TestConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9522BA505F00CCFF4F /* Scene0TestConst.swift */; };
+		2647CAA822BA505F00CCFF4F /* Scene0Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9622BA505F00CCFF4F /* Scene0Navigator.swift */; };
+		2647CAA922BA505F00CCFF4F /* Scene0Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9622BA505F00CCFF4F /* Scene0Navigator.swift */; };
+		2647CAAA22BA505F00CCFF4F /* Scene0.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2647CA9722BA505F00CCFF4F /* Scene0.strings */; };
+		2647CAAB22BA505F00CCFF4F /* Scene0.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2647CA9722BA505F00CCFF4F /* Scene0.strings */; };
+		2647CAAC22BA505F00CCFF4F /* Scene0Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9822BA505F00CCFF4F /* Scene0Presenter.swift */; };
+		2647CAAD22BA505F00CCFF4F /* Scene0Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9822BA505F00CCFF4F /* Scene0Presenter.swift */; };
+		2647CAAE22BA505F00CCFF4F /* Scene0Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9922BA505F00CCFF4F /* Scene0Const.swift */; };
+		2647CAAF22BA505F00CCFF4F /* Scene0Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9922BA505F00CCFF4F /* Scene0Const.swift */; };
+		2647CAB022BA505F00CCFF4F /* Scene0PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9A22BA505F00CCFF4F /* Scene0PresenterInterface.swift */; };
+		2647CAB122BA505F00CCFF4F /* Scene0PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9A22BA505F00CCFF4F /* Scene0PresenterInterface.swift */; };
+		2647CAB222BA505F00CCFF4F /* Scene0Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9B22BA505F00CCFF4F /* Scene0Types.swift */; };
+		2647CAB322BA505F00CCFF4F /* Scene0Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9B22BA505F00CCFF4F /* Scene0Types.swift */; };
+		2647CAB422BA505F00CCFF4F /* Scene0Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9C22BA505F00CCFF4F /* Scene0Setup.swift */; };
+		2647CAB522BA505F00CCFF4F /* Scene0Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9C22BA505F00CCFF4F /* Scene0Setup.swift */; };
+		2647CAB622BA505F00CCFF4F /* Scene0LogicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9D22BA505F00CCFF4F /* Scene0LogicState.swift */; };
+		2647CAB722BA505F00CCFF4F /* Scene0LogicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9D22BA505F00CCFF4F /* Scene0LogicState.swift */; };
+		2647CAB822BA505F00CCFF4F /* Scene0Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9E22BA505F00CCFF4F /* Scene0Interactor.swift */; };
+		2647CAB922BA505F00CCFF4F /* Scene0Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9E22BA505F00CCFF4F /* Scene0Interactor.swift */; };
+		2647CABA22BA505F00CCFF4F /* Scene0View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9F22BA505F00CCFF4F /* Scene0View.swift */; };
+		2647CABB22BA505F00CCFF4F /* Scene0View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CA9F22BA505F00CCFF4F /* Scene0View.swift */; };
+		2647CABC22BA505F00CCFF4F /* Scene0NavigatorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CAA022BA505F00CCFF4F /* Scene0NavigatorInterface.swift */; };
+		2647CABD22BA505F00CCFF4F /* Scene0NavigatorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CAA022BA505F00CCFF4F /* Scene0NavigatorInterface.swift */; };
+		2647CABE22BA505F00CCFF4F /* Scene0VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CAA122BA505F00CCFF4F /* Scene0VC.swift */; };
+		2647CABF22BA505F00CCFF4F /* Scene0VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CAA122BA505F00CCFF4F /* Scene0VC.swift */; };
+		2647CAC222BA505F00CCFF4F /* Scene0LogicInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CAA322BA505F00CCFF4F /* Scene0LogicInterface.swift */; };
+		2647CAC322BA505F00CCFF4F /* Scene0LogicInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CAA322BA505F00CCFF4F /* Scene0LogicInterface.swift */; };
+		2647CAC822BABD7400CCFF4F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2647CAC722BABD7400CCFF4F /* Double.swift */; };
 		2648179B224A3E8C0097014F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2648179A224A3E8C0097014F /* UIViewController.swift */; };
 		2658A3A021F5D43F004451F8 /* UIView+Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */; };
 		2658A3A121F5D43F004451F8 /* UIView+Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */; };
@@ -99,8 +116,6 @@
 		269651BB227C31AF00D286D4 /* Scene2Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651A1227C31AF00D286D4 /* Scene2Interactor.swift */; };
 		269651BC227C31AF00D286D4 /* Scene2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651A2227C31AF00D286D4 /* Scene2Presenter.swift */; };
 		269651BD227C31AF00D286D4 /* Scene2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651A2227C31AF00D286D4 /* Scene2Presenter.swift */; };
-		269651BE227C31AF00D286D4 /* Scene2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269651A3227C31AF00D286D4 /* Scene2View.xib */; };
-		269651BF227C31AF00D286D4 /* Scene2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269651A3227C31AF00D286D4 /* Scene2View.xib */; };
 		269651C0227C31AF00D286D4 /* Scene2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651A4227C31AF00D286D4 /* Scene2View.swift */; };
 		269651C1227C31AF00D286D4 /* Scene2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651A4227C31AF00D286D4 /* Scene2View.swift */; };
 		269651C2227C31AF00D286D4 /* Scene2TestConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651A5227C31AF00D286D4 /* Scene2TestConst.swift */; };
@@ -397,6 +412,23 @@
 		26365F05229D579F009AFBB3 /* Act2DCMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2DCMock.swift; sourceTree = "<group>"; };
 		263F1BDF2254EFBB00ED82A1 /* ServerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerWorker.swift; sourceTree = "<group>"; };
 		2642981B2227DCB5004251FD /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
+		2647CA9422BA505F00CCFF4F /* Scene0Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Logic.swift; sourceTree = "<group>"; };
+		2647CA9522BA505F00CCFF4F /* Scene0TestConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0TestConst.swift; sourceTree = "<group>"; };
+		2647CA9622BA505F00CCFF4F /* Scene0Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Navigator.swift; sourceTree = "<group>"; };
+		2647CA9722BA505F00CCFF4F /* Scene0.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Scene0.strings; sourceTree = "<group>"; };
+		2647CA9822BA505F00CCFF4F /* Scene0Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Presenter.swift; sourceTree = "<group>"; };
+		2647CA9922BA505F00CCFF4F /* Scene0Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Const.swift; sourceTree = "<group>"; };
+		2647CA9A22BA505F00CCFF4F /* Scene0PresenterInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0PresenterInterface.swift; sourceTree = "<group>"; };
+		2647CA9B22BA505F00CCFF4F /* Scene0Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Types.swift; sourceTree = "<group>"; };
+		2647CA9C22BA505F00CCFF4F /* Scene0Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Setup.swift; sourceTree = "<group>"; };
+		2647CA9D22BA505F00CCFF4F /* Scene0LogicState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0LogicState.swift; sourceTree = "<group>"; };
+		2647CA9E22BA505F00CCFF4F /* Scene0Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Interactor.swift; sourceTree = "<group>"; };
+		2647CA9F22BA505F00CCFF4F /* Scene0View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0View.swift; sourceTree = "<group>"; };
+		2647CAA022BA505F00CCFF4F /* Scene0NavigatorInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0NavigatorInterface.swift; sourceTree = "<group>"; };
+		2647CAA122BA505F00CCFF4F /* Scene0VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0VC.swift; sourceTree = "<group>"; };
+		2647CAA222BA505F00CCFF4F /* Scene0View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Scene0View.xib; sourceTree = "<group>"; };
+		2647CAA322BA505F00CCFF4F /* Scene0LogicInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0LogicInterface.swift; sourceTree = "<group>"; };
+		2647CAC722BABD7400CCFF4F /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		2648179A224A3E8C0097014F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorage.swift"; sourceTree = "<group>"; };
 		2659D5BF21FB0DAB00F11F18 /* AppArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppArguments.swift; sourceTree = "<group>"; };
@@ -717,6 +749,7 @@
 				26BF212922B0E78900724863 /* Act1DC.swift */,
 				26BF213222B0F6DD00724863 /* Act1DCInterface.swift */,
 				26BF213B22B0F84300724863 /* Act1Scenes.swift */,
+				2647CA6322BA4C0B00CCFF4F /* Scene0 */,
 				26EFBD512203071000FE48AB /* Scene1 */,
 			);
 			path = Act1;
@@ -748,6 +781,53 @@
 				26365F05229D579F009AFBB3 /* Act2DCMock.swift */,
 			);
 			path = Acts;
+			sourceTree = "<group>";
+		};
+		2647CA6322BA4C0B00CCFF4F /* Scene0 */ = {
+			isa = PBXGroup;
+			children = (
+				2647CA9722BA505F00CCFF4F /* Scene0.strings */,
+				2647CA9922BA505F00CCFF4F /* Scene0Const.swift */,
+				2647CA9C22BA505F00CCFF4F /* Scene0Setup.swift */,
+				2647CA9B22BA505F00CCFF4F /* Scene0Types.swift */,
+				2647CAC522BA55A900CCFF4F /* Core */,
+				2647CAC622BA55C100CCFF4F /* Display */,
+				2647CAC422BA558B00CCFF4F /* Logic */,
+			);
+			path = Scene0;
+			sourceTree = "<group>";
+		};
+		2647CAC422BA558B00CCFF4F /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				2647CA9422BA505F00CCFF4F /* Scene0Logic.swift */,
+				2647CAA322BA505F00CCFF4F /* Scene0LogicInterface.swift */,
+				2647CA9D22BA505F00CCFF4F /* Scene0LogicState.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		2647CAC522BA55A900CCFF4F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2647CA9622BA505F00CCFF4F /* Scene0Navigator.swift */,
+				2647CAA022BA505F00CCFF4F /* Scene0NavigatorInterface.swift */,
+				2647CAA122BA505F00CCFF4F /* Scene0VC.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2647CAC622BA55C100CCFF4F /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				2647CA9E22BA505F00CCFF4F /* Scene0Interactor.swift */,
+				2647CA9822BA505F00CCFF4F /* Scene0Presenter.swift */,
+				2647CA9A22BA505F00CCFF4F /* Scene0PresenterInterface.swift */,
+				2647CA9F22BA505F00CCFF4F /* Scene0View.swift */,
+				2647CAA222BA505F00CCFF4F /* Scene0View.xib */,
+				2647CA9522BA505F00CCFF4F /* Scene0TestConst.swift */,
+			);
+			path = Display;
 			sourceTree = "<group>";
 		};
 		2659D5CF21FB29C500F11F18 /* DemoWidget */ = {
@@ -1039,6 +1119,7 @@
 				26A33C80221D82EF00F1251A /* Bundle.swift */,
 				26F44D5D21EF8752004162F3 /* Date.swift */,
 				26A33C7E221D82EE00F1251A /* DispatchQueue.swift */,
+				2647CAC722BABD7400CCFF4F /* Double.swift */,
 				26A33C77221D82ED00F1251A /* String.swift */,
 				26A33C7A221D82EE00F1251A /* UIColor.swift */,
 				26A33C7F221D82EF00F1251A /* UIDevice.swift */,
@@ -1481,7 +1562,6 @@
 				2690232921EF602400C6B288 /* Sources */,
 				2690232A21EF602400C6B288 /* Frameworks */,
 				2690232B21EF602400C6B288 /* Resources */,
-				B20022EB5344AE1A997CAD38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1617,9 +1697,6 @@
 							};
 						};
 					};
-					26A33C8B221DB7DB00F1251A = {
-						CreatedOnToolsVersion = 10.1;
-					};
 					26C47B2C21FCA84C0069947A = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
@@ -1648,7 +1725,6 @@
 				26262ECD228D7A330004A5A2 /* ServerWorker */,
 				26262ED5228D7A330004A5A2 /* ServerWorkerTests */,
 				26C47B2C21FCA84C0069947A /* Shared */,
-				26A33C8B221DB7DB00F1251A /* FindUnusedCode */,
 			);
 		};
 /* End PBXProject section */
@@ -1690,9 +1766,9 @@
 			files = (
 				26EFBD6E2203071000FE48AB /* Scene1.strings in Resources */,
 				2690232421EF602400C6B288 /* Assets.xcassets in Resources */,
-				269651BE227C31AF00D286D4 /* Scene2View.xib in Resources */,
 				2690236021EF65E300C6B288 /* LaunchScreen.storyboard in Resources */,
 				269651AC227C31AF00D286D4 /* Scene2.strings in Resources */,
+				2647CAAA22BA505F00CCFF4F /* Scene0.strings in Resources */,
 				2642981C2227DCB5004251FD /* AppIcon.xcassets in Resources */,
 				26F44D4821EF84E2004162F3 /* Colors.xcassets in Resources */,
 				26F44D8721EF8753004162F3 /* Global.strings in Resources */,
@@ -1719,9 +1795,9 @@
 			files = (
 				26EFBD6F2203071000FE48AB /* Scene1.strings in Resources */,
 				2690236221EF65F500C6B288 /* LaunchScreen.storyboard in Resources */,
-				269651BF227C31AF00D286D4 /* Scene2View.xib in Resources */,
 				2690235121EF627D00C6B288 /* Assets.xcassets in Resources */,
 				269651AD227C31AF00D286D4 /* Scene2.strings in Resources */,
+				2647CAAB22BA505F00CCFF4F /* Scene0.strings in Resources */,
 				2642981D2227DCB5004251FD /* AppIcon.xcassets in Resources */,
 				26F44D4921EF84E2004162F3 /* Colors.xcassets in Resources */,
 				26F44D8821EF8753004162F3 /* Global.strings in Resources */,
@@ -1860,23 +1936,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/R.swift/rswift\" generate \"${SRCROOT}/EmbeddedFrameworks/Shared/Generated/R-swift/R.generated.swift\"\n";
-		};
-		26A33C8F221DB7EB00F1251A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"Pods/Periphery/periphery\" scan\n";
 		};
 		26C47BBE21FCD4520069947A /* R-swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2134,7 +2193,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -2147,7 +2205,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2192,7 +2249,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -2205,7 +2261,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2276,28 +2331,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B20022EB5344AE1A997CAD38 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoAppUnitTests/Pods-DemoAppUnitTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Hippolyte/Hippolyte.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hippolyte.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoAppUnitTests/Pods-DemoAppUnitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7FAA489F9A839233D9A2A5C /* [CP] Check Pods Manifest.lock */ = {
@@ -2414,33 +2447,44 @@
 				26EFBDA722033D5300FE48AB /* Scene1DefaultCellModel.swift in Sources */,
 				269651C4227C31AF00D286D4 /* Scene2VC.swift in Sources */,
 				26365EFE229D3653009AFBB3 /* Act2DC.swift in Sources */,
+				2647CAB422BA505F00CCFF4F /* Scene0Setup.swift in Sources */,
 				26EFBD9322030F3B00FE48AB /* Scene1TableControllerInterface.swift in Sources */,
 				26BF213622B0F74400724863 /* Act2DCInterface.swift in Sources */,
 				269651BA227C31AF00D286D4 /* Scene2Interactor.swift in Sources */,
+				2647CAAC22BA505F00CCFF4F /* Scene0Presenter.swift in Sources */,
 				2690236121EF65E300C6B288 /* AppDelegate.swift in Sources */,
+				2647CAB622BA505F00CCFF4F /* Scene0LogicState.swift in Sources */,
+				2647CABE22BA505F00CCFF4F /* Scene0VC.swift in Sources */,
 				26EFBD9722030F3B00FE48AB /* Scene1TableControllerTypes.swift in Sources */,
 				26F44D5021EF8683004162F3 /* BaseTableView.swift in Sources */,
 				26B71E602204772E00C6C341 /* BaseNavigationController.swift in Sources */,
 				26F44DB721EF8753004162F3 /* MailController.swift in Sources */,
 				269651C2227C31AF00D286D4 /* Scene2TestConst.swift in Sources */,
 				26EFBD8C2203071000FE48AB /* Scene1VC.swift in Sources */,
+				2647CAA422BA505F00CCFF4F /* Scene0Logic.swift in Sources */,
 				26EFBD822203071000FE48AB /* Scene1Interactor.swift in Sources */,
+				2647CAB822BA505F00CCFF4F /* Scene0Interactor.swift in Sources */,
+				2647CABC22BA505F00CCFF4F /* Scene0NavigatorInterface.swift in Sources */,
 				26EFBD9E2203352400FE48AB /* Scene1DefaultCellView.swift in Sources */,
+				2647CAAE22BA505F00CCFF4F /* Scene0Const.swift in Sources */,
 				269651AA227C31AF00D286D4 /* Scene2Const.swift in Sources */,
 				269651B2227C31AF00D286D4 /* Scene2LogicInterface.swift in Sources */,
 				26EFBDA42203382F00FE48AB /* BaseView.swift in Sources */,
 				26F44D5221EF8683004162F3 /* BaseCell.swift in Sources */,
 				262E99F5222D2DF000BAE132 /* Scene1NavigatorInterface.swift in Sources */,
+				2647CAC222BA505F00CCFF4F /* Scene0LogicInterface.swift in Sources */,
 				269651B4227C31AF00D286D4 /* Scene2Types.swift in Sources */,
 				26EFBD742203071000FE48AB /* Scene1LogicInterface.swift in Sources */,
 				26EFBD9522030F3B00FE48AB /* Scene1TableController.swift in Sources */,
 				26C47B6221FCCB9D0069947A /* UIResponder.swift in Sources */,
 				26365EFB229D3197009AFBB3 /* SetupModel.swift in Sources */,
+				2647CAB022BA505F00CCFF4F /* Scene0PresenterInterface.swift in Sources */,
 				26A5BFD722144F0E00D4F6FE /* Scene1Types.swift in Sources */,
 				269651B6227C31AF00D286D4 /* Scene2Setup.swift in Sources */,
 				26A5BFD12214420A00D4F6FE /* Scene1Setup.swift in Sources */,
 				2658A3A021F5D43F004451F8 /* UIView+Anchorage.swift in Sources */,
 				269651C6227C31AF00D286D4 /* Scene2NavigatorInterface.swift in Sources */,
+				2647CAA822BA505F00CCFF4F /* Scene0Navigator.swift in Sources */,
 				26EFBD8A2203071000FE48AB /* Scene1TestConst.swift in Sources */,
 				26EFBD722203071000FE48AB /* Scene1LogicState.swift in Sources */,
 				269651C0227C31AF00D286D4 /* Scene2View.swift in Sources */,
@@ -2451,7 +2495,9 @@
 				26EFBD9B2203345600FE48AB /* Scene1DefaultCell.swift in Sources */,
 				26F44D3E21EF8021004162F3 /* R.generated.swift in Sources */,
 				269651C8227C31AF00D286D4 /* Scene2Navigator.swift in Sources */,
+				2647CAB222BA505F00CCFF4F /* Scene0Types.swift in Sources */,
 				26F44D9B21EF8753004162F3 /* UIButton.swift in Sources */,
+				2647CABA22BA505F00CCFF4F /* Scene0View.swift in Sources */,
 				26EFBD682203071000FE48AB /* Scene1Navigator.swift in Sources */,
 				26BF213922B0F82C00724863 /* Act2Scenes.swift in Sources */,
 				26EFBD842203071000FE48AB /* Scene1Presenter.swift in Sources */,
@@ -2463,6 +2509,7 @@
 				26EFBD6C2203071000FE48AB /* Scene1Const.swift in Sources */,
 				269651B8227C31AF00D286D4 /* Scene2PresenterInterface.swift in Sources */,
 				26F44D4E21EF8683004162F3 /* BaseViewController.swift in Sources */,
+				2647CAA622BA505F00CCFF4F /* Scene0TestConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2496,33 +2543,44 @@
 				26EFBDA822033D5300FE48AB /* Scene1DefaultCellModel.swift in Sources */,
 				269651C5227C31AF00D286D4 /* Scene2VC.swift in Sources */,
 				26365EFF229D3653009AFBB3 /* Act2DC.swift in Sources */,
+				2647CAB522BA505F00CCFF4F /* Scene0Setup.swift in Sources */,
 				26EFBD9422030F3B00FE48AB /* Scene1TableControllerInterface.swift in Sources */,
 				26BF213722B0F74400724863 /* Act2DCInterface.swift in Sources */,
 				269651BB227C31AF00D286D4 /* Scene2Interactor.swift in Sources */,
+				2647CAAD22BA505F00CCFF4F /* Scene0Presenter.swift in Sources */,
 				2690236321EF65F800C6B288 /* AppDelegate.swift in Sources */,
+				2647CAB722BA505F00CCFF4F /* Scene0LogicState.swift in Sources */,
+				2647CABF22BA505F00CCFF4F /* Scene0VC.swift in Sources */,
 				26EFBD9822030F3B00FE48AB /* Scene1TableControllerTypes.swift in Sources */,
 				26F44D5121EF8683004162F3 /* BaseTableView.swift in Sources */,
 				26B71E612204772E00C6C341 /* BaseNavigationController.swift in Sources */,
 				26F44DB821EF8753004162F3 /* MailController.swift in Sources */,
 				269651C3227C31AF00D286D4 /* Scene2TestConst.swift in Sources */,
 				26EFBD8D2203071000FE48AB /* Scene1VC.swift in Sources */,
+				2647CAA522BA505F00CCFF4F /* Scene0Logic.swift in Sources */,
 				26EFBD832203071000FE48AB /* Scene1Interactor.swift in Sources */,
+				2647CAB922BA505F00CCFF4F /* Scene0Interactor.swift in Sources */,
+				2647CABD22BA505F00CCFF4F /* Scene0NavigatorInterface.swift in Sources */,
 				26EFBD9F2203352400FE48AB /* Scene1DefaultCellView.swift in Sources */,
+				2647CAAF22BA505F00CCFF4F /* Scene0Const.swift in Sources */,
 				269651AB227C31AF00D286D4 /* Scene2Const.swift in Sources */,
 				269651B3227C31AF00D286D4 /* Scene2LogicInterface.swift in Sources */,
 				26EFBDA52203382F00FE48AB /* BaseView.swift in Sources */,
 				26F44D5321EF8683004162F3 /* BaseCell.swift in Sources */,
 				262E99F6222D2DF000BAE132 /* Scene1NavigatorInterface.swift in Sources */,
+				2647CAC322BA505F00CCFF4F /* Scene0LogicInterface.swift in Sources */,
 				269651B5227C31AF00D286D4 /* Scene2Types.swift in Sources */,
 				26EFBD752203071000FE48AB /* Scene1LogicInterface.swift in Sources */,
 				26EFBD9622030F3B00FE48AB /* Scene1TableController.swift in Sources */,
 				26C47B6321FCCB9D0069947A /* UIResponder.swift in Sources */,
 				26365EFC229D3197009AFBB3 /* SetupModel.swift in Sources */,
+				2647CAB122BA505F00CCFF4F /* Scene0PresenterInterface.swift in Sources */,
 				26A5BFD822144F0E00D4F6FE /* Scene1Types.swift in Sources */,
 				269651B7227C31AF00D286D4 /* Scene2Setup.swift in Sources */,
 				26A5BFD22214420A00D4F6FE /* Scene1Setup.swift in Sources */,
 				26EFBD8B2203071000FE48AB /* Scene1TestConst.swift in Sources */,
 				269651C7227C31AF00D286D4 /* Scene2NavigatorInterface.swift in Sources */,
+				2647CAA922BA505F00CCFF4F /* Scene0Navigator.swift in Sources */,
 				26EFBD732203071000FE48AB /* Scene1LogicState.swift in Sources */,
 				2658A3A121F5D43F004451F8 /* UIView+Anchorage.swift in Sources */,
 				269651C1227C31AF00D286D4 /* Scene2View.swift in Sources */,
@@ -2533,7 +2591,9 @@
 				269651B1227C31AF00D286D4 /* Scene2LogicState.swift in Sources */,
 				26F44D3F21EF8021004162F3 /* R.generated.swift in Sources */,
 				269651C9227C31AF00D286D4 /* Scene2Navigator.swift in Sources */,
+				2647CAB322BA505F00CCFF4F /* Scene0Types.swift in Sources */,
 				26F44D9C21EF8753004162F3 /* UIButton.swift in Sources */,
+				2647CABB22BA505F00CCFF4F /* Scene0View.swift in Sources */,
 				26EFBD692203071000FE48AB /* Scene1Navigator.swift in Sources */,
 				26BF213A22B0F82C00724863 /* Act2Scenes.swift in Sources */,
 				26EFBD852203071000FE48AB /* Scene1Presenter.swift in Sources */,
@@ -2545,6 +2605,7 @@
 				26EFBD892203071000FE48AB /* Scene1View.swift in Sources */,
 				269651B9227C31AF00D286D4 /* Scene2PresenterInterface.swift in Sources */,
 				26EFBD6D2203071000FE48AB /* Scene1Const.swift in Sources */,
+				2647CAA722BA505F00CCFF4F /* Scene0TestConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2565,6 +2626,7 @@
 				26A33C76221D825500F1251A /* DelegatedCall.swift in Sources */,
 				26A33C73221D825500F1251A /* NotificationToken.swift in Sources */,
 				26C7E962222AB7690003C57B /* ButtonStyles.swift in Sources */,
+				2647CAC822BABD7400CCFF4F /* Double.swift in Sources */,
 				2693B85A222BF08D0094A917 /* R.generated.swift in Sources */,
 				266AEF992297ECA7008006E1 /* Times.swift in Sources */,
 				26232555228AE2A7006AFAF4 /* Suggestions.swift in Sources */,
@@ -2872,7 +2934,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_VERSION = 2.0;
+				APP_VERSION = 1.0;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2934,7 +2996,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_VERSION = 2.0;
+				APP_VERSION = 1.0;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3158,24 +3220,6 @@
 			};
 			name = Release;
 		};
-		26A33C8C221DB7DC00F1251A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H6T8HJZGHY;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		26A33C8D221DB7DC00F1251A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H6T8HJZGHY;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		26C47B3621FCA84C0069947A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F21C08798CF9AD66E80B520 /* Pods-Shared.debug.xcconfig */;
@@ -3318,15 +3362,6 @@
 			buildConfigurations = (
 				2690235421EF627D00C6B288 /* Debug */,
 				2690235521EF627D00C6B288 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		26A33C8E221DB7DC00F1251A /* Build configuration list for PBXAggregateTarget "FindUnusedCode" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				26A33C8C221DB7DC00F1251A /* Debug */,
-				26A33C8D221DB7DC00F1251A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

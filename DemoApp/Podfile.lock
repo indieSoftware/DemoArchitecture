@@ -1,11 +1,10 @@
 PODS:
-  - Anchorage (4.3)
+  - Anchorage (4.3.1)
   - AppFolder (0.2.0)
   - CocoaLumberjack/Core (3.5.3)
   - CocoaLumberjack/Swift (3.5.3):
     - CocoaLumberjack/Core
   - Hippolyte (0.7.1)
-  - Periphery (1.4.0)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
@@ -15,22 +14,19 @@ PODS:
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
-  - SwiftFormat/CLI (0.40.8)
-  - SwiftLint (0.32.0)
-  - WeaverDI (0.12.3)
+  - SwiftFormat/CLI (0.40.9)
+  - SwiftLint (0.33.0)
 
 DEPENDENCIES:
   - Anchorage
   - AppFolder
   - CocoaLumberjack/Swift
   - Hippolyte
-  - Periphery
   - R.swift
   - RxCocoa
   - RxSwift
   - SwiftFormat/CLI
   - SwiftLint
-  - WeaverDI
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -38,7 +34,6 @@ SPEC REPOS:
     - AppFolder
     - CocoaLumberjack
     - Hippolyte
-    - Periphery
     - R.swift
     - R.swift.Library
     - RxCocoa
@@ -46,23 +41,20 @@ SPEC REPOS:
     - RxSwift
     - SwiftFormat
     - SwiftLint
-    - WeaverDI
 
 SPEC CHECKSUMS:
-  Anchorage: 21a98675245188427f0bcea21404d42a824a766f
+  Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
   AppFolder: d10ba19488bd441d60ffcf96eb2ab639a4825231
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   Hippolyte: 811df5756a74ff55b2b1313d4663f93b916f85b1
-  Periphery: 88b0f2c4f290fb47b02d2faf8d9a3e2facf0b51f
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SwiftFormat: d9e5ca1aed735164fe9d26510ec508ddb8a93598
-  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
-  WeaverDI: 50396913e7e40856d393eb9fc5e86f67a6371d98
+  SwiftFormat: 6b67b6e7fe73d664f0cbb4f13721f130462c86a5
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
-PODFILE CHECKSUM: ce9a14d17067959a5111b7865c9d0148018fa127
+PODFILE CHECKSUM: 0e54292ce328214642fc2732997ebf590ba51890
 
 COCOAPODS: 1.6.1

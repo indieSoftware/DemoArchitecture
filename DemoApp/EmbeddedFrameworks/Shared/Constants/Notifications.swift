@@ -7,7 +7,7 @@ extension Const {
 		public enum Name {
 			/// Informs that the app's internal settings have been changed.
 			/// Provides a `userInfo` dictionary as parameter.
-			public static let InternalSettingsDidChange = Foundation.Notification.Name("INInternalSettingsDidChangeNotification")
+			public static let InternalSettingsDidChange = Foundation.Notification.Name("MYInternalSettingsDidChangeNotification")
 		}
 
 		/// Keys for a notification `userInfo` dictionary. The key's name begins with the notification's name for which it is.

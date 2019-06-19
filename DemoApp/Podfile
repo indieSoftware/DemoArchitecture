@@ -2,14 +2,25 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '11.0'
 use_frameworks!
 
+# Pods used for development only.
+def development_pods
+  # A linter to gather code metrics.
+  # https://github.com/realm/SwiftLint
+  pod 'SwiftLint'
+
+  # Formats the swift code to be consistent.
+  # https://github.com/nicklockwood/SwiftFormat
+  pod 'SwiftFormat/CLI'
+end
+
 # Required pods for the main app.
 def app_pods
-	# Add pods from embedded frameworks to resolve errors like: dyld Library not loaded, image not found
-	shared_pods
-	customViews_pods
-	serverWorker_pods
+	# Add pods from embedded frameworks to resolve dependency errors like: dyld Library not loaded, image not found
+  shared_pods
+  customViews_pods
+  serverWorker_pods
 
-	# Constants for localized text, storyboards, nibs, etc.
+	# Constants for localized text, colors, etc.
 	# https://github.com/mac-cain13/R.swift
 	pod 'R.swift'
 
@@ -25,62 +36,15 @@ def app_pods
 	# https://github.com/ReactiveX/RxSwift
 	pod 'RxSwift'
 	pod 'RxCocoa'
-
-	# An iOS SDK for tracking events and revenue to Amplitude.
-	# https://www.amplitude.com
-	#pod 'Amplitude-iOS'
-
-	# Date helper for Swift
-	# http://malcommac.github.io/SwiftDate/index.html#overview
-	#pod 'SwiftDate'
-    
-	# Intuitive date handling in Swift.
-	# https://github.com/naoty/Timepiece
-	#pod 'Timepiece'
-
-	# Async helper for Swift
-	# https://github.com/duemunk/Async
-	#pod 'AsyncSwift'
-
-	# Easy attributed strings in Swift.
-	# https://github.com/Raizlabs/BonMot
-	#pod 'BonMot'
-    
-	# Elegant transition library for iOS.
-	# https://github.com/lkzhao/Hero
-	#pod 'Hero'
-
-	# Swipeable UITableViewCell or UICollectionViewCell
-	# https://github.com/SwipeCellKit/SwipeCellKit
-	#pod 'SwipeCellKit'
-
-	# Attributed string library
-	# https://github.com/malcommac/SwiftRichString
-	#pod 'SwiftRichString'
-
-	# A UIWindow replacement to draw visual representations of all touch events to the screen for demo production only.
-	# https://github.com/Ideon/SmudgeKit
-	#pod 'SmudgeKit'
-end
-
-# Pods used for development only.
-def development_pods
-	# A linter to gather code metrics.
-	# https://github.com/realm/SwiftLint
-	pod 'SwiftLint'
-
-	# Formats the swift code to be consistent.
-	# https://github.com/nicklockwood/SwiftFormat
-	pod 'SwiftFormat/CLI'
-
-	# Detecting unused swift code.
-	# https://github.com/peripheryapp/periphery
-	pod 'Periphery'
 end
 
 # Pods used by the Shared framework.
 def shared_pods
-	# A configurable logger.
+  # Constants for localized text, storyboards, nibs, etc.
+  # https://github.com/mac-cain13/R.swift
+  pod 'R.swift'
+
+  # A configurable logger.
 	# https://github.com/CocoaLumberjack/CocoaLumberjack
 	pod 'CocoaLumberjack/Swift'
 end
@@ -94,6 +58,13 @@ end
 
 # Pods used by the ServerWorker framework.
 def serverWorker_pods
+end
+
+# Pods used by the DemoWidget extension.
+def widget_pods
+  # Constants for localized text, colors, etc.
+  # https://github.com/mac-cain13/R.swift
+  pod 'R.swift'
 end
 
 
@@ -110,100 +81,29 @@ end
 
 target 'DemoAppUnitTests' do
 	development_pods
-
-	# HTTP request mocker.
-	# https://github.com/kylef/Mockingjay
-	#pod 'Mockingjay'
-
-	# HTTP stubbing.
-	# https://github.com/JanGorman/Hippolyte
-	pod 'Hippolyte'
-
-	# Rx Tests.
-	# https://github.com/ReactiveX/RxSwift
-	#pod 'RxBlocking'
-	#pod 'RxTest'
-
-	# Mocking framework for Swift.
-	# https://github.com/Brightify/Cuckoo
-	#pod 'Cuckoo'
-
-	# Snapshot view unit tests.
-	# https://github.com/uber/ios-snapshot-test-case
-	#pod 'iOSSnapshotTestCase'
-
-	# Collection of debugging tools
-	# https://github.com/dbukowski/DBDebugToolkit
-	#pod 'DBDebugToolkit'
 end
 
 target 'DemoAppUITests' do
 	development_pods
-
-	# Device type detection.
-	# https://github.com/dennisweissmann/DeviceKit
-	#pod 'DeviceKit'
-
-	# Snapshot view unit tests.
-	# https://github.com/uber/ios-snapshot-test-case
-	#pod 'iOSSnapshotTestCase'
-
-	# Fake the simulator status bar.
-	# Warning: Has many problems with some devices, orientation and older iOS version, so it's not recommendet to use.
-	# https://github.com/shinydevelopment/SimulatorStatusMagic
-	#pod 'SimulatorStatusMagic'
-
-	# Collection of debugging tools
-	# https://github.com/dbukowski/DBDebugToolkit
-	#pod 'DBDebugToolkit'
 end
-
-#target 'DemoAppScreenshots' do
-	# Device type detection.
-	# https://github.com/dennisweissmann/DeviceKit
-	#pod 'DeviceKit'
-
-	# Snapshot view unit tests.
-	# https://github.com/uber/ios-snapshot-test-case
-	#pod 'iOSSnapshotTestCase'
-
-	# Fake the simulator status bar.
-	# Warning: Has many problems with some devices, orientation and older iOS version, so it's not recommendet to use.
-	# https://github.com/shinydevelopment/SimulatorStatusMagic
-	#pod 'SimulatorStatusMagic'
-#end
 
 target 'DemoWidget' do
 	development_pods
-
-	# Constants for localized text, storyboards, nibs, etc.
-	# https://github.com/mac-cain13/R.swift
-	pod 'R.swift'
+  widget_pods
 end
 
 target 'Shared' do
 	development_pods
-
 	shared_pods
-
-	# Constants for localized text, storyboards, nibs, etc.
-	# https://github.com/mac-cain13/R.swift
-	pod 'R.swift'
 end
 
 target 'CustomViews' do
 	development_pods
-
 	customViews_pods
 end
 
 target 'ServerWorker' do
 	development_pods
-
-	# HTTP stubbing.
-	# https://github.com/JanGorman/Hippolyte
-	pod 'Hippolyte'
-
 	serverWorker_pods
 end
 

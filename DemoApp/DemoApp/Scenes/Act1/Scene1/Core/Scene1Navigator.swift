@@ -6,7 +6,7 @@ final class Scene1Navigator {
 	/// Has to be assigned via property injection after initialization.
 	weak var viewController: UIViewController?
 
-	/// A reference to the dependecy container.
+	/// A reference to the dependency container.
 	private let dependencies: Act1DCInterface
 
 	init(dependencies: Act1DCInterface) {

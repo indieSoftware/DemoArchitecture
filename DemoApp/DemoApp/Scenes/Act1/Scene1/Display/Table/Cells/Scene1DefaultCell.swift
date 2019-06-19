@@ -34,7 +34,7 @@ class Scene1DefaultCell: BaseCell {
 
 		// Inform delegate about cell button tap.
 		cellView.cellButton.rx.tap
-			.throttle(Const.Time.defaultDebounceDuration, scheduler: MainScheduler.instance) // act immediately, but not too often
+			.throttle(Const.Time.defaultDebounceDuration.dispatchTimeInterval, scheduler: MainScheduler.instance) // act immediately, but not too often
 			.subscribe(onNext: { _ in
 				Log.debug("Cell \(model.suggestion) tapped")
 				model.delegate?.cellButtonPressed(cellModel: model)

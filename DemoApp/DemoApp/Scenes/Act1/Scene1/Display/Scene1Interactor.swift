@@ -28,7 +28,7 @@ final class Scene1Interactor {
 			// Trigger only when the text changes.
 			.controlEvent([.editingChanged]).asObservable()
 			// Wait until no changes arrive anymore.
-			.debounce(Const.Time.defaultDebounceDuration, scheduler: MainScheduler.instance)
+			.debounce(Const.Time.defaultDebounceDuration.dispatchTimeInterval, scheduler: MainScheduler.instance)
 			.subscribe(onNext: { _ in
 				let text = view.searchInputField.text ?? String.empty
 				logic.searchForText(text)
@@ -41,7 +41,7 @@ final class Scene1Interactor {
 			// Ignore first event on registration.
 			.changed
 			// Act immediately, but not too often.
-			.throttle(Const.Time.defaultDebounceDuration, scheduler: MainScheduler.instance)
+			.throttle(Const.Time.defaultDebounceDuration.dispatchTimeInterval, scheduler: MainScheduler.instance)
 			.subscribe(onNext: { _ in
 				logic.dismissKeyboard()
 			}).disposed(by: disposeBag)
