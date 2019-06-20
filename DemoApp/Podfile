@@ -19,6 +19,7 @@ def app_pods
   shared_pods
   customViews_pods
   serverWorker_pods
+  commons_pods
 
 	# Constants for localized text, colors, etc.
 	# https://github.com/mac-cain13/R.swift
@@ -49,6 +50,13 @@ def shared_pods
 	pod 'CocoaLumberjack/Swift'
 end
 
+# Pods used by the DemoWidget extension.
+def widget_pods
+  # Constants for localized text, colors, etc.
+  # https://github.com/mac-cain13/R.swift
+  pod 'R.swift'
+end
+
 # Pods used by the CustomViews framework.
 def customViews_pods
 	# A collection of operators and utilities that simplify iOS layout code.
@@ -60,11 +68,8 @@ end
 def serverWorker_pods
 end
 
-# Pods used by the DemoWidget extension.
-def widget_pods
-  # Constants for localized text, colors, etc.
-  # https://github.com/mac-cain13/R.swift
-  pod 'R.swift'
+# Pods used by the Commons framework.
+def commons_pods
 end
 
 
@@ -111,6 +116,14 @@ target 'ServerWorkerTests' do
 	# HTTP stubbing.
 	# https://github.com/JanGorman/Hippolyte
 	pod 'Hippolyte'
+end
+
+target 'Commons' do
+  development_pods
+  commons_pods
+end
+
+target 'CommonsTests' do
 end
 
 

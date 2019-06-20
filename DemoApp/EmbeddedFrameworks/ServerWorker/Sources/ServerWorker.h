@@ -1,11 +1,3 @@
-//
-//  ServerWorker.h
-//  ServerWorker
-//
-//  Created by Sven Korset on 16.05.19.
-//  Copyright © 2019 Indie-Software. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for ServerWorker.

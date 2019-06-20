@@ -1,11 +1,3 @@
-//
-//  Shared.h
-//  Shared
-//
-//  Created by Sven Korset on 26.01.19.
-//  Copyright © 2019 Indie-Software. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for Shared.
