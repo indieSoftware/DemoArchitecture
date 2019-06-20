@@ -41,22 +41,32 @@ extension Scene0Logic: Scene0LogicInterface {
 			// Start updating the settings in its own background block.
 			dispatchGroup.enter()
 			DispatchQueue.global(qos: .background).async {
-				dependencies.actDependencies.settings.updateSettings(testScenario: nil) // TODO: use test scenrios
+				dependencies.actDependencies.settings.updateSettings(testScenario: dependencies.actDependencies.testScenario)
 				dispatchGroup.leave()
 			}
 
-			// Simply wait to make sure the splash is shown the minimum time.
-			Thread.sleep(forTimeInterval: Const.Time.splashMinShowDuration)
+			// If not the fast start test scenario is set then simply wait
+			// to make sure the splash is shown the minimum time.
+			if dependencies.actDependencies.testScenario != .fastStart {
+				Thread.sleep(forTimeInterval: Const.Time.splashMinShowDuration)
+			}
 
-			// Wait further for the other groups to complete if necessary.
+			// Wait further for the settings update group to complete if necessary.
 			dispatchGroup.wait()
 
-			// Hide splash on the main thread.
+			// Run any presenter and navigator methods on the main thread.
 			DispatchQueue.main.async {
-				dependencies.presenter.hideSplash {
-					// Start transition after hiding the splash.
+				if dependencies.actDependencies.testScenario == .fastStart {
+					// Fast start test scenario, skip splash hiding and start transition immediately.
 					let model = SetupModel.Scene1()
 					dependencies.navigator.scene1(setupModel: model)
+				} else {
+					// Normal mode, hide splash.
+					dependencies.presenter.hideSplash {
+						// Start transition after hiding the splash.
+						let model = SetupModel.Scene1()
+						dependencies.navigator.scene1(setupModel: model)
+					}
 				}
 			}
 		}

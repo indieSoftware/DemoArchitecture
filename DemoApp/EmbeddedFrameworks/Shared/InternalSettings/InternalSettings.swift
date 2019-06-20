@@ -31,19 +31,15 @@ public final class InternalSettings {
 
 extension InternalSettings: InternalSettingsInterface {
 	@discardableResult
-	public func updateSettings(testScenario: Const.AppArgument.TestScenario? = nil) -> Bool {
-		// If a test scenario is provided only apply it instead of the normal update process.
-		if let testScenario = testScenario {
-			#if DEBUG
-				applyTestScenario(testScenario)
-			#else
-				fatalError("'testScenario' not supported in release version")
-			#endif
+	public func updateSettings(testScenario: TestScenario) -> Bool {
+		if testScenario == .none {
+			// No test mode, try updating the settings.
+			return applySettingsUpdate()
+		} else {
+			// Apply test scenario settings.
+			applyTestScenario(testScenario)
 			return false
 		}
-
-		// Not in test mode, try updating the settings.
-		return applySettingsUpdate()
 	}
 
 	// MARK: - Setting properties
@@ -63,6 +59,7 @@ extension InternalSettings: InternalSettingsInterface {
 // MARK: - Settings versions
 
 extension InternalSettings {
+	@discardableResult
 	private func applySettingsUpdate() -> Bool {
 		let currentSettingsVersion = settingsVersion
 		guard currentSettingsVersion < Const.InternalSettings.LatestVersionNumber else {
@@ -81,11 +78,13 @@ extension InternalSettings {
 			applySettingsVersion1(appUpdate: appUpdate)
 		}
 
+		// The next settings version update comes here...
+
 		// Finish update.
 		settingsVersion = Const.InternalSettings.LatestVersionNumber
 		#if DEBUG
 			// Force sync during development otherwise terminating the app in Xcode
-			// may prevent the user defaults to persist just in time.
+			// may prevent the user defaults to persist.
 			userDefaults.synchronize()
 		#endif
 		Log.info("Internal settings updated")
@@ -105,26 +104,29 @@ extension InternalSettings {
 
 	 - parameter testScenario: The test scenario to apply.
 	 */
-	private func applyTestScenario(_ testScenario: Const.AppArgument.TestScenario) {
-		// Delete app's persisted data.
-		let domain = Bundle.main.bundleIdentifier!
-		userDefaults.removePersistentDomain(forName: domain)
-		userDefaults.synchronize()
+	private func applyTestScenario(_ testScenario: TestScenario) {
+		#if DEBUG
+			// Delete app's persisted data.
+			userDefaults.removePersistentDomain(forName: Const.App.groupIdentifier)
+			userDefaults.synchronize()
 
-		// Initialize settings with default values.
-		updateSettings()
+			// Initialize settings with default values.
+			applySettingsUpdate()
 
-		// Set up settings according to scenario.
-		switch testScenario {
-		case .none:
-			// No specific scenario.
-			break
-		case .appUsed:
-			scenarioAppUsed()
-		}
+			// Set up settings according to scenario.
+			switch testScenario {
+			case .fastStart:
+				scenarioFastStart()
+			default:
+				// Nothing to apply.
+				break
+			}
+		#else
+			fatalError("Preventing data loss in a release build")
+		#endif
 	}
 
-	private func scenarioAppUsed() {
-		// Nothing to do currently...
+	private func scenarioFastStart() {
+		// Assign test scenario specific settings values.
 	}
 }

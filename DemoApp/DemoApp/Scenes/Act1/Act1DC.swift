@@ -7,13 +7,16 @@ class Act1DC: Act1DCInterface {
 		Act1Factory(dependencies: self)
 	}()
 
+	let testScenario: TestScenario
 	let settings: InternalSettingsInterface
 	let serverWorker: ServerWorkerInterface
 
 	init(
+		testScenario: TestScenario,
 		settings: InternalSettingsInterface,
 		serverWorker: ServerWorkerInterface
 	) {
+		self.testScenario = testScenario
 		self.settings = settings
 		self.serverWorker = serverWorker
 	}

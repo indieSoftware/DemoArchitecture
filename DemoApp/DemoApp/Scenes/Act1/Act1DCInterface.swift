@@ -4,6 +4,9 @@ import UIKit
 
 /// The act's dependency container.
 protocol Act1DCInterface: AnyObject {
+	/// The app's current test scenario to apply.
+	var testScenario: TestScenario { get }
+
 	/// The factory for creating new dependencies.
 	var factory: Act1FactoryInterface { get }
 

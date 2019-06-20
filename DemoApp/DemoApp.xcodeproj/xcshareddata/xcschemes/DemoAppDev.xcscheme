@@ -93,12 +93,12 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "--testMode"
-            isEnabled = "YES">
+            argument = "none"
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--appUsed"
-            isEnabled = "YES">
+            argument = "fastStart"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>

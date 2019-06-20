@@ -1,4 +1,5 @@
 import ServerWorker
+import Shared
 import UIKit
 
 class Act2DC: Act2DCInterface {
@@ -6,10 +7,12 @@ class Act2DC: Act2DCInterface {
 		Act2Factory(dependencies: self)
 	}()
 
+	let testScenario: TestScenario
 	let serverWorker: ServerWorkerInterface
 	let user: User
 
 	init(act1DC: Act1DCInterface, user: User) {
+		testScenario = act1DC.testScenario
 		serverWorker = act1DC.serverWorker
 		self.user = user
 	}
