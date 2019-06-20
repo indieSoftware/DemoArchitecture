@@ -1,4 +1,5 @@
 import Foundation
+import Shared
 
 extension Scene0Model {
 	/// The dependencies for the logic to inject.
@@ -30,12 +31,34 @@ final class Scene0Logic {
 
 extension Scene0Logic: Scene0LogicInterface {
 	func start() {
-		dependencies.presenter.showSplash {}
+		// Hold a strong reference to the dependencies for the closures.
+		let dependencies = self.dependencies
 
-		let internalSettings = dependencies.actDependencies.settings
-		internalSettings.updateSettings(testScenario: nil)
+		// Don't block the main thread with the following tasks.
+		DispatchQueue.global(qos: .background).async {
+			let dispatchGroup = DispatchGroup()
 
-		let model = SetupModel.Scene1()
-		dependencies.navigator.scene1(setupModel: model)
+			// Start updating the settings in its own background block.
+			dispatchGroup.enter()
+			DispatchQueue.global(qos: .background).async {
+				dependencies.actDependencies.settings.updateSettings(testScenario: nil) // TODO: use test scenrios
+				dispatchGroup.leave()
+			}
+
+			// Simply wait to make sure the splash is shown the minimum time.
+			Thread.sleep(forTimeInterval: Const.Time.splashMinShowDuration)
+
+			// Wait further for the other groups to complete if necessary.
+			dispatchGroup.wait()
+
+			// Hide splash on the main thread.
+			DispatchQueue.main.async {
+				dependencies.presenter.hideSplash {
+					// Start transition after hiding the splash.
+					let model = SetupModel.Scene1()
+					dependencies.navigator.scene1(setupModel: model)
+				}
+			}
+		}
 	}
 }

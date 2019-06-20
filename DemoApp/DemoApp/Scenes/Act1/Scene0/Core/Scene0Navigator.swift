@@ -19,12 +19,11 @@ final class Scene0Navigator {
 extension Scene0Navigator: Scene0NavigatorInterface {
 	func scene1(setupModel: SetupModel.Scene1) {
 		guard let source = viewController else { return }
-		guard let navController = source.navigationController else {
-			fatalError("Navigation controller not provided")
-		}
 
 		let sceneType = Act1Scene.scene1(setupModel)
 		let destination = dependencies.factory.scene(sceneType)
-		navController.pushViewController(destination, animated: true)
+		let navController = BaseNavigationController(rootViewController: destination)
+		navController.isNavigationBarHidden = true
+		source.present(navController, animated: false)
 	}
 }

@@ -15,23 +15,14 @@ final class Scene0Presenter {
 // MARK: - Scene0PresenterInterface
 
 extension Scene0Presenter: Scene0PresenterInterface {
-	func showSplash(completion: @escaping () -> Void) {
+	func hideSplash(completion: @escaping () -> Void) {
 		guard let view = view else { return }
 
-		view.titleLabel.alpha = 0
+		view.titleLabel.alpha = 1
 		UIView.animate(withDuration: Const.Time.splashFadeDuration.timeInterval, animations: {
-			view.titleLabel.alpha = 1
-		}, completion: { finished in
-			guard finished else {
-				// Animation not completed, instantly return.
-				completion()
-				return
-			}
-
-			// Wait to make sure the min show time is reached.
-			DispatchQueue.main.asyncAfter(deadline: .now() + Const.Time.splashMinShowDuration) {
-				completion()
-			}
+			view.titleLabel.alpha = 0
+		}, completion: { _ in
+			completion()
 		})
 	}
 }

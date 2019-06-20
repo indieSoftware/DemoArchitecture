@@ -29,7 +29,7 @@ final class Scene0View: BaseView {
 	let titleLabel: UILabel = {
 		let label = UILabel()
 		label.text = R.string.scene0.title()
-		label.alpha = 0
+		label.font = Const.Font.splashTitle
 		return label
 	}()
 

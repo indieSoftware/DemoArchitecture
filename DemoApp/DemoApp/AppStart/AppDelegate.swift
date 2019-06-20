@@ -27,14 +27,12 @@ extension AppDelegate: UIApplicationDelegate {
 			settings: InternalSettings(),
 			serverWorker: ServerWorker()
 		)
-		let setupModel = SetupModel.Scene1()
-		let sceneType = Act1Scene.scene1(setupModel)
+		let setupModel = SetupModel.Scene0()
+		let sceneType = Act1Scene.scene0(setupModel)
 		let scene = dependencies.factory.scene(sceneType)
-		let navController = BaseNavigationController(rootViewController: scene)
-		navController.isNavigationBarHidden = true
 
 		// Show the scene.
-		window.rootViewController = navController
+		window.rootViewController = scene
 		window.makeKeyAndVisible()
 
 		// Make sure device orientation changes are broadcasted.

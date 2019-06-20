@@ -6,10 +6,10 @@ extension Const {
 		/// The default duration in seconds for debouncing UI actions.
 		public static let defaultDebounceDuration = 0.3
 
-		/// The duration in seconds to fade in the splash screen.
+		/// The duration in seconds for the splash screen animation.
 		public static let splashFadeDuration = 1.0
 
-		/// The minimal duration in seconds the splash sceen should be shown after animating in.
-		public static let splashMinShowDuration = 0.5
+		/// The minimum duration in seconds the splash screen should be visible.
+		public static let splashMinShowDuration = 1.5
 	}
 }

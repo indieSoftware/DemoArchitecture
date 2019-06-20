@@ -59,11 +59,11 @@ public final class DispatchedCall {
 
 	 Calling this method again automatically cancels any old calls.
 
-	 - parameter delay: The delay time in seconds when to execute the block. Must be greater than 0.
+	 - parameter delay: The delay time in seconds when to execute the block. Must be greater or equal 0.
 	 - parameter queue: The queue on which the block gets executed. Defaults to the main queue.
 	 */
 	public func enqueue(for delay: TimeInterval, on queue: DispatchQueue = .main) {
-		precondition(delay > 0)
+		precondition(delay >= 0)
 
 		// Cancel any old worker.
 		dispatchWorkerItem?.cancel()
