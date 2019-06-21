@@ -6,8 +6,7 @@ extension UIButton {
 
 	/**
 	 Enlarges the hit detection area for each button to at least have the min size.
-	 Changes nothing if the button is equal or larger to the min size, otherwise touches up to the min size
-	 but outside of this button are also treated as inside.
+	 Changes nothing if the button is equal or larger than the min size.
 	 */
 	open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
 		let buttonSize = frame.size

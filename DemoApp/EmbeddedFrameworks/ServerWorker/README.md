@@ -1,3 +1,3 @@
 #  ServerWorker
 
-A worker framework which responsibility it is to perform server requests for this project.
+A worker framework with the responsibility to perform any server requests for this project.

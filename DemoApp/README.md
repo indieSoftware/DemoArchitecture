@@ -1,19 +1,21 @@
 README
 ===
 
-Last edited: 2019/04/01
+Last edited: 2019/06/21
 
 This README explains the project and folder structure of this app.
 
-To read this file use a markdown editor, e.g. [MacDown](https://macdown.uranusjr.com)
+To read and edit this file use a markdown editor, e.g. [MacDown](https://macdown.uranusjr.com)
 
 # The project
 
 Always open the project with the workspace file `DemoApp.xcworkspace`. (Don't use the `.xcodeproj` file)
 
+Used Xcode version: 10.2.1
+
 ## Swift
 
-The coding language is pure Swift of the latest version (4.2).
+Used version: Swift 5
 
 ### Comments
 
@@ -22,8 +24,6 @@ Use the language's [comment style](https://developer.apple.com/library/content/d
 ### Documentation
 
 Besides of this readme there is more docuementation located in the `Documentation` folder.
-
-The start entry point for the `ArchitecturalDecisions` folder should be [2019-03-31 The purpose of this folder.md](Documentation/ArchitecturalDecisions/2019-03-31 The purpose of this folder.md)
 
 ### Coding Style Guides
 
@@ -39,7 +39,7 @@ To log something use the `Log` class located in the embedded framework `Shared`.
 
 ## Dependencies
 
-Always add new depending libraries through CocoaPods. Only if there is no possibility use Carthage or integrate them directly.
+Always add new depending libraries through CocoaPods. Only if there is no possibility use a different option.
 
 When installing new libraries or to update integrated libraries simply use the `updatePods.sh` script located in the `Tools` folder. If necessary make the script executable via `chmod u+x updatePods.sh`.
 
@@ -55,8 +55,7 @@ All pods are included in the repository and already linked with the workspace.
 
 Part of the app's code is outsourced into their own frameworks. They are embedded into the app and located in the `EmbeddedFrameworks` folder. They share code used in different modules, e.g. the app and a widget. Use them with their corresponding import statement.
 
-- CustomViews: Contains custom views and controls used in multiple places. They can be live tested in their corresponding playground projects.
-- Shared: Contains common code shared, e.g. global constants, extensions, the logger and internal settings.
+Each framework has its own `README.md` file which describes the purpos of the framework and any notable information.
 
 ### Resources
 
@@ -106,13 +105,13 @@ Constants are defined in the files located in the `Constants` folder of the embe
 
 ### Localized text
 
-Always put output text (text which the user can read) into localizable strings files. Globally used strings go into the `Global.strings` file, all other specific use case strings go into their corresponding strings file mostly located in the scene's folder. Reference them via `R-swift`.
+Always write output text (text which the user can read) into localizable strings files. Globally used strings go into the `Global.strings` file, all other specific use case strings go into their corresponding strings file mostly located in the scene's folder. Reference them via `R-swift`.
 
 ## App version
 
-The app's version number (`CFBundleShortVersionString` e.g. `2.0`) is saved in the project's build settings as a user-defined setting named `APP_VERSION`. This has to be updated manually when a new app version release is targeted.
+The app's version number (`CFBundleShortVersionString` e.g. `1.0`) is saved in the project's build settings as a user-defined setting named `APP_VERSION`. This has to be updated manually when a new app version release is targeted.
 
-The app's build number (`CFBundleVersion` e.g. `200`) is saved in the info.plist file and the target's build settings in the `Versioning` section. This number should automatically be increased by a CI system when releasing a new version. To manually increment the version run `xcrun agvtool next-version -all`.
+The app's build number (`CFBundleVersion` e.g. `42`) is saved in the `info.plist` file and the target's build settings in the `Versioning` section. This number should automatically be increased by a CI system when releasing a new version. To manually increment the version run `xcrun agvtool next-version -all`.
 
 ### Settings
 
@@ -130,6 +129,14 @@ This folder contains the main code, the app's views and controllers. Each 'app v
 
 The entry point for each scene is the class with the scene's name and `VC` added, e.g. `Scene1VC`. This represents the `ViewController` which is responsible for building up this scene, containing the view and any dependencies.
 
-For passing values to the scene there is a `setup` file located in the scene's folder, e.g. `Scene1Setup`. This describes the struct to inject as dependency into the new scene when creating it.
+For passing values to the scene there is a `setup` file located in the scene's folder, e.g. `Scene1Setup.swift`. This describes the struct to inject as dependency into the new scene when creating it.
 
 Other parts of a scene are the `Logic` and the `Display`. The former contains any business logic this scene implements while the latter manages the view, how to represent values and deliver interactions to the logic.
+
+### Xibs & Storyboards
+
+The project doesn't use Xibs or Storyboards to layout views or to design the navigation. Everything is done via code.
+
+There are some Xibs in the project which only present the view  via `IBDesignable`. They are only meant to visualize the code during development. These Xibs are not added to a target and therefore not delivered with the app.
+
+One 
