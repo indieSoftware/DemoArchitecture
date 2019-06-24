@@ -1,0 +1,7 @@
+# https://github.com/nicklockwood/SwiftFormat
+# https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
+
+--indent tab 
+--commas inline
+--stripunusedargs closure-only
+--disable redundantRawValues

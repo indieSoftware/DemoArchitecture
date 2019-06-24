@@ -1578,6 +1578,8 @@
 			buildConfigurationList = 260A4B7822BBC45900C73BF1 /* Build configuration list for PBXNativeTarget "Commons" */;
 			buildPhases = (
 				7513EB2F2CD43450B9D91CF3 /* [CP] Check Pods Manifest.lock */,
+				26C8F85A22C10500007AF088 /* SwiftFormat */,
+				26C8F85822C104CD007AF088 /* SwiftLint */,
 				260A4B5C22BBC45800C73BF1 /* Headers */,
 				260A4B5D22BBC45800C73BF1 /* Sources */,
 				260A4B5E22BBC45800C73BF1 /* Frameworks */,
@@ -2115,7 +2117,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"EmbeddedFrameworks/ServerWorker\" --indent tab --commas inline --stripunusedargs closure-only --disable redundantRawValues\n";
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"EmbeddedFrameworks/ServerWorker\"\n";
 		};
 		26262EF6228D7FE00004A5A2 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2227,7 +2229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"EmbeddedFrameworks/Shared\" --indent tab --commas inline --stripunusedargs closure-only --disable redundantRawValues\n";
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"EmbeddedFrameworks/Shared\"\n";
 		};
 		26C47BC521FCD78A0069947A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2247,6 +2249,42 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		26C8F85822C104CD007AF088 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		26C8F85A22C10500007AF088 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"EmbeddedFrameworks/Commons\"\n\n";
+		};
 		26CC1175223BB7D900B37D2D /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2263,7 +2301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"EmbeddedFrameworks/CustomViews\" --indent tab --commas inline --stripunusedargs closure-only --disable redundantRawValues\n";
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"EmbeddedFrameworks/CustomViews\"\n";
 		};
 		26CC1176223BB80C00B37D2D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2299,7 +2337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"DemoApp\" --indent tab --commas inline --stripunusedargs closure-only --disable redundantRawValues\n";
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"DemoApp\"\n";
 		};
 		26F44D3421EF74F5004162F3 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -19,9 +19,9 @@ public struct ViewStyle<T> {
 	/// The code to execute the provided component's styling.
 	public let style: (T) -> Void
 
-    public init(_ style: @escaping (T) -> Void) {
-        self.style = style
-    }
+	public init(_ style: @escaping (T) -> Void) {
+		self.style = style
+	}
 }
 
 public protocol Stylable {
