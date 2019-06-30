@@ -65,9 +65,9 @@
 		26365EFC229D3197009AFBB3 /* SetupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365EFA229D3197009AFBB3 /* SetupModel.swift */; };
 		26365EFE229D3653009AFBB3 /* Act2DC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365EFD229D3653009AFBB3 /* Act2DC.swift */; };
 		26365EFF229D3653009AFBB3 /* Act2DC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365EFD229D3653009AFBB3 /* Act2DC.swift */; };
-		26365F02229D54EB009AFBB3 /* Act1DCMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F01229D54EB009AFBB3 /* Act1DCMock.swift */; };
+		26365F02229D54EB009AFBB3 /* Act1DCStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F01229D54EB009AFBB3 /* Act1DCStub.swift */; };
 		26365F04229D5547009AFBB3 /* InternalSettingsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F03229D5547009AFBB3 /* InternalSettingsMock.swift */; };
-		26365F06229D579F009AFBB3 /* Act2DCMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F05229D579F009AFBB3 /* Act2DCMock.swift */; };
+		26365F06229D579F009AFBB3 /* Act2DCStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26365F05229D579F009AFBB3 /* Act2DCStub.swift */; };
 		26381E3721FDE2DE00DC3917 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C47B2D21FCA84C0069947A /* Shared.framework */; };
 		2642981C2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
 		2642981D2227DCB5004251FD /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2642981B2227DCB5004251FD /* AppIcon.xcassets */; };
@@ -154,6 +154,11 @@
 		269651CE227C31F000D286D4 /* InternalSettingsConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651CB227C31F000D286D4 /* InternalSettingsConst.swift */; };
 		269651CF227C31F000D286D4 /* InternalSettingsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651CC227C31F000D286D4 /* InternalSettingsInterface.swift */; };
 		269651D0227C31F000D286D4 /* InternalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269651CD227C31F000D286D4 /* InternalSettings.swift */; };
+		26A08A4222C8E163002A0756 /* Config-staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26A08A4022C8E163002A0756 /* Config-staging.plist */; };
+		26A08A4322C8E163002A0756 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26A08A4122C8E163002A0756 /* Config.plist */; };
+		26A08A4622C8E16A002A0756 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26A08A4522C8E16A002A0756 /* Config.plist */; };
+		26A08A4922C8E443002A0756 /* ConfigLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A08A3522C8C6F3002A0756 /* ConfigLoader.swift */; };
+		26A08A4A22C8E446002A0756 /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A08A3D22C8DBE8002A0756 /* ConfigModel.swift */; };
 		26A5BFD12214420A00D4F6FE /* Scene1Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BFD02214420A00D4F6FE /* Scene1Setup.swift */; };
 		26A5BFD22214420A00D4F6FE /* Scene1Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BFD02214420A00D4F6FE /* Scene1Setup.swift */; };
 		26A5BFD722144F0E00D4F6FE /* Scene1Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BFD622144F0E00D4F6FE /* Scene1Types.swift */; };
@@ -457,9 +462,9 @@
 		26345E80223BAB9A00BFCA07 /* RoundedButton.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = RoundedButton.playground; path = /Users/sven/Work/indieSoftware/Code/Calendar/Cali2/DemoApp/EmbeddedFrameworks/CustomViews/Buttons/RoundedButton.playground; sourceTree = "<absolute>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26365EFA229D3197009AFBB3 /* SetupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupModel.swift; sourceTree = "<group>"; };
 		26365EFD229D3653009AFBB3 /* Act2DC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2DC.swift; sourceTree = "<group>"; };
-		26365F01229D54EB009AFBB3 /* Act1DCMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1DCMock.swift; sourceTree = "<group>"; };
+		26365F01229D54EB009AFBB3 /* Act1DCStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act1DCStub.swift; sourceTree = "<group>"; };
 		26365F03229D5547009AFBB3 /* InternalSettingsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSettingsMock.swift; sourceTree = "<group>"; };
-		26365F05229D579F009AFBB3 /* Act2DCMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2DCMock.swift; sourceTree = "<group>"; };
+		26365F05229D579F009AFBB3 /* Act2DCStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act2DCStub.swift; sourceTree = "<group>"; };
 		263F1BDF2254EFBB00ED82A1 /* ServerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerWorker.swift; sourceTree = "<group>"; };
 		2642981B2227DCB5004251FD /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		2647CA9422BA505F00CCFF4F /* Scene0Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene0Logic.swift; sourceTree = "<group>"; };
@@ -530,6 +535,11 @@
 		269651CD227C31F000D286D4 /* InternalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalSettings.swift; sourceTree = "<group>"; };
 		26A08A1E22C8A5B8002A0756 /* DEPENDENCIES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DEPENDENCIES.md; sourceTree = "<group>"; };
 		26A08A1F22C8A603002A0756 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26A08A3522C8C6F3002A0756 /* ConfigLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLoader.swift; sourceTree = "<group>"; };
+		26A08A3D22C8DBE8002A0756 /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
+		26A08A4022C8E163002A0756 /* Config-staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Config-staging.plist"; sourceTree = "<group>"; };
+		26A08A4122C8E163002A0756 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		26A08A4522C8E16A002A0756 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		26A33C6A221D81D700F1251A /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		26A33C6D221D825500F1251A /* KeyboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardController.swift; sourceTree = "<group>"; };
 		26A33C6E221D825500F1251A /* NotificationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationToken.swift; sourceTree = "<group>"; };
@@ -895,8 +905,8 @@
 		26365F00229D54D0009AFBB3 /* Acts */ = {
 			isa = PBXGroup;
 			children = (
-				26365F01229D54EB009AFBB3 /* Act1DCMock.swift */,
-				26365F05229D579F009AFBB3 /* Act2DCMock.swift */,
+				26365F01229D54EB009AFBB3 /* Act1DCStub.swift */,
+				26365F05229D579F009AFBB3 /* Act2DCStub.swift */,
 			);
 			path = Acts;
 			sourceTree = "<group>";
@@ -1053,6 +1063,8 @@
 				2690232321EF602400C6B288 /* Assets.xcassets */,
 				2690235921EF649900C6B288 /* Info.plist */,
 				26F5CDCC21F0809B00DB0D86 /* DemoApp.entitlements */,
+				26A08A3F22C8E163002A0756 /* Dev */,
+				26A08A4422C8E16A002A0756 /* Release */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1147,6 +1159,32 @@
 			path = InternalSettings;
 			sourceTree = "<group>";
 		};
+		26A08A3422C8C6D7002A0756 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				26A08A3522C8C6F3002A0756 /* ConfigLoader.swift */,
+				26A08A3D22C8DBE8002A0756 /* ConfigModel.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		26A08A3F22C8E163002A0756 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				26A08A4022C8E163002A0756 /* Config-staging.plist */,
+				26A08A4122C8E163002A0756 /* Config.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		26A08A4422C8E16A002A0756 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				26A08A4522C8E16A002A0756 /* Config.plist */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
 		26A92CEF225B21D200E4B0C1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1176,6 +1214,7 @@
 			isa = PBXGroup;
 			children = (
 				260A4B9722BBD01600C73BF1 /* README.md */,
+				26A08A3422C8C6D7002A0756 /* Configuration */,
 				26C47B5421FCACF80069947A /* Constants */,
 				2693B855222BF08D0094A917 /* Generated */,
 				269651CA227C31EF00D286D4 /* InternalSettings */,
@@ -1966,6 +2005,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A08A4222C8E163002A0756 /* Config-staging.plist in Resources */,
 				26EFBD6E2203071000FE48AB /* Scene1.strings in Resources */,
 				2690232421EF602400C6B288 /* Assets.xcassets in Resources */,
 				2690236021EF65E300C6B288 /* LaunchScreen.storyboard in Resources */,
@@ -1973,6 +2013,7 @@
 				2647CAAA22BA505F00CCFF4F /* Scene0.strings in Resources */,
 				2642981C2227DCB5004251FD /* AppIcon.xcassets in Resources */,
 				26F44D4821EF84E2004162F3 /* Colors.xcassets in Resources */,
+				26A08A4322C8E163002A0756 /* Config.plist in Resources */,
 				26F44D8721EF8753004162F3 /* Global.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1996,6 +2037,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26EFBD6F2203071000FE48AB /* Scene1.strings in Resources */,
+				26A08A4622C8E16A002A0756 /* Config.plist in Resources */,
 				2690236221EF65F500C6B288 /* LaunchScreen.storyboard in Resources */,
 				2690235121EF627D00C6B288 /* Assets.xcassets in Resources */,
 				269651AD227C31AF00D286D4 /* Scene2.strings in Resources */,
@@ -2835,11 +2877,11 @@
 			files = (
 				26A92CF8225B6CB300E4B0C1 /* ServerWorkerMock.swift in Sources */,
 				26365F04229D5547009AFBB3 /* InternalSettingsMock.swift in Sources */,
-				26365F02229D54EB009AFBB3 /* Act1DCMock.swift in Sources */,
+				26365F02229D54EB009AFBB3 /* Act1DCStub.swift in Sources */,
 				26A92CF5225B5F8500E4B0C1 /* Scene1Mocks.swift in Sources */,
 				260C5AEF22417DC6009CE5A8 /* Scene1LogicTests.swift in Sources */,
 				26232551228ADCC1006AFAF4 /* SearchAutocompletionResultTests.swift in Sources */,
-				26365F06229D579F009AFBB3 /* Act2DCMock.swift in Sources */,
+				26365F06229D579F009AFBB3 /* Act2DCStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2930,10 +2972,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				26965112227C316600D286D4 /* Notifications.swift in Sources */,
+				26A08A4A22C8E446002A0756 /* ConfigModel.swift in Sources */,
 				26C47B5621FCADE20069947A /* Fonts.swift in Sources */,
 				26C47B5121FCAC870069947A /* Const.swift in Sources */,
 				26232556228AE2AC006AFAF4 /* SearchAutocompletionResult.swift in Sources */,
 				269651CF227C31F000D286D4 /* InternalSettingsInterface.swift in Sources */,
+				26A08A4922C8E443002A0756 /* ConfigLoader.swift in Sources */,
 				266AEF972297EC2C008006E1 /* Sizes.swift in Sources */,
 				26C7E962222AB7690003C57B /* ButtonStyles.swift in Sources */,
 				2693B85A222BF08D0094A917 /* R.generated.swift in Sources */,

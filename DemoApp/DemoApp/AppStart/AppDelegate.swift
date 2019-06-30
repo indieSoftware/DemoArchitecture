@@ -30,11 +30,16 @@ extension AppDelegate: UIApplicationDelegate {
 		#endif
 		Log.debug("Applying scenario: \(testScenario.rawValue)")
 
+		// Load config file.
+		let config = ConfigLoader.getConfig()
+		Log.debug("Config value: \(config.value)")
+
 		// Prepare initial act & scene.
 		let setupModel = SetupModel.Scene0()
 		let sceneType = Act1Scene.scene0(setupModel)
 		let dependencies = Act1DC(
 			testScenario: testScenario,
+			configuration: config,
 			settings: InternalSettings(),
 			serverWorker: ServerWorker()
 		)

@@ -11,12 +11,12 @@ class Scene1LogicTests: XCTestCase {
 	/// The dependencies injected for testing.
 	private var presenterMock: Scene1PresenterMock!
 	private var navigatorMock: Scene1NavigatorMock!
-	private var actDependenciesMock: Act1DCMock!
+	private var actDependenciesMock: Act1DCStub!
 
 	func createSut(setupModel: SetupModel.Scene1) {
 		presenterMock = Scene1PresenterMock()
 		navigatorMock = Scene1NavigatorMock()
-		actDependenciesMock = Act1DCMock()
+		actDependenciesMock = Act1DCStub()
 		let logicDependencies = Scene1Model.LogicDependencies(
 			setupModel: setupModel,
 			presenter: presenterMock,
@@ -246,7 +246,7 @@ class Scene1LogicTests: XCTestCase {
 	 */
 	private func expectServerSendsSuggestions(queryString: String, suggestions: Suggestions) {
 		let serverWorkerMock = ServerWorkerMock()
-		actDependenciesMock.serverWorkerStub = { serverWorkerMock }
+		actDependenciesMock.serverWorker = serverWorkerMock
 
 		let result = SearchAutocompletionResult(query: queryString, suggestions: suggestions)
 		let sendExpectation = expectation(description: "expectServerSendsSuggestionsExpectation")
@@ -264,7 +264,7 @@ class Scene1LogicTests: XCTestCase {
 	 */
 	private func expectServerSendsError(expectedError: ServerWorkerError) {
 		let serverWorkerMock = ServerWorkerMock()
-		actDependenciesMock.serverWorkerStub = { serverWorkerMock }
+		actDependenciesMock.serverWorker = serverWorkerMock
 
 		let sendExpectation = expectation(description: "expectServerSendsErrorExpectation")
 		serverWorkerMock.sendStub = { _, closure in
