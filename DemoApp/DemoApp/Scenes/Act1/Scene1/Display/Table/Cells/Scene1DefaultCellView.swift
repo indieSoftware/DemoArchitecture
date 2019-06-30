@@ -44,7 +44,6 @@ class Scene1DefaultCellView: BaseView {
 
 	/// The button to apply the suggestion.
 	let cellButton: UIButton = {
-		// TODO: Replace the button's representation with the correct image icon.
 		let button = UIButton(type: UIButton.ButtonType.contactAdd)
 		return button
 	}()

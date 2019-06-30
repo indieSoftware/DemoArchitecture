@@ -242,8 +242,6 @@
 		26F44D5321EF8683004162F3 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F44D4D21EF8683004162F3 /* BaseCell.swift */; };
 		26F44D8721EF8753004162F3 /* Global.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F44D5B21EF8752004162F3 /* Global.strings */; };
 		26F44D8821EF8753004162F3 /* Global.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F44D5B21EF8752004162F3 /* Global.strings */; };
-		26F44D9B21EF8753004162F3 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F44D6621EF8752004162F3 /* UIButton.swift */; };
-		26F44D9C21EF8753004162F3 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F44D6621EF8752004162F3 /* UIButton.swift */; };
 		26F44DB721EF8753004162F3 /* MailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F44D7921EF8752004162F3 /* MailController.swift */; };
 		26F44DB821EF8753004162F3 /* MailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F44D7921EF8752004162F3 /* MailController.swift */; };
 		527CB01866DAABF4FD7478C6 /* Pods_DemoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39B068706CD791491484D0B /* Pods_DemoAppUITests.framework */; };
@@ -602,7 +600,6 @@
 		26F44D4D21EF8683004162F3 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		26F44D5B21EF8752004162F3 /* Global.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Global.strings; sourceTree = "<group>"; };
 		26F44D5D21EF8752004162F3 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		26F44D6621EF8752004162F3 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		26F44D7921EF8752004162F3 /* MailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailController.swift; sourceTree = "<group>"; };
 		26F5CDCC21F0809B00DB0D86 /* DemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoApp.entitlements; sourceTree = "<group>"; };
 		26F5CE1E21F0D2E100DB0D86 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -984,7 +981,7 @@
 				2690231B21EF602300C6B288 /* DemoApp */,
 				2690233021EF602400C6B288 /* DemoAppUnitTests */,
 				2690233B21EF602400C6B288 /* DemoAppUITests */,
-				2659D5CF21FB29C500F11F18 /* DemoWidget */,
+				26A08A4B22C9271B002A0756 /* Extensions */,
 				26C47B3921FCA89D0069947A /* EmbeddedFrameworks */,
 				2693B85D222BF1DE0094A917 /* GlobalResources */,
 				37C9BC8692858E5BE8A07A39 /* Pods */,
@@ -1173,6 +1170,14 @@
 				26A08A4522C8E16A002A0756 /* Config.plist */,
 			);
 			path = Release;
+			sourceTree = "<group>";
+		};
+		26A08A4B22C9271B002A0756 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2659D5CF21FB29C500F11F18 /* DemoWidget */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		26A92CEF225B21D200E4B0C1 /* Scenes */ = {
@@ -1472,7 +1477,6 @@
 		26F44DBF21EF88D2004162F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				26F44D6621EF8752004162F3 /* UIButton.swift */,
 				26C47B6121FCCB9D0069947A /* UIResponder.swift */,
 				2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */,
 			);
@@ -2843,7 +2847,6 @@
 				26F44D3E21EF8021004162F3 /* R.generated.swift in Sources */,
 				269651C8227C31AF00D286D4 /* Scene2Navigator.swift in Sources */,
 				2647CAB222BA505F00CCFF4F /* Scene0Types.swift in Sources */,
-				26F44D9B21EF8753004162F3 /* UIButton.swift in Sources */,
 				2647CABA22BA505F00CCFF4F /* Scene0View.swift in Sources */,
 				26EFBD682203071000FE48AB /* Scene1Navigator.swift in Sources */,
 				26BF213922B0F82C00724863 /* Act2Scenes.swift in Sources */,
@@ -2939,7 +2942,6 @@
 				26F44D3F21EF8021004162F3 /* R.generated.swift in Sources */,
 				269651C9227C31AF00D286D4 /* Scene2Navigator.swift in Sources */,
 				2647CAB322BA505F00CCFF4F /* Scene0Types.swift in Sources */,
-				26F44D9C21EF8753004162F3 /* UIButton.swift in Sources */,
 				2647CABB22BA505F00CCFF4F /* Scene0View.swift in Sources */,
 				26EFBD692203071000FE48AB /* Scene1Navigator.swift in Sources */,
 				26BF213A22B0F82C00724863 /* Act2Scenes.swift in Sources */,
@@ -3345,10 +3347,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 28EE63BAA5EBAEEA7FF923D4 /* Pods-DemoWidget.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = DemoWidget/Resources/DemoWidget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Extensions/DemoWidget/Resources/DemoWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6T8HJZGHY;
-				INFOPLIST_FILE = DemoWidget/Resources/Info.plist;
+				INFOPLIST_FILE = Extensions/DemoWidget/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3367,10 +3369,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47F91E3C8E2F9F3FF71A0835 /* Pods-DemoWidget.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = DemoWidget/Resources/DemoWidget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Extensions/DemoWidget/Resources/DemoWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6T8HJZGHY;
-				INFOPLIST_FILE = DemoWidget/Resources/Info.plist;
+				INFOPLIST_FILE = Extensions/DemoWidget/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
