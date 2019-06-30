@@ -7,13 +7,11 @@ class Act2DC: Act2DCInterface {
 		Act2Factory(dependencies: self)
 	}()
 
-	let testScenario: TestScenario
 	let configuration: Configuration
 	let serverWorker: ServerWorkerInterface
 	let user: User
 
 	init(act1DC: Act1DCInterface, user: User) {
-		testScenario = act1DC.testScenario
 		configuration = act1DC.configuration
 		serverWorker = act1DC.serverWorker
 		self.user = user

@@ -22,23 +22,15 @@ extension AppDelegate: UIApplicationDelegate {
 		self.window = window
 		window.backgroundColor = R.color.defaultBackground()
 
-		// Get test scenario.
-		#if DEBUG
-			let testScenario = TestScenario(commandLineArguments: CommandLine.arguments)
-		#else
-			let testScenario = TestScenario.none
-		#endif
-		Log.debug("Applying scenario: \(testScenario.rawValue)")
-
 		// Load config file.
-		let config = ConfigLoader.getConfig()
-		Log.debug("Config value: \(config.value)")
+		let configName = ConfigLoader.getConfigName(forCommandLineArguments: CommandLine.arguments)
+		let config = ConfigLoader.getConfig(named: configName)
+		Log.debug("Config: \(config)\n\n------")
 
 		// Prepare initial act & scene.
 		let setupModel = SetupModel.Scene0()
 		let sceneType = Act1Scene.scene0(setupModel)
 		let dependencies = Act1DC(
-			testScenario: testScenario,
 			configuration: config,
 			settings: InternalSettings(),
 			serverWorker: ServerWorker()

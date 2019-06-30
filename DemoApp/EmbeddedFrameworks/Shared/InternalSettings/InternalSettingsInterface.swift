@@ -18,15 +18,13 @@ public protocol InternalSettingsInterface {
 
 	 The lastest version number can be seen via `Const.InternalSettings.LatestVersionNumber`.
 
-	 A specific test scenario besides `none` should only be applyed in a debug build.
-	 Depending on the scenario the internal settings might get cleared and any test values set.
-	 To prevent data loss providing a test scenario other than `none` in a release build will crash the app.
+	 Special behavior can be applied for testing some scenarios by providing test flags.
 
-	 - parameter testScenario: The test scenario to apply.
-	 - returns: `true` if an update has been performed, `false` when the settings were already up to date or the app is in test mode.
+	 - parameter testFlags: Some flags to apply when testing special behaviors. Set to `nil` for not applying any special testing cases.
+	 - returns: `true` if an update has been performed, `false` when the settings were already up to date or any test flags were provided.
 	 */
 	@discardableResult
-	func updateSettings(testScenario: TestScenario) -> Bool
+	func updateSettings(testFlags: TestFlags?) -> Bool
 
 	/// The current setting's version.
 	/// Returns 0 when none has been set.

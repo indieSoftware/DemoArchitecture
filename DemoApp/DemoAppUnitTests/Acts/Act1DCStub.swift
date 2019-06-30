@@ -5,8 +5,7 @@ import XCTest
 
 class Act1DCStub: Act1DCInterface {
 	var factory: Act1FactoryInterface = Act1FactoryMock()
-	var testScenario: TestScenario = .none
-	var configuration: Configuration = ConfigLoader.getConfig(forEnvironment: .default)
+	var configuration: Configuration = ConfigLoader.getConfig(named: .default)
 	var settings: InternalSettingsInterface = InternalSettingsMock()
 	var serverWorker: ServerWorkerInterface = ServerWorkerMock()
 }

@@ -182,7 +182,6 @@
 		26C47B3521FCA84C0069947A /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C47B2D21FCA84C0069947A /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26C47B5121FCAC870069947A /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F44D4121EF80DF004162F3 /* Const.swift */; };
 		26C47B5221FCAC870069947A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F44D4421EF8305004162F3 /* App.swift */; };
-		26C47B5521FCADDF0069947A /* TestScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2659D5BF21FB0DAB00F11F18 /* TestScenario.swift */; };
 		26C47B5621FCADE20069947A /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2659D5C521FB22A700F11F18 /* Fonts.swift */; };
 		26C47B5721FCADE50069947A /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2659D5C221FB221700F11F18 /* Margins.swift */; };
 		26C47B6021FCB6180069947A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5CE1E21F0D2E100DB0D86 /* Logger.swift */; };
@@ -486,7 +485,6 @@
 		2647CAC722BABD7400CCFF4F /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		2648179A224A3E8C0097014F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2658A39F21F5D43F004451F8 /* UIView+Anchorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorage.swift"; sourceTree = "<group>"; };
-		2659D5BF21FB0DAB00F11F18 /* TestScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScenario.swift; sourceTree = "<group>"; };
 		2659D5C221FB221700F11F18 /* Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
 		2659D5C521FB22A700F11F18 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		2659D5CC21FB29C500F11F18 /* DemoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DemoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -759,14 +757,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		260A4B5B22BB8C2D00C73BF1 /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				2659D5BF21FB0DAB00F11F18 /* TestScenario.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
 		260A4B6222BBC45900C73BF1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,7 +1210,6 @@
 				269651CA227C31EF00D286D4 /* InternalSettings */,
 				26F5CE1D21F0D2E100DB0D86 /* Logger */,
 				26F44D7D21EF8753004162F3 /* Models */,
-				260A4B5B22BB8C2D00C73BF1 /* Types */,
 				26C47B5321FCACD60069947A /* Resources */,
 			);
 			path = Shared;
@@ -2985,7 +2974,6 @@
 				26232555228AE2A7006AFAF4 /* Suggestions.swift in Sources */,
 				26C47B5221FCAC870069947A /* App.swift in Sources */,
 				26C47B6021FCB6180069947A /* Logger.swift in Sources */,
-				26C47B5521FCADDF0069947A /* TestScenario.swift in Sources */,
 				269651CE227C31F000D286D4 /* InternalSettingsConst.swift in Sources */,
 				26C47B5721FCADE50069947A /* Margins.swift in Sources */,
 				269651D0227C31F000D286D4 /* InternalSettings.swift in Sources */,

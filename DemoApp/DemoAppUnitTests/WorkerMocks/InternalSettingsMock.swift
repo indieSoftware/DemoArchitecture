@@ -3,9 +3,9 @@ import Shared
 import XCTest
 
 class InternalSettingsMock: InternalSettingsInterface {
-	var updateSettingsStub: (_ testScenario: Const.AppArgument.TestScenario?) -> Bool = { _ in XCTFail(); return false }
-	func updateSettings(testScenario: Const.AppArgument.TestScenario?) -> Bool {
-		return updateSettingsStub(testScenario)
+	var updateSettingsStub: (_ testFlags: TestFlags?) -> Bool = { _ in XCTFail(); return false }
+	func updateSettings(testFlags: TestFlags?) -> Bool {
+		return updateSettingsStub(testFlags)
 	}
 
 	var settingsVersionGetStub: () -> Int = { XCTFail(); return 0 }

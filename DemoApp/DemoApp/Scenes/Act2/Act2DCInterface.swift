@@ -4,9 +4,6 @@ import UIKit
 
 /// The act's dependency container.
 protocol Act2DCInterface: AnyObject {
-	/// The app's current test scenario to apply.
-	var testScenario: TestScenario { get }
-
 	/// The configuration properties.
 	var configuration: Configuration { get }
 

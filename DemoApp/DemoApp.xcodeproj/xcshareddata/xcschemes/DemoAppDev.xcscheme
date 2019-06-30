@@ -103,11 +103,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "none"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "fastStart"
+            argument = "staging"
             isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>

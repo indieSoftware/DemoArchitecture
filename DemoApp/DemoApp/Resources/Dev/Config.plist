@@ -2,9 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>value</key>
-	<string>DebugExample</string>
+	<key>config</key>
+	<string>Dev</string>
 	<key>backendUrl</key>
 	<string>https://suggestqueries.google.com/</string>
+	<key>testFlags</key>
+	<dict>
+		<key>resetData</key>
+		<true/>
+		<key>noSplash</key>
+		<false/>
+		<key>applyTestData</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

@@ -31,15 +31,24 @@ public final class InternalSettings {
 
 extension InternalSettings: InternalSettingsInterface {
 	@discardableResult
-	public func updateSettings(testScenario: TestScenario) -> Bool {
-		if testScenario == .none {
-			// No test mode, try updating the settings.
-			return applySettingsUpdate()
-		} else {
-			// Apply test scenario settings.
-			applyTestScenario(testScenario)
-			return false
+	public func updateSettings(testFlags: TestFlags?) -> Bool {
+		if let testFlags = testFlags, testFlags.resetData {
+			// Delete app's persisted data.
+			userDefaults.removePersistentDomain(forName: Const.App.groupIdentifier)
+			userDefaults.synchronize()
 		}
+
+		// Try updating the settings.
+		let updated = applySettingsUpdate()
+
+		// Apply any test flag scenarios.
+		if let testFlags = testFlags {
+			if testFlags.applyTestData {
+				applyTestData()
+			}
+		}
+
+		return updated
 	}
 
 	// MARK: - Setting properties
@@ -59,7 +68,6 @@ extension InternalSettings: InternalSettingsInterface {
 // MARK: - Settings versions
 
 extension InternalSettings {
-	@discardableResult
 	private func applySettingsUpdate() -> Bool {
 		let currentSettingsVersion = settingsVersion
 		guard currentSettingsVersion < Const.InternalSettings.LatestVersionNumber else {
@@ -99,34 +107,7 @@ extension InternalSettings {
 // MARK: - Test scenarios
 
 extension InternalSettings {
-	/**
-	 Deletes and sets up the internal settings for a test mode scenario.
-
-	 - parameter testScenario: The test scenario to apply.
-	 */
-	private func applyTestScenario(_ testScenario: TestScenario) {
-		#if DEBUG
-			// Delete app's persisted data.
-			userDefaults.removePersistentDomain(forName: Const.App.groupIdentifier)
-			userDefaults.synchronize()
-
-			// Initialize settings with default values.
-			applySettingsUpdate()
-
-			// Set up settings according to scenario.
-			switch testScenario {
-			case .fastStart:
-				scenarioFastStart()
-			default:
-				// Nothing to apply.
-				break
-			}
-		#else
-			fatalError("Preventing data loss in a release build")
-		#endif
-	}
-
-	private func scenarioFastStart() {
+	private func applyTestData() {
 		// Assign test scenario specific settings values.
 	}
 }

@@ -5,8 +5,7 @@ import XCTest
 
 class Act2DCStub: Act2DCInterface {
 	var factory: Act2FactoryInterface = Act2FactoryMock()
-	var testScenario: TestScenario = .none
-	var configuration: Configuration = ConfigLoader.getConfig(forEnvironment: .default)
+	var configuration: Configuration = ConfigLoader.getConfig(named: .default)
 	var serverWorker: ServerWorkerInterface = ServerWorkerMock()
 	var user: User = User()
 }
