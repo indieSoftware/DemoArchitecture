@@ -9,17 +9,8 @@ import Shared
  https://medium.com/@frederikjacques/repository-design-pattern-in-swift-952061485aa
  */
 public final class ServerWorker {
-	// TODO: Consider using a configuration file which gets read at runtime depending on the target and/or build mode instead of using hard coded properties.
-	/// The server's base URL as the string constant.
-	private let baseUrlString = "https://suggestqueries.google.com/complete"
-
 	/// The server's base URL where all requests are performed to.
-	lazy var baseEndpointUrl: URL = {
-		guard let url = URL(string: baseUrlString) else {
-			fatalError("Malformed URL string: \(baseUrlString)")
-		}
-		return url
-	}()
+	private let baseEndpointUrl: URL
 
 	// TODO: Consider using Alamofire instead of URLSession.
 	/// Foundation's `URLSession` is used as the underlying session resolver for sending requests.
@@ -27,8 +18,15 @@ public final class ServerWorker {
 
 	/**
 	 Default initializer.
+
+	 - parameter baseUrl: The URL to the server for applying any requests.
 	 */
-	public init() {}
+	public init(baseUrl: String) {
+		guard let url = URL(string: baseUrl) else {
+			fatalError("Malformed URL string: \(baseUrl)")
+		}
+		baseEndpointUrl = url
+	}
 
 	/**
 	 Creates the corresponding URL to call for a given request.

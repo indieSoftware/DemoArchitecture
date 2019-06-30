@@ -46,9 +46,10 @@ extension Scene0Logic: Scene0LogicInterface {
 				dispatchGroup.leave()
 			}
 
-			// If not the fast start test scenario is set then simply wait
-			// to make sure the splash is shown the minimum time.
-			if testFlags?.noSplash ?? false {
+			// Make sure the splash is shown the minimum time.
+			if let testFlags = testFlags, testFlags.noSplash {
+				// Skip splash for test case.
+			} else {
 				Thread.sleep(forTimeInterval: Const.Time.splashMinShowDuration)
 			}
 
@@ -57,12 +58,12 @@ extension Scene0Logic: Scene0LogicInterface {
 
 			// Run any presenter and navigator methods on the main thread.
 			DispatchQueue.main.async {
-				if testFlags?.noSplash ?? false {
-					// Fast start test scenario, skip splash hiding and start transition immediately.
+				if let testFlags = testFlags, testFlags.noSplash {
+					// Skip splash for test scenario and start transition immediately.
 					let model = SetupModel.Scene1()
 					dependencies.navigator.scene1(setupModel: model)
 				} else {
-					// Normal mode, hide splash.
+					// Normal mode, hide splash animated.
 					dependencies.presenter.hideSplash {
 						// Start transition after hiding the splash.
 						let model = SetupModel.Scene1()

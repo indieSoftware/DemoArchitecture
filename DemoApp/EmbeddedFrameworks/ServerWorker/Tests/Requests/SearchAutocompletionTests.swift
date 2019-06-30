@@ -8,9 +8,11 @@ class SearchAutocompletionTests: XCTestCase {
 	private var sut: ServerWorker!
 	/// A weak reference to the sut for detecting retain cycles.
 	private weak var weakSut: ServerWorker?
+	/// The server worker's base URL.
+	private let baseUrlString = "http://example.com"
 
 	override func setUp() {
-		sut = ServerWorker()
+		sut = ServerWorker(baseUrl: baseUrlString)
 		weakSut = sut
 	}
 
@@ -26,7 +28,8 @@ class SearchAutocompletionTests: XCTestCase {
 	func testEndpointMatch() {
 		let query = "testEndpointMatch"
 		let request = Request.SearchAutocompletion.Query(query)
-		let expectedUrl = URL(string: sut.baseEndpointUrl.appendingPathComponent(request.resourceName).absoluteString +
+		let baseUrl = URL(string: baseUrlString)!
+		let expectedUrl = URL(string: baseUrl.appendingPathComponent(request.resourceName).absoluteString +
 			"?\(Request.SearchAutocompletion.Query.CodingKeys.language.rawValue)=\(request.language)" +
 			"&\(Request.SearchAutocompletion.Query.CodingKeys.output.rawValue)=\(request.output)" +
 			"&\(Request.SearchAutocompletion.Query.CodingKeys.query.rawValue)=\(request.query)")!

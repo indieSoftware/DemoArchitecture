@@ -1161,8 +1161,8 @@
 		26A08A3F22C8E163002A0756 /* Dev */ = {
 			isa = PBXGroup;
 			children = (
-				26A08A4022C8E163002A0756 /* Config-staging.plist */,
 				26A08A4122C8E163002A0756 /* Config.plist */,
+				26A08A4022C8E163002A0756 /* Config-staging.plist */,
 			);
 			path = Dev;
 			sourceTree = "<group>";

@@ -1,5 +1,4 @@
 @testable import Commons
 import XCTest
 
-class CommonsTests: XCTestCase {
-}
+class CommonsTests: XCTestCase {}

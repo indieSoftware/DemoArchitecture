@@ -8,7 +8,7 @@ extension Request {
 		public struct Query: ServerRequest {
 			public typealias Response = SearchAutocompletionResult
 
-			public let resourceName = "search"
+			public let resourceName = "complete/search"
 
 			public let httpMethod = HTTPMethod.GET
 

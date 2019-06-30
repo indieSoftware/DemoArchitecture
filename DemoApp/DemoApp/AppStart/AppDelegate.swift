@@ -33,7 +33,7 @@ extension AppDelegate: UIApplicationDelegate {
 		let dependencies = Act1DC(
 			configuration: config,
 			settings: InternalSettings(),
-			serverWorker: ServerWorker()
+			serverWorker: ServerWorker(baseUrl: config.backendUrl)
 		)
 		let scene = dependencies.factory.scene(sceneType)
 
