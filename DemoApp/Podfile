@@ -4,12 +4,14 @@ use_frameworks!
 
 # Pods used for development only.
 def development_pods
-  # A linter to gather code metrics.
+  # A linter to gather code metrics and enforce Swift style and conventions.
   # https://github.com/realm/SwiftLint
+  # License: MIT
   pod 'SwiftLint'
 
-  # Formats the swift code to be consistent.
+  # Formats the Swift code to be consistent with the coding style guidelines.
   # https://github.com/nicklockwood/SwiftFormat
+  # License: MIT
   pod 'SwiftFormat/CLI'
 end
 
@@ -21,46 +23,54 @@ def app_pods
   serverWorker_pods
   commons_pods
 
-	# Constants for localized text, colors, etc.
+	# Automatically creates type-safe constants for localized text, colors, etc.
 	# https://github.com/mac-cain13/R.swift
+  # License: MIT
 	pod 'R.swift'
 
 	# A strong typed folder path structure to replace NSSearchPathForDirectoriesInDomains.
 	# https://github.com/dreymonde/AppFolder
+  # License: MIT
 	pod 'AppFolder'
 
-	# A collection of operators and utilities that simplify iOS layout code.
+	# A collection of operators and utilities that simplify iOS layout code. Used to create view constraints in code.
 	# https://github.com/Raizlabs/Anchorage
+  # License: MIT
 	pod 'Anchorage'
 
 	# Reactive programming in swift and cocoa.
 	# https://github.com/ReactiveX/RxSwift
+  # License: MIT
 	pod 'RxSwift'
 	pod 'RxCocoa'
 end
 
 # Pods used by the Shared framework.
 def shared_pods
-  # Constants for localized text, storyboards, nibs, etc.
+  # Automatically creates type-safe constants for localized text, colors, etc.
   # https://github.com/mac-cain13/R.swift
+  # License: MIT
   pod 'R.swift'
 
   # A configurable logger.
 	# https://github.com/CocoaLumberjack/CocoaLumberjack
+  # License: BSD-3-Clause
 	pod 'CocoaLumberjack/Swift'
 end
 
 # Pods used by the DemoWidget extension.
 def widget_pods
-  # Constants for localized text, colors, etc.
+  # Automatically creates type-safe constants for localized text, colors, etc.
   # https://github.com/mac-cain13/R.swift
+  # License: MIT
   pod 'R.swift'
 end
 
 # Pods used by the CustomViews framework.
 def customViews_pods
-	# A collection of operators and utilities that simplify iOS layout code.
+	# A collection of operators and utilities that simplify iOS layout code. Used to create view constraints in code.
 	# https://github.com/Raizlabs/Anchorage
+  # License: MIT
 	pod 'Anchorage'
 end
 
@@ -113,8 +123,9 @@ target 'ServerWorker' do
 end
 
 target 'ServerWorkerTests' do
-	# HTTP stubbing.
+	# HTTP stubbing for mocking HTTP calls so depending classes can be tested.
 	# https://github.com/JanGorman/Hippolyte
+  # License: MIT
 	pod 'Hippolyte'
 end
 

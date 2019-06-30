@@ -528,6 +528,8 @@
 		269651CB227C31F000D286D4 /* InternalSettingsConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalSettingsConst.swift; sourceTree = "<group>"; };
 		269651CC227C31F000D286D4 /* InternalSettingsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalSettingsInterface.swift; sourceTree = "<group>"; };
 		269651CD227C31F000D286D4 /* InternalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalSettings.swift; sourceTree = "<group>"; };
+		26A08A1E22C8A5B8002A0756 /* DEPENDENCIES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DEPENDENCIES.md; sourceTree = "<group>"; };
+		26A08A1F22C8A603002A0756 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26A33C6A221D81D700F1251A /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		26A33C6D221D825500F1251A /* KeyboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardController.swift; sourceTree = "<group>"; };
 		26A33C6E221D825500F1251A /* NotificationToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationToken.swift; sourceTree = "<group>"; };
@@ -988,6 +990,8 @@
 				37C9BC8692858E5BE8A07A39 /* Pods */,
 				2690231A21EF602300C6B288 /* Products */,
 				8BA581C4AC80D1CFC7C10ADC /* Frameworks */,
+				26A08A1F22C8A603002A0756 /* README.md */,
+				26A08A1E22C8A5B8002A0756 /* DEPENDENCIES.md */,
 			);
 			sourceTree = "<group>";
 		};
