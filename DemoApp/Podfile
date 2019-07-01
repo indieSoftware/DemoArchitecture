@@ -90,7 +90,7 @@ target 'DemoAppDev' do
 	app_pods
 end
 
-target 'DemoAppRelease' do
+target 'DemoAppProd' do
 	app_pods
 end
 
