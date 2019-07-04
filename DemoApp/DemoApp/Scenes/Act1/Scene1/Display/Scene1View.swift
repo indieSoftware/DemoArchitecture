@@ -39,7 +39,7 @@ final class Scene1View: BaseView {
 
 	// MARK: - Subviews
 
-	/// The search input field.
+	/// The input field for the search query term.
 	let searchInputField: UITextField = {
 		let field = UITextField()
 		field.backgroundColor = R.color.defaultBackground()
@@ -51,14 +51,14 @@ final class Scene1View: BaseView {
 		return field
 	}()
 
-	/// The separator line.
+	/// The separator line between input field and table view.
 	let separatorLine: UIView = {
 		guard let color = R.color.separator() else { fatalError() }
 		let line = UIView.viewWithColor(color)
 		return line
 	}()
 
-	/// The table view.
+	/// The table view covering most of the view.
 	let tableView: UITableView = {
 		let tableView = UITableView()
 		tableView.backgroundColor = R.color.defaultBackground()

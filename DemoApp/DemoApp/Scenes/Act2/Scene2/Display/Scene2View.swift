@@ -36,20 +36,20 @@ final class Scene2View: BaseView {
 
 	// MARK: - Subviews
 
-	/// The headline label.
+	/// The headline label shown at the top.
 	let headlineLabel: UILabel = {
 		let label = UILabel()
 		return label
 	}()
 
-	/// The dismiss button.
+	/// The rounded dismiss button under the headline.
 	let dismissButton: RoundedButton = {
 		let button = RoundedButton()
 		button.setTitle(R.string.scene2.dismissButtonTitle(), for: .normal)
 		return button
 	}()
 
-	/// The rotation lock switch.
+	/// The switch for locking the rotation.
 	let rotationLockSwitch: UISwitch = {
 		let view = UISwitch()
 		return view

@@ -26,6 +26,7 @@ final class Scene0View: BaseView {
 
 	// MARK: - Subviews
 
+    /// The only label showing the title in the middle of the screen.
 	let titleLabel: UILabel = {
 		let label = UILabel()
 		label.text = R.string.scene0.title()
