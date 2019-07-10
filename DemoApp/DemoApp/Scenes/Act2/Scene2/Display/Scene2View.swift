@@ -74,6 +74,7 @@ final class Scene2View: BaseView {
 
 	@IBInspectable private lazy var ibBackgroundColor: UIColor = .white
 	@IBInspectable private lazy var ibHeadlineTitle: String = "Headline title"
+	@IBInspectable private lazy var ibRotationSwitchState: Bool = false
 
 	override func prepareForInterfaceBuilder() {
 		// For crash reports look at '~/Library/Logs/DiagnosticReports/'.
@@ -81,5 +82,6 @@ final class Scene2View: BaseView {
 		backgroundColor = ibBackgroundColor
 
 		headlineLabel.text = ibHeadlineTitle
+		rotationLockSwitch.isOn = ibRotationSwitchState
 	}
 }

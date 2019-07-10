@@ -68,7 +68,6 @@ final class Scene1View: BaseView {
 	// MARK: - Interface Builder
 
 	@IBInspectable private lazy var ibBackgroundColor: UIColor = .white
-	@IBInspectable private lazy var ibHeadlineTitle: String = "Headline title"
 
 	override func prepareForInterfaceBuilder() {
 		// For crash reports look at '~/Library/Logs/DiagnosticReports/'.
