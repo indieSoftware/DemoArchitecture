@@ -6,7 +6,7 @@ extension ViewStyle where T: UIButton {
 	public static var filled: ViewStyle<T> {
 		return ViewStyle<T> {
 			$0.setTitleColor(R.color.buttonText(), for: .normal)
-			$0.setTitleColor(R.color.defaultBackground(), for: .highlighted)
+			$0.setTitleColor(R.color.buttonTextHighlight(), for: .highlighted)
 			$0.backgroundColor = R.color.defaultBackground()
 		}
 	}

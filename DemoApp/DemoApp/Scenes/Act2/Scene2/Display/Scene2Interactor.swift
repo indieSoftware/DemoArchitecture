@@ -37,10 +37,13 @@ final class Scene2Interactor {
 		view.rotationLockSwitch.rx
 			// Trigger on switch state changes.
 			.isOn
-			// Ignore first event on registration.
+			// Ignore first event on registration and propagate only changes.
 			.changed
+			// Wait until the user has finished toggling the switch and propagate then the correct value.
+			.debounce(Const.Time.defaultDebounceDuration.dispatchTimeInterval, scheduler: MainScheduler.instance)
 			.subscribe(onNext: { enabled in
-				let lockState: Scene2Model.DisplayRotation = enabled ? .possible : .locked
+				// When the switch is active then the rotations should be locked.
+				let lockState: Scene2Model.DisplayRotation = enabled ? .locked : .possible
 				logic.rotationLockChanged(lockState: lockState)
 			}).disposed(by: disposeBag)
 	}

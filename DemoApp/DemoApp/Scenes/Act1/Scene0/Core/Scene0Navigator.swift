@@ -24,6 +24,7 @@ extension Scene0Navigator: Scene0NavigatorInterface {
 		let destination = dependencies.factory.scene(sceneType)
 		let navController = BaseNavigationController(rootViewController: destination)
 		navController.isNavigationBarHidden = true
+		navController.modalPresentationStyle = .fullScreen
 		source.present(navController, animated: false)
 	}
 }

@@ -17,25 +17,36 @@ public struct StubRequest: Hashable {
     public init() {
     }
 
+    @discardableResult
     public func stubRequest(withMethod method: HTTPMethod, url: URL) -> Builder {
       request = StubRequest(method: method, url: url)
       return self
     }
 
+    @discardableResult
     public func stubRequest(withMethod method: HTTPMethod, urlMatcher: Matcher) -> Builder {
       request = StubRequest(method: method, urlMatcher: urlMatcher)
       return self
     }
 
+    @discardableResult
     public func addHeader(withKey key: String, value: String) -> Builder {
       assert(request != nil)
       request.setHeader(key: key, value: value)
       return self
     }
 
+    @discardableResult
     public func addResponse(_ response: StubResponse) -> Builder {
       assert(request != nil)
       request.response = response
+      return self
+    }
+
+    @discardableResult
+    public func addMatcher(_ matcher: Matcher) -> Builder {
+      assert(request != nil)
+      request.bodyMatcher = matcher
       return self
     }
 
@@ -82,13 +93,15 @@ public struct StubRequest: Hashable {
     return urlMatcher.matches(string: url?.absoluteString)
   }
 
-  private func matchesHeaders(_ headers: [String: String]?) -> Bool {
-    guard let otherHeaders = headers else { return self.headers.isEmpty }
-    for key in self.headers.keys {
-      guard let value = otherHeaders[key] else {
+  private func matchesHeaders(_ headersToMatch: [String: String]?) -> Bool {
+    guard let headersToMatch = headersToMatch else {
+      return headers.isEmpty
+    }
+    for key in headers.keys {
+      guard let value = headersToMatch[key] else {
         return false
       }
-      if value != self.headers[key] {
+      if value != headers[key] {
         return false
       }
     }
