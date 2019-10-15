@@ -1,4 +1,5 @@
 import Anchorage
+import Commons
 import Shared
 import UIKit
 
@@ -12,12 +13,13 @@ final class Scene0View: BaseView {
 		accessibilityIdentifier = Const.Scene0Tests.mainView
 
 		// Put the title in the center.
-		addSubview(titleLabel)
-		titleLabel.centerAnchors == centerAnchors
-		titleLabel.topAnchor >= layoutMarginsGuide.topAnchor
-		titleLabel.bottomAnchor <= layoutMarginsGuide.bottomAnchor
-		titleLabel.leadingAnchor >= layoutMarginsGuide.leadingAnchor
-		titleLabel.trailingAnchor <= layoutMarginsGuide.trailingAnchor
+		add(titleLabel) { titleLabel in
+			titleLabel.centerAnchors == centerAnchors
+			titleLabel.topAnchor >= layoutMarginsGuide.topAnchor
+			titleLabel.bottomAnchor <= layoutMarginsGuide.bottomAnchor
+			titleLabel.leadingAnchor >= layoutMarginsGuide.leadingAnchor
+			titleLabel.trailingAnchor <= layoutMarginsGuide.trailingAnchor
+		}
 
 		// Set default styles.
 		backgroundColor = R.color.defaultBackground()
@@ -27,12 +29,10 @@ final class Scene0View: BaseView {
 	// MARK: - Subviews
 
 	/// The only label showing the title in the middle of the screen.
-	let titleLabel: UILabel = {
-		let label = UILabel()
+	let titleLabel: UILabel = configure(UILabel()) { label in
 		label.text = R.string.scene0.title()
 		label.font = Const.Font.splashTitle
-		return label
-	}()
+	}
 
 	// MARK: - Interface Builder
 

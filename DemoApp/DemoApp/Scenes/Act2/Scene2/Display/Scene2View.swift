@@ -1,4 +1,5 @@
 import Anchorage
+import Commons
 import CustomViews
 import Shared
 import UIKit
@@ -13,21 +14,24 @@ final class Scene2View: BaseView {
 		accessibilityIdentifier = Const.Scene2Tests.mainView
 
 		// Position the headline at the top.
-		addSubview(headlineLabel)
-		headlineLabel.topAnchor == layoutMarginsGuide.topAnchor
-		headlineLabel.leadingAnchor == layoutMarginsGuide.leadingAnchor
-		headlineLabel.trailingAnchor == layoutMarginsGuide.trailingAnchor
+		add(headlineLabel) { headlineLabel in
+			headlineLabel.topAnchor == layoutMarginsGuide.topAnchor
+			headlineLabel.leadingAnchor == layoutMarginsGuide.leadingAnchor
+			headlineLabel.trailingAnchor == layoutMarginsGuide.trailingAnchor
+		}
 
 		// The switch goes under the headline.
-		addSubview(rotationLockSwitch)
-		rotationLockSwitch.topAnchor == headlineLabel.bottomAnchor + Const.Size.gap
-		rotationLockSwitch.leadingAnchor == layoutMarginsGuide.leadingAnchor
+		add(rotationLockSwitch) { rotationLockSwitch in
+			rotationLockSwitch.topAnchor == headlineLabel.bottomAnchor + Const.Size.gap
+			rotationLockSwitch.leadingAnchor == layoutMarginsGuide.leadingAnchor
+		}
 
 		// The dismiss button goes under the dismiss button.
-		addSubview(dismissButton)
-		dismissButton.topAnchor == rotationLockSwitch.bottomAnchor + Const.Size.gap
-		dismissButton.leadingAnchor == layoutMarginsGuide.leadingAnchor
-		dismissButton.trailingAnchor <= layoutMarginsGuide.trailingAnchor
+		add(dismissButton) { dismissButton in
+			dismissButton.topAnchor == rotationLockSwitch.bottomAnchor + Const.Size.gap
+			dismissButton.leadingAnchor == layoutMarginsGuide.leadingAnchor
+			dismissButton.trailingAnchor <= layoutMarginsGuide.trailingAnchor
+		}
 
 		// Set default styles.
 		backgroundColor = R.color.scene2Background()
@@ -37,23 +41,17 @@ final class Scene2View: BaseView {
 	// MARK: - Subviews
 
 	/// The headline label shown at the top.
-	let headlineLabel: UILabel = {
-		let label = UILabel()
-		return label
-	}()
+	let headlineLabel = configure(UILabel()) { _ in
+	}
 
 	/// The rounded dismiss button under the headline.
-	let dismissButton: RoundedButton = {
-		let button = RoundedButton()
+	let dismissButton = configure(RoundedButton()) { button in
 		button.setTitle(R.string.scene2.dismissButtonTitle(), for: .normal)
-		return button
-	}()
+	}
 
 	/// The switch for locking the rotation.
-	let rotationLockSwitch: UISwitch = {
-		let view = UISwitch()
-		return view
-	}()
+	let rotationLockSwitch = configure(UISwitch()) { _ in
+	}
 
 	// MARK: - View changes
 
@@ -63,11 +61,12 @@ final class Scene2View: BaseView {
 	 - parameter subView: The sub-controller's view.
 	 */
 	func addEmbeddedView(_ subView: UIView) {
-		addSubview(subView)
-		subView.topAnchor == dismissButton.bottomAnchor + Const.Size.gap
-		subView.leadingAnchor == layoutMarginsGuide.leadingAnchor
-		subView.trailingAnchor == layoutMarginsGuide.trailingAnchor
-		subView.bottomAnchor == layoutMarginsGuide.bottomAnchor
+		add(subView) { subView in
+			subView.topAnchor == dismissButton.bottomAnchor + Const.Size.gap
+			subView.leadingAnchor == layoutMarginsGuide.leadingAnchor
+			subView.trailingAnchor == layoutMarginsGuide.trailingAnchor
+			subView.bottomAnchor == layoutMarginsGuide.bottomAnchor
+		}
 	}
 
 	// MARK: - Interface Builder

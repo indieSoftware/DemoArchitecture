@@ -1,4 +1,5 @@
 import Anchorage
+import Commons
 import Shared
 import UIKit
 
@@ -12,25 +13,28 @@ final class Scene1View: BaseView {
 		accessibilityIdentifier = Const.Scene1Tests.mainView
 
 		// Position the input field at the top.
-		addSubview(searchInputField)
-		searchInputField.topAnchor == layoutMarginsGuide.topAnchor
-		searchInputField.leadingAnchor == layoutMarginsGuide.leadingAnchor
-		searchInputField.trailingAnchor == layoutMarginsGuide.trailingAnchor
-		searchInputField.heightAnchor == Const.Scene1.searchFieldHeight
+		add(searchInputField) { searchInputField in
+			searchInputField.topAnchor == layoutMarginsGuide.topAnchor
+			searchInputField.leadingAnchor == layoutMarginsGuide.leadingAnchor
+			searchInputField.trailingAnchor == layoutMarginsGuide.trailingAnchor
+			searchInputField.heightAnchor == Const.Scene1.searchFieldHeight
+		}
 
 		// Add a separator line between the input field and the table view.
-		addSubview(separatorLine)
-		separatorLine.topAnchor == searchInputField.bottomAnchor + Const.Size.gap
-		separatorLine.leadingAnchor == leadingAnchor
-		separatorLine.trailingAnchor == trailingAnchor
-		separatorLine.heightAnchor == Const.Size.separatorThickness
+		add(separatorLine) { separatorLine in
+			separatorLine.topAnchor == searchInputField.bottomAnchor + Const.Size.gap
+			separatorLine.leadingAnchor == leadingAnchor
+			separatorLine.trailingAnchor == trailingAnchor
+			separatorLine.heightAnchor == Const.Size.separatorThickness
+		}
 
 		// The table view under the headline.
-		addSubview(tableView)
-		tableView.topAnchor == separatorLine.bottomAnchor
-		tableView.leadingAnchor == leadingAnchor
-		tableView.trailingAnchor == trailingAnchor
-		tableView.bottomAnchor == bottomAnchor
+		add(tableView) { tableView in
+			tableView.topAnchor == separatorLine.bottomAnchor
+			tableView.leadingAnchor == leadingAnchor
+			tableView.trailingAnchor == trailingAnchor
+			tableView.bottomAnchor == bottomAnchor
+		}
 
 		// Set default styles.
 		backgroundColor = R.color.defaultBackground()
@@ -40,16 +44,14 @@ final class Scene1View: BaseView {
 	// MARK: - Subviews
 
 	/// The input field for the search query term.
-	let searchInputField: UITextField = {
-		let field = UITextField()
+	let searchInputField = configure(UITextField()) { field in
 		field.backgroundColor = R.color.defaultBackground()
 		field.text = String.empty
 		field.autocorrectionType = .no
 		field.clearButtonMode = .always
 		field.clearsOnBeginEditing = false
 		field.borderStyle = .roundedRect
-		return field
-	}()
+	}
 
 	/// The separator line between input field and table view.
 	let separatorLine: UIView = {
@@ -59,11 +61,9 @@ final class Scene1View: BaseView {
 	}()
 
 	/// The table view covering most of the view.
-	let tableView: UITableView = {
-		let tableView = UITableView()
+	let tableView = configure(UITableView()) { tableView in
 		tableView.backgroundColor = R.color.defaultBackground()
-		return tableView
-	}()
+	}
 
 	// MARK: - Interface Builder
 
