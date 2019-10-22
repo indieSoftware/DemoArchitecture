@@ -5,9 +5,9 @@ PODS:
   - CocoaLumberjack/Swift (3.6.0):
     - CocoaLumberjack/Core
   - Hippolyte (1.0.0)
-  - R.swift (5.0.3):
-    - R.swift.Library (~> 5.0.0)
-  - R.swift.Library (5.0.1)
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -47,8 +47,8 @@ SPEC CHECKSUMS:
   AppFolder: d10ba19488bd441d60ffcf96eb2ab639a4825231
   CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
   Hippolyte: c06122e59aac9b47bf906c5fcb96c81a8c98ae99
-  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
-  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
@@ -57,4 +57,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 861703781d73f624b0a0601e981dc90dddd91aec
 
-COCOAPODS: 1.8.0
+COCOAPODS: 1.8.4
