@@ -1,30 +1,24 @@
 import UIKit
 
 public final class InternalSettings {
-	// MARK: - Properties
-
 	/// The user defaults to use by this settings.
-	private let userDefaults: UserDefaults
-
-	/// Returns the `UserDefaults` for a group identifier to persist the app's internal settings to.
-	public static let getUserDefaults: () -> UserDefaults = {
+	fileprivate static var userDefaults: UserDefaults = {
 		if let defaults = UserDefaults(suiteName: Const.App.groupIdentifier) {
 			return defaults
 		} else {
 			fatalError("Should use the user defaults with the group identifier")
 		}
-	}
-
-	// MARK: - Init
+	}()
 
 	/**
 	 Initializes the settings.
-
-	 - parameter userDefaults: The user default object to use for persisting the app settings.
 	 */
-	public init(userDefaults: UserDefaults = getUserDefaults()) {
-		self.userDefaults = userDefaults
-	}
+	public init() {}
+
+	// MARK: - Properties
+
+	@InternalSettingsWrapper(key: Const.InternalSettings.Key.SettingsVersion, defaultValue: 0)
+	public var settingsVersion: Int
 }
 
 // MARK: - InternalSettingsInterface
@@ -34,8 +28,8 @@ extension InternalSettings: InternalSettingsInterface {
 	public func updateSettings(testFlags: TestFlags?) -> Bool {
 		if let testFlags = testFlags, testFlags.resetData {
 			// Delete app's persisted data.
-			userDefaults.removePersistentDomain(forName: Const.App.groupIdentifier)
-			userDefaults.synchronize()
+			Self.userDefaults.removePersistentDomain(forName: Const.App.groupIdentifier)
+			Self.userDefaults.synchronize()
 		}
 
 		// Try updating the settings.
@@ -49,19 +43,6 @@ extension InternalSettings: InternalSettingsInterface {
 		}
 
 		return updated
-	}
-
-	// MARK: - Setting properties
-
-	public var settingsVersion: Int {
-		get {
-			return userDefaults.integer(forKey: Const.InternalSettings.Key.SettingsVersion.rawValue)
-		}
-		set {
-			userDefaults.set(newValue, forKey: Const.InternalSettings.Key.SettingsVersion.rawValue)
-			NotificationCenter.default.post(name: Const.Notification.Name.InternalSettingsDidChange, object: self, userInfo:
-				[Const.Notification.UserInfoKey.InternalSettingsDidChangeSettingKey: Const.InternalSettings.Key.SettingsVersion])
-		}
 	}
 }
 
@@ -93,7 +74,7 @@ extension InternalSettings {
 		#if DEBUG
 			// Force sync during development otherwise terminating the app in Xcode
 			// may prevent the user defaults to persist.
-			userDefaults.synchronize()
+			Self.userDefaults.synchronize()
 		#endif
 		Log.info("Internal settings updated")
 		return true
@@ -109,5 +90,42 @@ extension InternalSettings {
 extension InternalSettings {
 	private func applyTestData() {
 		// Assign test scenario specific settings values.
+	}
+}
+
+// MARK: - PropertyWrapper
+
+/**
+ A `PropertyWrapper` for the properties of the `InternalSettings`.
+
+ Saves the property's value to the `InternalSettings`'s `userDefaults` and sends an `InternalSettingsDidChange` notification via `NotificationCenter`.
+ */
+@propertyWrapper
+public struct InternalSettingsWrapper<T> {
+	/// The settings key used for saving the value to the `UserDefaults`.
+	private let key: Const.InternalSettings.Key
+	/// The default value returned when no value could be retrieved from the `UserDefaults`.
+	private let defaultValue: T
+
+	/**
+	 Initializes the property with a `UserDefaults` key and a default value.
+
+	  - parameter key: The key used for saving the value to the `UserDefaults`.
+	  - parameter defaultValue: The value to return when no value can be retrieved from the `UserDefaults`.
+	 */
+	public init(key: Const.InternalSettings.Key, defaultValue: T) {
+		self.key = key
+		self.defaultValue = defaultValue
+	}
+
+	public var wrappedValue: T {
+		get {
+			return InternalSettings.userDefaults.object(forKey: key.rawValue) as? T ?? defaultValue
+		}
+		set {
+			InternalSettings.userDefaults.set(newValue, forKey: key.rawValue)
+			NotificationCenter.default.post(name: Const.Notification.Name.InternalSettingsDidChange, object: nil, userInfo:
+				[Const.Notification.UserInfoKey.InternalSettingsDidChangeSettingKey: key])
+		}
 	}
 }

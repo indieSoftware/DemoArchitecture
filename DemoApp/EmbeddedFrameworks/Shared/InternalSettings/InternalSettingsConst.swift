@@ -8,10 +8,10 @@ extension Const {
 		/// The internal settings version number for app v1.0.
 		public static let SettingsVersion1 = 1
 
+		// MARK: - Setting keys
+
 		/// Any setting keys used for saving and retrieving values to and from the user defaults.
 		public struct Key: Hashable, Equatable, RawRepresentable, ExpressibleByStringLiteral {
-			// MARK: - Setting keys
-
 			/// The setting's version key for versioning the settings (value is an integer).
 			public static let SettingsVersion: Key = "SettingsUserDefaultsKeySettingsVersion"
 
