@@ -10,8 +10,17 @@ import Foundation
  ```
  private static let dateFormatter = configure(DateFormatter()) {
      $0.dateFormat = "yyyy-MM-dd HH:mm"
-     $0.timeZone = TimeZone(secondsFromGMT: 0)
  }
+ ```
+
+ Instead of:
+
+ ```
+ private static let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm"
+    return formatter
+ }()
  ```
 
  - parameters:

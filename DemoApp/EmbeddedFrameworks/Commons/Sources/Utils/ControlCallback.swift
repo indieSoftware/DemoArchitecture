@@ -10,9 +10,9 @@ import UIKit
  ```
  // Provide possibility to register for a button's press action.
  private(set) lazy var onButtonPressed: ControlCallback<UIButton> = {
- ControlCallback(for: button, event: .touchUpInside) { [unowned self] in
- self.button
- }
+    ControlCallback(for: button, event: .touchUpInside) { [unowned self] in
+        self.button
+    }
  }()
 
  // Register a callback which will be informed about the button gets pressed.
