@@ -37,7 +37,7 @@ public final class DelegatedCall<Input> {
 	 - parameter delivery: The object to deliver to the delegate.
 	 */
 	public func setDelegate<Object: AnyObject>(to object: Object,
-	                                           with callback: @escaping (_ strongSelf: Object, _ delivery: Input) -> Void) {
+											   with callback: @escaping (_ strongSelf: Object, _ delivery: Input) -> Void) {
 		self.callback = { [weak object] input in
 			guard let object = object else {
 				return

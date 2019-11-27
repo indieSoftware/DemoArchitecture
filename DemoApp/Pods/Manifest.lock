@@ -4,18 +4,18 @@ PODS:
   - CocoaLumberjack/Core (3.6.0)
   - CocoaLumberjack/Swift (3.6.0):
     - CocoaLumberjack/Core
-  - Hippolyte (1.0.0)
+  - Hippolyte (1.1.0)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
-  - RxCocoa (5.0.0):
+  - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.0.0):
+  - RxRelay (5.0.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
-  - SwiftFormat/CLI (0.40.13)
-  - SwiftLint (0.35.0)
+  - RxSwift (5.0.1)
+  - SwiftFormat/CLI (0.41.1)
+  - SwiftLint (0.37.0)
 
 DEPENDENCIES:
   - Anchorage
@@ -46,15 +46,15 @@ SPEC CHECKSUMS:
   Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
   AppFolder: d10ba19488bd441d60ffcf96eb2ab639a4825231
   CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
-  Hippolyte: c06122e59aac9b47bf906c5fcb96c81a8c98ae99
+  Hippolyte: a295da386260477d164529b7b18a07adc6175240
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SwiftFormat: d548b3585a6dbe64390177b386e95375b8c300b6
-  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SwiftFormat: 03bae03c48218b1facbb735ead26552c41341c4b
+  SwiftLint: c078a14d7d7ade75e5507795d185e3da41d844d2
 
-PODFILE CHECKSUM: 861703781d73f624b0a0601e981dc90dddd91aec
+PODFILE CHECKSUM: 0699064e8e6cba65672aee862fdae6b6067654d6
 
 COCOAPODS: 1.8.4

@@ -10,7 +10,7 @@ final class HTTPStubURLProtocol: URLProtocol {
     let request: URLRequest
     
     var description: String {
-      return "No matching stub found for \(request)"
+      "No matching stub found for \(request)"
     }
   }
 
@@ -20,11 +20,11 @@ final class HTTPStubURLProtocol: URLProtocol {
   }
 
   override class func canonicalRequest(for request: URLRequest) -> URLRequest {
-    return request
+    request
   }
 
   override class func requestIsCacheEquivalent(_ a: URLRequest, to b: URLRequest) -> Bool {
-    return false
+    false
   }
 
   override func startLoading() {
@@ -43,7 +43,7 @@ final class HTTPStubURLProtocol: URLProtocol {
       let response = HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil,
                                      headerFields: stubbedResponse.headers)
 
-      if 300...399 ~= statusCode && (statusCode != 304 || statusCode != 305) {
+      if 300...399 ~= statusCode && (statusCode != 304 && statusCode != 305) {
         guard let location = stubbedResponse.headers["Location"], let url = URL(string: location),
               let cookies = cookieStorage.cookies(for: url) else {
                 return

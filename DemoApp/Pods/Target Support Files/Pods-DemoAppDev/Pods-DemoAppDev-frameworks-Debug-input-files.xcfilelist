@@ -1,8 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-DemoAppDev/Pods-DemoAppDev-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework
-${BUILT_PRODUCTS_DIR}/AppFolder/AppFolder.framework
-${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
-${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
-${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
-${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
-${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework

@@ -85,12 +85,8 @@ end
 
 # Targets
 
-target 'DemoAppDev' do
+target 'DemoApp' do
 	development_pods
-	app_pods
-end
-
-target 'DemoAppProd' do
 	app_pods
 end
 
@@ -146,6 +142,7 @@ post_install do |installer|
 			# Ignore any warnings from pods.
 			config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = "YES"
 			config.build_settings['SWIFT_SUPPRESS_WARNINGS'] = "YES"
+      config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = "YES"
 		end
 	end
 end

@@ -64,7 +64,7 @@ public final class ControlCallback<ReturnType: Any> {
 	 - parameter value: The object to deliver to the delegate.
 	 */
 	public func setDelegate<Object: AnyObject>(to object: Object,
-	                                           with callback: @escaping (_ strongSelf: Object, _ value: ReturnType) -> Void) {
+											   with callback: @escaping (_ strongSelf: Object, _ value: ReturnType) -> Void) {
 		self.callback = { [weak object] returnValue in
 			guard let object = object else {
 				return

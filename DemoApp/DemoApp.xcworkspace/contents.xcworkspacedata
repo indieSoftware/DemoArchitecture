@@ -4,13 +4,6 @@
    <FileRef
       location = "group:DemoApp.xcodeproj">
    </FileRef>
-   <Group
-      location = "group:Playgrounds"
-      name = "Playgrounds">
-      <FileRef
-         location = "group:/Users/sven/Work/indieSoftware/Code/Calendar/Cali2/DemoApp/Playgrounds/RxSwift.playground">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

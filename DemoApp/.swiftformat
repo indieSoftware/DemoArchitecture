@@ -2,6 +2,7 @@
 # https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
 
 --indent tab 
+--tabwidth 4
 --commas inline
 --stripunusedargs closure-only
 --disable redundantRawValues

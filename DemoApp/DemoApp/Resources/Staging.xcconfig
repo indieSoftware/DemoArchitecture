@@ -1,0 +1,9 @@
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+// https://hackernoon.com/a-cleaner-way-to-organize-your-ios-debug-development-and-release-distributions-6b5eb6a48356
+// https://www.appcoda.com/xcconfig-guide/
+
+#include "Pods/Target Support Files/Pods-DemoApp/Pods-DemoApp.staging.xcconfig"
+
+// The app's display name. This value is used as the `CFBundleName` in the `Info.plist`.
+CONFIG_BUNDLE_NAME = Demo Staging
