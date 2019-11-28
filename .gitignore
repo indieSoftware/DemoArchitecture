@@ -44,5 +44,5 @@ Gemfile.lock
 DemoApp/SnapshotFailureDiffImages
 
 # Auto-generated
-**/Generated/R-swift/R.generated.swift
-**/Generated/weaver/Weaver.swift
+**/Generated/SwiftGen/*
+!**/Generated/SwiftGen/placeholder

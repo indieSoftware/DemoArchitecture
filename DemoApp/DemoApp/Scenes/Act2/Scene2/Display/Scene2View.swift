@@ -34,7 +34,7 @@ final class Scene2View: BaseView {
 		}
 
 		// Set default styles.
-		backgroundColor = R.color.scene2Background()
+		backgroundColor = Const.Color.scene2Background()
 		directionalLayoutMargins = Const.Margin.default.directional
 	}
 
@@ -46,7 +46,7 @@ final class Scene2View: BaseView {
 
 	/// The rounded dismiss button under the headline.
 	let dismissButton = configure(RoundedButton()) { button in
-		button.setTitle(R.string.scene2.dismissButtonTitle(), for: .normal)
+		button.setTitle(Const.Text.Scene2.dismissButtonTitle(), for: .normal)
 	}
 
 	/// The switch for locking the rotation.

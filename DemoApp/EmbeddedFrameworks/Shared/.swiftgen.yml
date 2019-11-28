@@ -1,0 +1,27 @@
+# https://github.com/SwiftGen/SwiftGen
+
+input_dir: Resources
+output_dir: Generated/SwiftGen/
+xcassets:
+  - inputs:
+      - Color.xcassets
+    outputs:
+      - templatePath: ../../GlobalResources/SwiftGenTemplates/assets.stencil
+        output: Colors.swift
+        params:
+          publicAccess: true
+  - inputs:
+      - Data.xcassets
+    outputs:
+      - templatePath: ../../GlobalResources/SwiftGenTemplates/assets.stencil
+        output: Data.swift
+        params:
+          publicAccess: true
+  - inputs:
+      - Image.xcassets
+    outputs:
+#      - templateName: swift4
+      - templatePath: ../../GlobalResources/SwiftGenTemplates/assets.stencil
+        output: Image.swift
+        params:
+          publicAccess: true

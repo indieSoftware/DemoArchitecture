@@ -5,9 +5,9 @@ extension ViewStyle where T: UIButton {
 	/// Makes the button solid with a filled color.
 	public static var filled: ViewStyle<T> {
 		return ViewStyle<T> {
-			$0.setTitleColor(R.color.buttonText(), for: .normal)
-			$0.setTitleColor(R.color.buttonTextHighlight(), for: .highlighted)
-			$0.backgroundColor = R.color.defaultBackground()
+			$0.setTitleColor(Const.Color.buttonText(), for: .normal)
+			$0.setTitleColor(Const.Color.buttonTextHighlight(), for: .highlighted)
+			$0.backgroundColor = Const.Color.defaultBackground()
 		}
 	}
 

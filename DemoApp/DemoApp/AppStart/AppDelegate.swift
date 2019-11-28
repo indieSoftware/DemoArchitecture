@@ -20,7 +20,7 @@ extension AppDelegate: UIApplicationDelegate {
 		// Create window.
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		self.window = window
-		window.backgroundColor = R.color.defaultBackground()
+		window.backgroundColor = Const.Color.defaultBackground()
 
 		// Load config file.
 		let configName = ConfigLoader.getConfigName(forCommandLineArguments: CommandLine.arguments)

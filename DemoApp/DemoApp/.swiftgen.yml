@@ -1,0 +1,19 @@
+# https://github.com/SwiftGen/SwiftGen
+
+input_dir: .
+output_dir: Generated/SwiftGen/
+strings:
+  inputs: 
+    - Globals
+    - Scenes
+  outputs:
+    - templatePath: ../GlobalResources/SwiftGenTemplates/strings.stencil
+      output: Text.swift
+xcassets:
+  inputs:
+    - Resources/
+  outputs:
+    - templatePath: ../GlobalResources/SwiftGenTemplates/assets.stencil
+      output: Assets.swift
+      params:
+        importShared: true

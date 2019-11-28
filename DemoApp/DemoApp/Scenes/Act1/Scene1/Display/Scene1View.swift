@@ -37,7 +37,7 @@ final class Scene1View: BaseView {
 		}
 
 		// Set default styles.
-		backgroundColor = R.color.defaultBackground()
+		backgroundColor = Const.Color.defaultBackground()
 		directionalLayoutMargins = Const.Margin.default.directional
 	}
 
@@ -45,7 +45,7 @@ final class Scene1View: BaseView {
 
 	/// The input field for the search query term.
 	let searchInputField = configure(UITextField()) { field in
-		field.backgroundColor = R.color.defaultBackground()
+		field.backgroundColor = Const.Color.defaultBackground()
 		field.text = String.empty
 		field.autocorrectionType = .no
 		field.clearButtonMode = .always
@@ -55,14 +55,14 @@ final class Scene1View: BaseView {
 
 	/// The separator line between input field and table view.
 	let separatorLine: UIView = {
-		guard let color = R.color.separator() else { fatalError() }
+		let color = Const.Color.separator()
 		let line = UIView.viewWithColor(color)
 		return line
 	}()
 
 	/// The table view covering most of the view.
 	let tableView = configure(UITableView()) { tableView in
-		tableView.backgroundColor = R.color.defaultBackground()
+		tableView.backgroundColor = Const.Color.defaultBackground()
 	}
 
 	// MARK: - Interface Builder

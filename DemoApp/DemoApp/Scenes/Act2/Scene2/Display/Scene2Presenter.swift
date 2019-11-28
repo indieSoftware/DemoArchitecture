@@ -17,16 +17,16 @@ final class Scene2Presenter {
 extension Scene2Presenter: Scene2PresenterInterface {
 	func updateView(model: Scene2Model.Presenter.UpdateView) {
 		// Update the nav bar title.
-		viewController?.title = R.string.scene2.title(model.headline)
+		viewController?.title = Const.Text.Scene2.title(model.headline)
 
 		// Format the input data to display the headline.
 		let headline: String
 		switch model.displayRotation {
 		case .locked:
-			headline = R.string.scene2.headlineLocked(model.rotations)
+			headline = Const.Text.Scene2.headlineLocked(model.rotations)
 			view?.rotationLockSwitch.isOn = true
 		case .possible:
-			headline = R.string.scene2.headlineUnlocked(model.rotations)
+			headline = Const.Text.Scene2.headlineUnlocked(model.rotations)
 			view?.rotationLockSwitch.isOn = false
 		}
 		view?.headlineLabel.text = headline

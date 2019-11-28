@@ -26,8 +26,8 @@ extension Scene1Presenter: Scene1PresenterInterface {
 	}
 
 	func serverError(_ error: ServerWorkerError) {
-		let alert = UIAlertController(title: R.string.global.serverErrorTitle(), message: R.string.global.serverErrorMessage(), preferredStyle: .alert)
-		let defaultAction = UIAlertAction(title: R.string.global.serverErrorDefaultButton(), style: .default, handler: nil)
+		let alert = UIAlertController(title: Const.Text.Global.serverErrorTitle(), message: Const.Text.Global.serverErrorMessage(), preferredStyle: .alert)
+		let defaultAction = UIAlertAction(title: Const.Text.Global.serverErrorDefaultButton(), style: .default, handler: nil)
 		alert.addAction(defaultAction)
 		viewController?.present(alert, animated: true, completion: nil)
 	}

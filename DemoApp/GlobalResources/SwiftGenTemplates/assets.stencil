@@ -1,0 +1,33 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+{% if catalogs %}
+{% if param.importShared %}import Shared{% endif %}
+import UIKit
+
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+{% macro assetsBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "color" %}
+  {{accessModifier}} static func {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}() -> UIColor { UIColor(named: "{{asset.value}}", in: BundleToken.bundle, compatibleWith: nil)! }
+  {% elif asset.type == "data" %}
+  {{accessModifier}} static func {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}() -> NSDataAsset { NSDataAsset(name: "{{asset.value}}", bundle: BundleToken.bundle)! }
+  {% elif asset.type == "image" %}
+  {{accessModifier}} static func {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}() -> UIImage { UIImage(named: "{{asset.value}}", in: BundleToken.bundle, compatibleWith: nil)! }
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+extension Const {
+  {% for catalog in catalogs %}
+  {{accessModifier}} enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% filter indent:2 %}{% call assetsBlock catalog.assets %}{% endfilter %}
+  }
+  {% endfor %}
+}
+
+private final class BundleToken {
+  fileprivate static let bundle: Bundle = { Bundle(for: BundleToken.self) }()
+}
+{% else %}
+// No asset catalogs found
+{% endif %}
