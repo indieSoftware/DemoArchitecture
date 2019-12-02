@@ -1,11 +1,11 @@
-@testable import DemoAppDev
+@testable import DemoApp
 import ServerWorker
 import Shared
 import XCTest
 
 class Act2DCStub: Act2DCInterface {
 	var factory: Act2FactoryInterface = Act2FactoryMock()
-	var configuration: Configuration = ConfigLoader.getConfig(named: .default)
+	var configuration: Configuration = ConfigLoader.parseFile()
 	var serverWorker: ServerWorkerInterface = ServerWorkerMock()
 	var user: User = User()
 }

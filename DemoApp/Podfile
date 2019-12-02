@@ -23,9 +23,10 @@ def app_pods
   serverWorker_pods
   commons_pods
 
-  # Swift code generator creating type-safe constants for localized text, colors, etc.
-  # https://github.com/SwiftGen/SwiftGen
-  pod 'SwiftGen'
+	# Automatically creates type-safe constants for localized text, colors, etc.
+	# https://github.com/mac-cain13/R.swift
+  # License: MIT
+	pod 'R.swift'
 
 	# A strong typed folder path structure to replace NSSearchPathForDirectoriesInDomains.
 	# https://github.com/dreymonde/AppFolder
@@ -46,9 +47,10 @@ end
 
 # Pods used by the Shared framework.
 def shared_pods
-  # Swift code generator creating type-safe constants for localized text, colors, etc.
-  # https://github.com/SwiftGen/SwiftGen
-  pod 'SwiftGen'
+  # Automatically creates type-safe constants for localized text, colors, etc.
+  # https://github.com/mac-cain13/R.swift
+  # License: MIT
+  pod 'R.swift'
 
   # A configurable logger.
 	# https://github.com/CocoaLumberjack/CocoaLumberjack
@@ -58,6 +60,10 @@ end
 
 # Pods used by the DemoWidget extension.
 def widget_pods
+  # Automatically creates type-safe constants for localized text, colors, etc.
+  # https://github.com/mac-cain13/R.swift
+  # License: MIT
+  pod 'R.swift'
 end
 
 # Pods used by the CustomViews framework.
@@ -90,6 +96,7 @@ end
 
 target 'DemoAppUITests' do
 	development_pods
+  app_pods
 end
 
 target 'DemoWidget' do

@@ -20,11 +20,10 @@ extension AppDelegate: UIApplicationDelegate {
 		// Create window.
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		self.window = window
-		window.backgroundColor = Const.Color.defaultBackground()
+		window.backgroundColor = R.color.defaultBackground()
 
 		// Load config file.
-		let configName = ConfigLoader.getConfigName(forCommandLineArguments: CommandLine.arguments)
-		let config = ConfigLoader.getConfig(named: configName)
+		let config = ConfigLoader.parseFile()
 		Log.debug("Config: \(config)\n\n------")
 
 		// Prepare initial act & scene.

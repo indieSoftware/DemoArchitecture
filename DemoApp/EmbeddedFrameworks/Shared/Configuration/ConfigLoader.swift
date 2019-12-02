@@ -1,13 +1,19 @@
+/**
+ A helper to load a configuration plist file and mapping it to its model.
+ The config file should contain all necessary data to run the app, e.g. server URLs, token IDs, etc.
+ The config has to match the corresponding model in `ConfigModel.swift`.
+ */
 public final class ConfigLoader {
+	/// The name of the config plist file in the bundle.
+	public static let ConfigName = "Config.plist"
+
 	/**
-	 Loads the configuration from the `Config.plist` file.
+	 Loads the configuration from the config file by parsing it into the model.
 
-	 - parameter configName: The file name to load the config from.
-	 - returns: The configuration data model.
+	 - parameter fileName: The config's file name to load the config from.
+	 - returns: The configuration data model filled with the values from the file.
 	 */
-	public static func getConfig(named configName: ConfigName = .default) -> Configuration {
-		let fileName = configName.rawValue
-
+	public static func parseFile(named fileName: String = ConfigName) -> Configuration {
 		// Load config file from bundle.
 		guard let filePath = Bundle.main.path(forResource: fileName, ofType: nil),
 			let fileData = FileManager.default.contents(atPath: filePath)
@@ -23,27 +29,4 @@ public final class ConfigLoader {
 			fatalError("Configuration not decodable from '\(fileName)': \(error)")
 		}
 	}
-
-	/**
-	 Retrieves the config name depending on the command line argumenst provided by app start.
-
-	 - parameter commandLineArguments: The command line arguments passed to the app.
-	 - returns: The config name for loading a configuration.
-	    If no matching argument could be found, then `default` will be returned.
-	 */
-	public static func getConfigName(forCommandLineArguments commandLineArguments: [String]) -> ConfigName {
-		if commandLineArguments.contains("staging") {
-			return .staging
-		} else {
-			return .default
-		}
-	}
-}
-
-/// The specific configuration file name. The string represents the file name.
-public enum ConfigName: String {
-	/// The default configuration file name which is used for normal debug or release builds, e.g. `Config.plist`.
-	case `default` = "Config.plist"
-	/// The staging configuration file. Provide `staging` as command line argument to use this config.
-	case staging = "Config-staging.plist"
 }

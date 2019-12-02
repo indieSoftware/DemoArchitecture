@@ -1,4 +1,4 @@
-@testable import DemoAppDev
+@testable import DemoApp
 import ServerWorker
 @testable import Shared
 import XCTest

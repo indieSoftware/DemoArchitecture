@@ -1,7 +1,7 @@
 README
 ===
 
-Last edited: 2019/06/21
+Last edited: 2019/12/02
 
 This README explains the project and folder structure of this app.
 
@@ -95,6 +95,8 @@ To reference those types always use R-swift, e.g.:
 - `R.color.myColor()`
 - `R.string.localizable.myMessage()`
 
+R.swift doesn't support multiple entitlements files in different targets, yet. Therefore, the command line for the main project includes the flag `--generators image,string,color,file,font` to include only the necessary file types. When additional types are needed they have to be added here. 
+
 ### AppFolder
 
 For a strong type reference to the file system [AppFolder](https://github.com/dreymonde/AppFolder) is used. So instead of using `NSSearchPathForDirectoriesInDomains` simply use something like `AppFolder.Documents` or extend it to use own custom paths.
@@ -102,6 +104,14 @@ For a strong type reference to the file system [AppFolder](https://github.com/dr
 ### Constants
 
 Constants are defined in the files located in the `Constants` folder of the embedded framework `Shared`. They are all tailored into a struct called `Const` where extensions add additional sub-structs for specific types. Reference them like `Const.myType.myConst`.
+
+### Configurations
+
+For using different URLs, tokens, model, etc. for the different potential server modes (develop, staging, production) `Config.plist` files are provided. They are located in the subfolders in `Resources` matching the corresponding modes. During the build phase the correct file depending on the selected scheme is copied to the `Generated` folder and then included into the bundle. Theferfore, never modify the generated file, but the original in the resources folder.
+
+The configuration is parsed from the `plist` file into a model located in the `Configuration` folder of the embedded framework `Shared`. So, when modifying the config file also modify the `ConfigModel` to match the changes and don't forget to alter also the other configuration files for the other modes.
+
+The configuration file is also used for providing test flags for debugging. The config model has a `testFlags` dictionary with flags for specific test cases. The `testFlags` dictionary is optional so it can be dropped for the production build and not risking to provide sensitive debug data in the release binary. 
 
 ### Localized text
 

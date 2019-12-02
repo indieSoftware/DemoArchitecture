@@ -30,7 +30,7 @@ class Scene1DefaultCellView: BaseView {
 		heightAnchor == Const.Size.cellMinHeight ~ .required - 1
 
 		// Set default styles.
-		backgroundColor = Const.Color.defaultBackground()
+		backgroundColor = R.color.defaultBackground()
 		directionalLayoutMargins = Const.Margin.cell.directional
 	}
 
@@ -50,7 +50,7 @@ class Scene1DefaultCellView: BaseView {
 
 	/// The separator line.
 	let separatorLine: UIView = {
-		let color = Const.Color.separator()
+		guard let color = R.color.separator() else { fatalError() }
 		let line = UIView.viewWithColor(color)
 		return line
 	}()

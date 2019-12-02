@@ -22,7 +22,7 @@ final class Scene0View: BaseView {
 		}
 
 		// Set default styles.
-		backgroundColor = Const.Color.defaultBackground()
+		backgroundColor = R.color.defaultBackground()
 		directionalLayoutMargins = Const.Margin.default.directional
 	}
 
@@ -30,7 +30,7 @@ final class Scene0View: BaseView {
 
 	/// The only label showing the title in the middle of the screen.
 	let titleLabel: UILabel = configure(UILabel()) { label in
-		label.text = Const.Text.Scene0.title()
+		label.text = R.string.scene0.title()
 		label.font = Const.Font.splashTitle
 	}
 
