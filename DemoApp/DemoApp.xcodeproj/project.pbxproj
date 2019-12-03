@@ -3521,7 +3521,7 @@
 		};
 		2690234221EF602400C6B288 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 260F21CA238D6665008AB708 /* Development.xcconfig */;
+			baseConfigurationReference = EF5A62CC826161EAA8B168C7 /* Pods-DemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DemoApp/Resources/DemoApp.entitlements;

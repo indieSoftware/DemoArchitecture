@@ -1,3 +1,5 @@
+import Foundation
+
 /**
  A helper to load a configuration plist file and mapping it to its model.
  The config file should contain all necessary data to run the app, e.g. server URLs, token IDs, etc.
