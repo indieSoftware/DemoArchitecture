@@ -1,17 +1,15 @@
 README
 ===
 
-Last edited: 2019/12/02
+Last edited: 2019/12/05
 
 This README explains the project and folder structure of this app.
-
-To read and edit this file use a markdown editor, e.g. [MacDown](https://macdown.uranusjr.com)
 
 # The project
 
 Always open the project with the workspace file `DemoApp.xcworkspace`. (Don't use the `.xcodeproj` file)
 
-Used Xcode version: 10.2.1
+Xcode version: 10.2.1
 
 ## Swift
 
@@ -121,7 +119,7 @@ Always write output text (text which the user can read) into localizable strings
 
 The app's version number (`CFBundleShortVersionString` e.g. `1.0`) is saved in the project's build settings as a user-defined setting named `APP_VERSION`. This has to be updated manually when a new app version release is targeted.
 
-The app's build number (`CFBundleVersion` e.g. `42`) is saved in the `info.plist` file and the target's build settings in the `Versioning` section. This number should automatically be increased by a CI system when releasing a new version. To manually increment the version run `xcrun agvtool next-version -all`.
+The app's build number (`CFBundleVersion` e.g. `42`) is saved in the `info.plist` file and the target's build settings in the `Versioning` section with the key `Current Project Version`. This number should automatically be increased by a CI system when releasing a new version. To manually increment the version run `xcrun agvtool next-version -all`. For this to work the Build Setting's key `Versioning System` has also to be set to `Apple Generic`.
 
 ### Settings
 
@@ -148,5 +146,3 @@ Other parts of a scene are the `Logic` and the `Display`. The former contains an
 The project doesn't use Xibs or Storyboards to layout views or to design the navigation. Everything is done via code.
 
 There are some Xibs in the project which only present the view  via `IBDesignable`. They are only meant to visualize the code during development. These Xibs are not added to a target and therefore not delivered with the app.
-
-One 
