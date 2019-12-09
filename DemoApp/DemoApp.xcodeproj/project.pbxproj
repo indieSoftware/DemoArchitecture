@@ -659,6 +659,31 @@
 			path = Scene1;
 			sourceTree = "<group>";
 		};
+		260CE1A9239E537300BA7B45 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26345E7A223BA41500BFCA07 /* Buttons */,
+				26345E5D223BA2AD00BFCA07 /* CustomViews.h */,
+				26345E5E223BA2AD00BFCA07 /* Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		260CE1AA239E53C200BA7B45 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26A08A3422C8C6D7002A0756 /* Configuration */,
+				26C47B5421FCACF80069947A /* Constants */,
+				2693B855222BF08D0094A917 /* Generated */,
+				269651CA227C31EF00D286D4 /* InternalSettings */,
+				26F5CE1D21F0D2E100DB0D86 /* Logger */,
+				26F44D7D21EF8753004162F3 /* Models */,
+				26C47B2F21FCA84C0069947A /* Shared.h */,
+				26C47B3021FCA84C0069947A /* Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		2623254F228ADC9F006AFAF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,8 +734,7 @@
 			isa = PBXGroup;
 			children = (
 				260A4B9A22BBD0FB00C73BF1 /* README.md */,
-				26345E7A223BA41500BFCA07 /* Buttons */,
-				26CC1174223BB72600B37D2D /* Resources */,
+				260CE1A9239E537300BA7B45 /* Sources */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1117,13 +1141,7 @@
 			isa = PBXGroup;
 			children = (
 				260A4B9722BBD01600C73BF1 /* README.md */,
-				26A08A3422C8C6D7002A0756 /* Configuration */,
-				26C47B5421FCACF80069947A /* Constants */,
-				2693B855222BF08D0094A917 /* Generated */,
-				269651CA227C31EF00D286D4 /* InternalSettings */,
-				26F5CE1D21F0D2E100DB0D86 /* Logger */,
-				26F44D7D21EF8753004162F3 /* Models */,
-				26C47B5321FCACD60069947A /* Resources */,
+				260CE1AA239E53C200BA7B45 /* Sources */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1137,15 +1155,6 @@
 				26C47B2E21FCA84C0069947A /* Shared */,
 			);
 			path = EmbeddedFrameworks;
-			sourceTree = "<group>";
-		};
-		26C47B5321FCACD60069947A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				26C47B2F21FCA84C0069947A /* Shared.h */,
-				26C47B3021FCA84C0069947A /* Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		26C47B5421FCACF80069947A /* Constants */ = {
@@ -1221,15 +1230,6 @@
 				26C7E961222AB7690003C57B /* ButtonStyles.swift */,
 			);
 			path = Styles;
-			sourceTree = "<group>";
-		};
-		26CC1174223BB72600B37D2D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				26345E5D223BA2AD00BFCA07 /* CustomViews.h */,
-				26345E5E223BA2AD00BFCA07 /* Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		26EFBD512203071000FE48AB /* Scene1 */ = {
@@ -1999,7 +1999,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --path \"EmbeddedFrameworks/ServerWorker/Sources\" --config \"../../../.swiftlint.yml\"\n";
 		};
 		2645818B23950CD70088A152 /* Copy Config */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2096,7 +2096,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"Extensions/DemoWidget\" --indent tab --commas inline --stripunusedargs closure-only --disable redundantRawValues\n";
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"Extensions/DemoWidget\"\n";
 		};
 		26C47BC321FCD72E0069947A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2114,7 +2114,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --path \"Extensions/DemoWidget\" --config \"../../.swiftlint.yml\"\n";
 		};
 		26C47BC421FCD75A0069947A /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2150,7 +2150,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --path \"EmbeddedFrameworks/Shared/Sources\" --config \"../../../.swiftlint.yml\"\n";
 		};
 		26C8F85822C104CD007AF088 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2168,7 +2168,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --path \"EmbeddedFrameworks/Commons/Sources\" --config \"../../../.swiftlint.yml\"\n";
 		};
 		26C8F85A22C10500007AF088 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2222,7 +2222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --path \"EmbeddedFrameworks/CustomViews/Sources\" --config \"../../../.swiftlint.yml\"\n";
 		};
 		26F44D3321EF74B4004162F3 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2258,7 +2258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --path \"DemoApp\" --config \"../.swiftlint.yml\"\n";
 		};
 		26F44D3521EF7529004162F3 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3031,7 +3031,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EmbeddedFrameworks/CustomViews/Resources/Info.plist;
+				INFOPLIST_FILE = EmbeddedFrameworks/CustomViews/Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3115,7 +3115,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EmbeddedFrameworks/Shared/Resources/Info.plist;
+				INFOPLIST_FILE = EmbeddedFrameworks/Shared/Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3304,7 +3304,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EmbeddedFrameworks/CustomViews/Resources/Info.plist;
+				INFOPLIST_FILE = EmbeddedFrameworks/CustomViews/Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3337,7 +3337,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EmbeddedFrameworks/CustomViews/Resources/Info.plist;
+				INFOPLIST_FILE = EmbeddedFrameworks/CustomViews/Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3660,7 +3660,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EmbeddedFrameworks/Shared/Resources/Info.plist;
+				INFOPLIST_FILE = EmbeddedFrameworks/Shared/Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3691,7 +3691,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = EmbeddedFrameworks/Shared/Resources/Info.plist;
+				INFOPLIST_FILE = EmbeddedFrameworks/Shared/Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -3,11 +3,9 @@
 
 disabled_rules: # rule identifiers to exclude from running
   - nesting
-included: # paths to include during linting. `--path` is ignored if present.
-  - DemoApp
+#included: # paths to include during linting. `--path` is ignored if present.
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - DemoApp/Generated
-  - DemoApp/Resources
+  - Generated
 
 line_length: 160 # instead of 120
 

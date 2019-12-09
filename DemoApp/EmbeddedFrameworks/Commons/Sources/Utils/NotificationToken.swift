@@ -55,8 +55,10 @@ extension NotificationCenter {
 	 - parameter block: The block to be executed when the notification is received.
 	 - parameter notification: The notification called.
 	 */
-	public func observe(name: NSNotification.Name?, object obj: Any? = nil, queue: OperationQueue? = .main,
-						using block: @escaping (_ notification: Notification) -> Void) -> NotificationToken {
+	public func observe(
+		name: NSNotification.Name?, object obj: Any? = nil, queue: OperationQueue? = .main,
+		using block: @escaping (_ notification: Notification) -> Void
+	) -> NotificationToken {
 		let token = addObserver(forName: name, object: obj, queue: queue, using: block)
 		return NotificationToken(notificationCenter: self, token: token)
 	}

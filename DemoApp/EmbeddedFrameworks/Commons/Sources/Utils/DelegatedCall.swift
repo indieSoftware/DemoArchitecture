@@ -36,8 +36,10 @@ public final class DelegatedCall<Input> {
 	 - parameter strongSelf: A non-retaining strong reference to the delegate callee.
 	 - parameter delivery: The object to deliver to the delegate.
 	 */
-	public func setDelegate<Object: AnyObject>(to object: Object,
-											   with callback: @escaping (_ strongSelf: Object, _ delivery: Input) -> Void) {
+	public func setDelegate<Object: AnyObject>(
+		to object: Object,
+		with callback: @escaping (_ strongSelf: Object, _ delivery: Input) -> Void
+	) {
 		self.callback = { [weak object] input in
 			guard let object = object else {
 				return

@@ -63,8 +63,10 @@ public final class ControlCallback<ReturnType: Any> {
 	 - parameter strongSelf: A non-retaining strong reference to the delegate callee.
 	 - parameter value: The object to deliver to the delegate.
 	 */
-	public func setDelegate<Object: AnyObject>(to object: Object,
-											   with callback: @escaping (_ strongSelf: Object, _ value: ReturnType) -> Void) {
+	public func setDelegate<Object: AnyObject>(
+		to object: Object,
+		with callback: @escaping (_ strongSelf: Object, _ value: ReturnType) -> Void
+	) {
 		self.callback = { [weak object] returnValue in
 			guard let object = object else {
 				return
