@@ -2074,11 +2074,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${SRCROOT}/EmbeddedFrameworks/Shared/Generated/R-swift/R.generated.swift",
+				"${SRCROOT}/EmbeddedFrameworks/Shared/Sources/Generated/R-swift/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/R.swift/rswift\" generate \"${SRCROOT}/EmbeddedFrameworks/Shared/Generated/R-swift/R.generated.swift\"\n";
+			shellScript = "\"${PODS_ROOT}/R.swift/rswift\" generate \"${SRCROOT}/EmbeddedFrameworks/Shared/Sources/Generated/R-swift/R.generated.swift\"\n";
 		};
 		26C47BC221FCD7080069947A /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
